@@ -65,7 +65,7 @@ export default function Menu() {
                     </ul>
                 </li> */}
                 <li>
-                    <Link href="">Home
+                    <Link href="/">Home
                         <span className="main-menu-border"></span>
                     </Link>
                 </li>

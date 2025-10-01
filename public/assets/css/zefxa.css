@@ -31,7 +31,7 @@
   --zefxa-gray-rgb: 108, 107, 111;
   --zefxa-white: #ffffff;
   --zefxa-white-rgb: 255, 255, 255;
-  --zefxa-base: #ff8e00;
+  --zefxa-base: #327ea5;
   --zefxa-base-rgb: 245, 9, 99;
   --zefxa-black: #1c1b1f;
   --zefxa-black-rgb: 28, 27, 31;
@@ -4050,6 +4050,23 @@ a.video-popup {
   display: block;
   font-weight: 500;
   border-radius: 0;
+}
+
+/* Ensure textarea in contact form matches the same visual style as inputs */
+.contact-one__input-box textarea {
+  min-height: 120px; /* reasonable multi-line height */
+  width: 100%;
+  border: none;
+  background-color: var(--zefxa-white);
+  padding-left: 20px;
+  padding-right: 55px; /* leave space for icon if used */
+  outline: none;
+  font-size: 14px;
+  color: var(--zefxa-gray);
+  display: block;
+  font-weight: 500;
+  border-radius: 0;
+  resize: vertical;
 }
 
 .contact-one__input-box-icon {

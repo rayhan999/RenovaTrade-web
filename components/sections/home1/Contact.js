@@ -52,7 +52,7 @@ export default function Contact() {
                                     </div>
                                     <div className="col-xl-12">
                                         <div className="contact-one__input-box">
-                                            <input type="text" name="phone" placeholder="Your Query" required/>
+                                            <textarea name="query" placeholder="Your Query" required rows={5} className="form-control" />
                                             {/* <div className="contact-one__input-box-icon">
                                                 <span className="icon-phone-call"></span>
                                             </div> */}
@@ -87,12 +87,12 @@ export default function Contact() {
                         <div className="contact-one__right">
                             <div className="contact-one__video-link wow zoomIn" data-wow-delay="100ms"
                                 data-wow-duration="3500ms">
-                                <Link href="#" className="video-popup">
+                                {/* <Link href="#" className="video-popup">
                                     <div className="contact-one__video-icon">
                                         <span className="icon-play-button"></span>
                                         <i className="ripple"></i>
                                     </div>
-                                </Link>
+                                </Link> */}
                                 <h4 className="contact-one__video-text">Let's discuss about how we can help to
 
                                    make your business better</h4>

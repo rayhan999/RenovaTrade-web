@@ -13,7 +13,7 @@ export default function Footer1() {
             <div className="site-footer__top">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                             <div className="footer-widget__column footer-widget__about">
                                 <div className="footer-widget__logo">
                                     <Link href="/"><img src="assets/images/resources/renova_logo.svg" alt="" width={160}/></Link>
@@ -32,7 +32,7 @@ export default function Footer1() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                             <div className="footer-widget__column footer-widget__link">
                                 <div className="footer-widget__title-box">
                                     <h3 className="footer-widget__title">Useful Link</h3>
@@ -46,7 +46,7 @@ export default function Footer1() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                             <div className="footer-widget__column footer-widget__newsletter">
                                 <div className="footer-widget__title-box">
                                     <h3 className="footer-widget__title">Newsletter</h3>
@@ -75,7 +75,7 @@ export default function Footer1() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                        {/* <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
                             <div className="footer-widget__column footer-widget__Gallery">
                                 <div className="footer-widget__title-box">
                                     <h3 className="footer-widget__title">Gallery</h3>
@@ -119,7 +119,7 @@ export default function Footer1() {
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

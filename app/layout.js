@@ -6,7 +6,7 @@ import "swiper/css/pagination"
 import 'swiper/css/free-mode';
 import { dmSans, manrope } from '@/lib/font'
 export const metadata = {
-    title: 'iDesco',
+    title: 'Renova Trade',
     description: 'Digital Agency react next Js template'
 }
 

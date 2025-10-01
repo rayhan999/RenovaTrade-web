@@ -67,7 +67,8 @@ export default function Banner() {
             <img src="assets/images/shapes/main-slider-shape-2.png" alt="" />
           </div>
           <div className="main-slider__shape-3 float-bob-x">
-            <img src="assets/images/shapes/main-slider-shape-3_new.png" alt="" />
+            {/* <img src="assets/images/shapes/main-slider-shape-3_new.png" alt="" /> */}
+    
           </div>
 
           {/* Content */}
@@ -76,8 +77,9 @@ export default function Banner() {
               <div className="col-xl-12">
                 <div className="main-slider__content">
                   <h2 className="main-slider__title">
-                    The world of<br /> <span>secondary raw materials</span> <br />
-                    at your fingertips
+                    Rejuvenating  <br /> <span>the metal </span> <br />
+                    to new life 
+
                   </h2>
                   <p className="main-slider__text">
                     Your all-in-one solution for metal scrap. Focus on your core business, while we take care of everything, from start to finish.

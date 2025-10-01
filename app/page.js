@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout"
 import Banner from "@/components/sections/home1/Banner"
 import About from "@/components/sections/home1/About"
+// import About from "@/components/sections/home3/About"
 import Service from "@/components/sections/home1/Service"
 import Testimonial from "@/components/sections/home1/Testimonial"
 import Team from "@/components/sections/home1/Team"
@@ -19,14 +20,14 @@ export default function Home() {
             <Layout headerStyle={1} footerStyle={1}>
                 {/* <Banner /> */}
                  <Banner />   
-                <Service />
                 <About />
+                <Service />
+                <Process />
                  {/* <Project /> */}
                 {/* <Blog /> */}
                 {/* <Team /> */}
                 <Contact />
                 <Slidingtext />
-                {/* <Process /> */}
                 {/* <Why /> */}
                 {/* <Testimonial /> */}
                 {/* <Blog /> */}

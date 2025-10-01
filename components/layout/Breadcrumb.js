@@ -17,7 +17,7 @@ export default function Breadcrumb({ breadcrumbTitle }) {
                 <img src="assets/images/shapes/page-header-shape-2.png" alt=""/>
             </div>
             <div className="page-header__shape-3 float-bob-x">
-                <img src="assets/images/shapes/page-header-shape-3_new.png" alt=""/>
+                {/* <img src="assets/images/shapes/page-header-shape-3_new.png" alt=""/> */}
             </div>
             <div className="container">
                 <div className="page-header__inner">

@@ -45,9 +45,8 @@ export default function Home() {
                             </div>
                             {/* <h4 className="about-three__text-1">Suspendisse vel iaculis leo.Curabitur scelerisque mi porta
                                 justo fermentum porta.</h4> */}
-                           <p className="about-one__text">Over the decades, we have expanded our operations into different sectors within the metals industry, including smelting, shredding and granulation. We currently handle over 100,000 tonne of non-ferrous a year. Our aim is to provide a premier service to our customers and suppliers alike, while maintaining an environmentally business model.
-
-From our base in London, we work with clients of all sizes including scrap metal merchants, car breakers and demolition contractors. We operate sustainable business practices and have all the necessary licenses and accreditations in place. Giving you the comfort of dealing with a responsible scrap metal trader, who go over and above the industry standards.</p>
+                           <p className="about-one__text">We bring the best value in managing the scrap metal having multiple sourcing and with the destinations across Europe and South Asia. renova Trade focuses on sourcing recyclable raw scrap metals from Europe and selling to the South Asian markets where it finds a new form to serve new purposes. We specialize in exporting the heavy metal scraps that includes HMS1, HMS2, along with different grades of stainless steels and re-rollable metals. 
+</p>
                             <div className="about-three__points-and-year">
                                 <ul className="about-three__points list-unstyled">
                                     <li>
@@ -69,11 +68,11 @@ From our base in London, we work with clients of all sizes including scrap metal
                                         <p>Efficient and friendly service</p>
                                     </li>
                                 </ul>
-                                {/* <div className="about-three__year">
+                                <div className="about-three__year">
                                     <div className="about-three__year-shape"></div>
                                     <p>Since
-                                        <br/> 2024</p>
-                                </div> */}
+                                        <br/> 2025</p>
+                                </div>
                             </div>
                             <div className="about-three__btn-box">
                                 <Link href="contact" className="about-three__btn thm-btn">Contact us</Link>

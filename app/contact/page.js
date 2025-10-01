@@ -10,7 +10,7 @@ export default function Home() {
         {/*Contact Two Start*/}
         <section className="contact-two">
             <div className="contact-two__img-1 wow fadeInLeft" data-wow-delay="300ms">
-                <img src="assets/images/resources/blog-one-shape-1.png" alt="" className="float-bob-x"/>
+                {/* <img src="assets/images/resources/blog-one-shape-1.png" alt="" className="float-bob-x"/> */}
             </div>
             <div className="contact-two__bg-shape"></div>
             <div className="contact-two__bg-shape-2"></div>
@@ -59,8 +59,14 @@ export default function Home() {
                                         </div>
                                     </div>
                                     <div className="col-xl-6 col-lg-6">
-                                        <div className="contact-two__input-box">
-                                            <input type="text" name="Phone" placeholder="Your Query" required/>
+                                        {/* <div className="contact-two__input-box">
+                                            <input type="text" name="query" placeholder="Your Query" required/>
+                                        </div> */}
+                                        <div className="contact-one__input-box">
+                                            <textarea name="query" placeholder="Your Query" required rows={5} className="form-control" />
+                                            {/* <div className="contact-one__input-box-icon">
+                                                <span className="icon-phone-call"></span>
+                                            </div> */}
                                         </div>
                                     </div>
                                     {/* <div className="col-xl-3 col-lg-3 col-md-6">
@@ -101,7 +107,7 @@ export default function Home() {
                                             </div>
                                         </div>
                                     </div> */}
-                                    <div className="col-xl-3 col-lg-6 col-md-6">
+                                    <div className="col-xl-3 col-lg-6 col-md-6 " style={{ display: 'flex', alignItems: 'center', marginBottom:'24px'}}>
                                         <div className="contact-two__btn-box">
                                             <button type="submit" className="thm-btn contact-two__btn">Submit
                                                 Message</button>
