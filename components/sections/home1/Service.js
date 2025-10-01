@@ -26,9 +26,9 @@ export default function Service() {
                                 </div>
                             </div>
                             <div className="services-one__content-wrap" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-                                <div className="services-one__icon">
+                                {/* <div className="services-one__icon">
                                     <span className="icon-coding"></span>
-                                </div>
+                                </div> */}
                                 <div className="services-one__content" style={{ flex: 1 }}>
                                     <h3 className="services-one__title"><Link href="website-development">Heavy Melting Steel</Link></h3>
                                     <p className="services-one__text">HMS-1 (high density/6mm, non-galvanized or blackened steel)  and HMS-2 (galvanized or blackened, 3mm)
@@ -49,9 +49,9 @@ export default function Service() {
                                 </div>
                             </div>
                             <div className="services-one__content-wrap" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-                                <div className="services-one__icon">
+                                {/* <div className="services-one__icon">
                                     <span className="icon-curve"></span>
-                                </div>
+                                </div> */}
                                 <div className="services-one__content" style={{ flex: 1 }}>
                                     <h3 className="services-one__title"><Link href="seo-content-writting">Shredded Scrap
 </Link></h3>
@@ -113,7 +113,7 @@ export default function Service() {
                                    <img src="assets/images/services/service_3.jpg" alt=""/>
                                 </div>
                             </div>
-                            <div className="services-one__content-wrap">
+                          <div className="services-one__content-wrap" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                                 {/* <div className="services-one__icon">
                                     <span className="icon-productivity"></span>
                                 </div> */}
@@ -135,7 +135,7 @@ export default function Service() {
                                    <img src="assets/images/services/service_3.jpg" alt=""/>
                                 </div>
                             </div>
-                            <div className="services-one__content-wrap">
+                            <div className="services-one__content-wrap" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                                 {/* <div className="services-one__icon">
                                     <span className="icon-productivity"></span>
                                 </div> */}

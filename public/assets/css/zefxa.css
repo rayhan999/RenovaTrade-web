@@ -3600,7 +3600,8 @@ a.video-popup {
   color: #f4f1ee;
   transform: rotate(90deg);
   position: absolute;
-  bottom: 307px;
+  /* bottom: 307px; */
+  top:50%;
   left: -73px;
 }
 
