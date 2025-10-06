@@ -77,12 +77,12 @@ export default function Banner() {
               <div className="col-xl-12">
                 <div className="main-slider__content">
                   <h2 className="main-slider__title">
-                    Rejuvenating  <br /> <span>the metal </span> <br />
-                    to new life 
+                    Leading   <br /> <span>today’s scrap </span> <br />
+                   into tomorrow’s resources
 
                   </h2>
                   <p className="main-slider__text">
-                    Your all-in-one solution for metal scrap. Focus on your core business, while we take care of everything, from start to finish.
+                   Rejuvenating       the metal to new life by connecting industries with scrap metals needs 
                   </p>
                   <div className="main-slider__btn-box">
                     <Link href="contact" className="main-slider__btn thm-btn">

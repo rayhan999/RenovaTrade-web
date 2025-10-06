@@ -14,7 +14,8 @@ import Cta from "@/components/sections/home1/Cta"
 import Project from "@/components/sections/home2/Project"
 
 export default function Home() {
-
+// ns2.domainhotelli.fi
+// ns1.domainhotelli.fi
     return (
         <>
             <Layout headerStyle={1} footerStyle={1}>

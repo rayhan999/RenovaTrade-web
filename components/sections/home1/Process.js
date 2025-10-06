@@ -21,9 +21,9 @@ export default function Process() {
                         <div className="process-one__single-inner" style={{ flex: 1 }}>
                             <div className="process-one__single-shape"></div>
                             <div className="process-one__single" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                                <div className="process-one__single-bg"
+                                {/* <div className="process-one__single-bg"
                                     style={{ backgroundImage: ' url(assets/images/resources/process-one-single-bg.jpg)' }} >
-                                </div>
+                                </div> */}
                                 <div className="process-one__icon">
                                     <span className="icon-coding"></span>
                                 </div>
@@ -40,9 +40,9 @@ export default function Process() {
                         <div className="process-one__single-inner" style={{ flex: 1 }}>
                             <div className="process-one__single-shape"></div>
                             <div className="process-one__single" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                                <div className="process-one__single-bg"
+                                {/* <div className="process-one__single-bg"
                                     style={{ backgroundImage: ' url(assets/images/resources/process-one-single-bg.jpg)' }} >
-                                </div>
+                                </div> */}
                                 <div className="process-one__icon">
                                     <span className="icon-curve"></span>
                                 </div>
@@ -58,9 +58,9 @@ export default function Process() {
                         <div className="process-one__single-inner" style={{ flex: 1 }}>
                             <div className="process-one__single-shape"></div>
                             <div className="process-one__single" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                                <div className="process-one__single-bg"
+                                {/* <div className="process-one__single-bg"
                                     style={{ backgroundImage: ' url(assets/images/resources/process-one-single-bg.jpg)' }} >
-                                </div>
+                                </div> */}
                                 <div className="process-one__icon">
                                     <span className="icon-like"></span>
                                 </div>
@@ -76,9 +76,9 @@ export default function Process() {
                         <div className="process-one__single-inner" style={{ flex: 1 }}>
                             <div className="process-one__single-shape"></div>
                             <div className="process-one__single" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                                <div className="process-one__single-bg"
+                                {/* <div className="process-one__single-bg"
                                     style={{ backgroundImage: ' url(assets/images/resources/process-one-single-bg.jpg)' }} >
-                                </div>
+                                </div> */}
                                 <div className="process-one__icon">
                                     <span className="icon-bullhorn"></span>
                                 </div>

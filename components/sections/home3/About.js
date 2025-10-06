@@ -71,8 +71,8 @@ export default function About() {
                                 </ul>
                                 <div className="about-three__year">
                                     <div className="about-three__year-shape"></div>
-                                    <p>Since
-                                        <br/> 2024</p>
+                                    <p>Visionary
+                                        <br/> Solutions</p>
                                 </div>
                             </div>
                             <div className="about-three__btn-box">

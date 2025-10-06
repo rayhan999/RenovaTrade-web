@@ -16,11 +16,10 @@ export default function Footer1() {
                         <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                             <div className="footer-widget__column footer-widget__about">
                                 <div className="footer-widget__logo">
-                                    <Link href="/"><img src="assets/images/resources/renova_logo.svg" alt="" width={160}/></Link>
+                                    <Link href="/"><img src="assets/images/resources/renova_logo_white.png" alt="" width={260}/></Link>
                                 </div>
-                                <p className="footer-widget__about-text">Lorem ipsum dolor sit amet,consecte
-                                    tur adipiscing elit.Ut elit tellus,luctus nec ullamcorper mattis, pulvinar dapibus
-                                    leo</p>
+                                <p className="footer-widget__about-text">Rejuvenating       the metal to new life by connecting industries with scrap metals needs 
+</p>
                                 <div className="site-footer__social-box">
                                     <h3 className="site-footer__social-title">Follow On</h3>
                                     <div className="site-footer__social">

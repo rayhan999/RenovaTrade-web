@@ -18,7 +18,7 @@ export default function Service() {
                 </div>
                 <div className="row justify-center" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'stretch', justifyContent:'center' }}>
                     {/*Services One Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="100ms" style={{ display: 'flex' }}>
+                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="100ms" style={{ display: 'flex' }}>
                         <div className="services-one__single" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                             <div className="services-one__img-box">
                                 <div className="services-one__img">
@@ -41,7 +41,7 @@ export default function Service() {
                     </div>
                     {/*Services One Single End*/}
                     {/*Services One Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="300ms" style={{ display: 'flex' }}>
+                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="300ms" style={{ display: 'flex' }}>
                         <div className="services-one__single" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                             <div className="services-one__img-box">
                                 <div className="services-one__img">
@@ -63,7 +63,7 @@ export default function Service() {
                     </div>
                     {/*Services One Single End*/}
                     {/*Services One Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="600ms" style={{ display: 'flex' }}>
+                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="600ms" style={{ display: 'flex' }}>
                         <div className="services-one__single" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                             <div className="services-one__img-box">
                                 <div className="services-one__img">
@@ -84,7 +84,7 @@ export default function Service() {
                     </div>
                     {/*Services One Single End*/}
                     {/*Services One Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="900ms" style={{ display: 'flex' }}>
+                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="900ms" style={{ display: 'flex' }}>
                         <div className="services-one__single" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                             <div className="services-one__img-box">
                                 <div className="services-one__img">
@@ -106,7 +106,7 @@ export default function Service() {
                     </div>
                     {/*Services One Single End*/}
                     {/*Services One Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="1200ms">
+                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="1200ms">
                         <div className="services-one__single">
                             <div className="services-one__img-box">
                                 <div className="services-one__img">
@@ -128,7 +128,7 @@ export default function Service() {
                     </div>
                     {/*Services One Single End*/}
                     {/*Services One Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="1600ms">
+                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="1600ms">
                         <div className="services-one__single">
                             <div className="services-one__img-box">
                                 <div className="services-one__img">
@@ -163,7 +163,7 @@ export default function Service() {
                 </div>
                 <div className="row justify-center" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'stretch', justifyContent:'center' }}>
                     {/*Services One Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="100ms" style={{ display: 'flex' }}>
+                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="100ms" style={{ display: 'flex' }}>
                         <div className="services-one__single" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                             <div className="services-one__img-box">
                                 <div className="services-one__img">
@@ -187,7 +187,7 @@ export default function Service() {
                     </div>
                     {/*Services One Single End*/}
                     {/*Services One Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="300ms" style={{ display: 'flex' }}>
+                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay="300ms" style={{ display: 'flex' }}>
                         <div className="services-one__single" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                             <div className="services-one__img-box">
                                 <div className="services-one__img">
@@ -209,7 +209,7 @@ export default function Service() {
                     </div>
                     {/*Services One Single End*/}
                     {/*Services One Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="600ms" style={{ display: 'flex' }}>
+                    <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInRight" data-wow-delay="600ms" style={{ display: 'flex' }}>
                         <div className="services-one__single" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                             <div className="services-one__img-box">
                                 <div className="services-one__img">

@@ -35,7 +35,7 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
                   </div>
                   <div className="text">
                     <p>
-                      <Link href="mailto:needhelp@company.com">renova.trade@outlook.fi</Link>
+                      <Link href="mailto:needhelp@company.com">info@renovatrade.fi</Link>
                     </p>
                   </div>
                 </li>
@@ -45,7 +45,7 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
                   </div>
                   <div className="text">
                     <p>
-                      <Link href="tel:666-888-0000">+358-12212121</Link>
+                      <Link href="tel:666-888-0000">+358-413171469</Link>
                     </p>
                   </div>
                 </li>
@@ -60,7 +60,8 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
               </ul>
             </div>
             <div className="main-menu-three__top-right">
-              <p className="main-menu-three__top-text">Global metal traders</p>
+              <p className="main-menu-three__top-text">Rejuvenating the metal to new life 
+</p>
             </div>
           </div>
         </div>
@@ -70,7 +71,7 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
               <div className="main-menu-three__left">
                 <div className="main-menu-three__logo">
                   <Link href="/">
-                    <img src="assets/images/resources/renova_logo.svg" alt="" width={150} />
+                    <img src="assets/images/resources/renova_logo.png" alt="" width={250} />
                   </Link>
                 </div>
                 <div className="main-menu-three__main-menu-box">
@@ -110,7 +111,7 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
                 <div className="main-menu-three__left">
                   <div className="main-menu-three__logo">
                     <Link href="/">
-                      <img src="assets/images/resources/renova_logo.svg" alt="" width={120} />
+                      <img src="assets/images/resources/renova_logo.png" alt="" width={250} />
                     </Link>
                   </div>
                   <div className="main-menu-three__main-menu-box">

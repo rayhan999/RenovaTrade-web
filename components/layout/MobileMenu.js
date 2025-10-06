@@ -32,7 +32,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                     <span className="mobile-nav__close mobile-nav__toggler" onClick={handleMobileMenu} ><i className="fa fa-times"></i></span>
 
                     <div className="logo-box">
-                        <Link href="/" aria-label="logo image"><img src="assets/images/resources/renova_logo.svg" width="150" alt="" /></Link>
+                        <Link href="/" aria-label="logo image"><img src="assets/images/resources/renova_logo.png" width="200" alt="" /></Link>
                     </div>
 
                     <div className="mobile-nav__container">
