@@ -16,6 +16,7 @@ export default function Contact() {
             username: fd.get('username') || '',
             email: fd.get('email') || '',
             phone: fd.get('phone') || '',
+            company: fd.get('company') || '',
             subject: fd.get('subject') || '',
             query: fd.get('query') || '',
         }
@@ -77,6 +78,13 @@ export default function Contact() {
                                             <input type="text" name="phone" placeholder="Phone Number" required/>
                                             <div className="contact-one__input-box-icon">
                                                 <span className="icon-phone-call"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-xl-12">
+                                        <div className="contact-one__input-box">
+                                            <input type="text" name="company" placeholder="Company Name" /><div className="contact-one__input-box-icon">
+                                                <span className="fa fa-building"></span>
                                             </div>
                                         </div>
                                     </div>

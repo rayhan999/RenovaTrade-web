@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { username, email, phone, subject, query } = body;
+  const { username, email, phone, company, subject, query } = body;
 
     // Read SMTP credentials from environment variables
     const SMTP_HOST = process.env.ZOHO_SMTP_HOST || 'smtp.zoho.com';
@@ -34,12 +34,13 @@ export async function POST(req) {
       replyTo: `${username} <${email}>`,
       to: 'info@renovatrade.fi',
       subject: subject || `Contact form submission from ${username}`,
-      text: `Name: ${username}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${query}`,
+      text: `Name: ${username}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nSubject: ${subject}\n\nMessage:\n${query}`,
       html: `<p><strong>Name:</strong> ${username}</p>
-             <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Phone:</strong> ${phone}</p>
-             <p><strong>Subject:</strong> ${subject}</p>
-             <p><strong>Message:</strong><br/>${query.replace(/\n/g, '<br/>')}</p>`,
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Message:</strong><br/>${query.replace(/\n/g, '<br/>')}</p>`,
     };
 
     const info = await transporter.sendMail(mailOptions);

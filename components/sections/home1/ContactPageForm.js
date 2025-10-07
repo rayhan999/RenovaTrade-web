@@ -15,6 +15,7 @@ export default function ContactPageForm() {
       username: fd.get('username') || '',
       email: fd.get('email') || '',
       phone: fd.get('phone') || '',
+      company: fd.get('company') || '',
       subject: fd.get('subject') || '',
       query: fd.get('query') || '',
     }
@@ -59,6 +60,11 @@ export default function ContactPageForm() {
           </div>
           <div className="col-xl-6 col-lg-6">
             <div className="contact-two__input-box">
+              <input type="text" name="company" placeholder="Company Name" />
+            </div>
+          </div>
+          <div className="col-xl-6 col-lg-6">
+            <div className="contact-two__input-box">
               <input type="text" name="subject" placeholder="Subject" required />
             </div>
           </div>
@@ -67,8 +73,8 @@ export default function ContactPageForm() {
               <textarea name="query" placeholder="Your Query" required rows={5} className="form-control" />
             </div>
           </div>
-          <div className="col-xl-3 col-lg-6 col-md-6 " style={{ display: 'flex', alignItems: 'center', marginBottom: '24px' }}>
-            <div className="contact-two__btn-box">
+          <div className="col-12" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
+            <div className="contact-two__btn-box" style={{ textAlign: 'center' }}>
               <button type="submit" className="thm-btn contact-two__btn" disabled={loading}>{loading ? 'Sending...' : 'Submit Message'}</button>
             </div>
           </div>

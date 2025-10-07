@@ -4148,10 +4148,13 @@ a.video-popup {
 
 .contact-one__right {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center; /* vertically center content */
+  justify-content: center; /* horizontally center content */
   margin-left: 70px;
   text-align: center;
   margin-top: 104px;
+  flex-direction: column; /* keep content stacked */
 }
 
 .contact-one__video-link {
@@ -8272,9 +8275,13 @@ a.video-popup {
 .contact-two {
   position: relative;
   display: block;
-  background-color: #f7f8fa;
+  /* background-color: #f7f8fa; */
   padding: 120px 0 111px;
   z-index: 3;
+}
+
+.contact-two.contact-form-section {
+  background-color: #f7f8fa;
 }
 
 .contact-two__img-1 {
@@ -8512,8 +8519,9 @@ a.video-popup {
 
 /* Date Picker Css End */
 
-.contact-two__left-text {
+.contact-two__centered-text {
   margin-top: 2px;
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -9219,8 +9227,8 @@ a.video-popup {
   font-weight: 700;
   border-radius: 50%;
   color: var(--zefxa-base);
-  counter-increment: count;
-  content: "0" counter(count);
+  /* counter-increment: count;
+  content: "0" counter(count); */
   transition: all 200ms linear;
   transition-delay: 0.1s;
   -webkit-transition: all 500ms ease;
