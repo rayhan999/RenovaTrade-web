@@ -7,11 +7,34 @@ import 'swiper/css/free-mode';
 import { dmSans, manrope } from '@/lib/font'
 export const metadata = {
     title: { default: 'Renova Trade', template: '%s | Renova Trade' },
-    description: 'Renova Trade - International metal scrap trader: HMS, shredded scrap, non-ferrous scrap including copper, aluminum, and stainless steel. Reliable sourcing and prompt logistics.',
-    keywords: ['metal scrap', 'HMS scrap', 'shredded scrap', 'aluminum scrap', 'copper scrap', 'stainless steel scrap', 'scrap trading', 'Renova Trade'],
+    description: 'Renova Trade is a global metal scrap trading company and exporter, sourcing ferrous and non-ferrous scrap (HMS, shredded scrap, copper, aluminum, stainless steel, brass) and supplying international buyers. We offer reliable logistics, sustainable metal recycling, and export services across Asia and worldwide.',
+    keywords: [
+        'metal scrap trading company',
+        'scrap metal exporter',
+        'buy and sell metal scrap',
+        'scrap trading company in Asia',
+        'international metal scrap dealer',
+        'Renova Trade scrap metal',
+        'metal recycling and export',
+        'global scrap trading company',
+        'scrap metal supplier',
+        'iron scrap exporter',
+        'copper scrap trading company',
+        'aluminum scrap supplier',
+        'stainless steel scrap buyer',
+        'brass scrap exporter',
+        'heavy melting scrap supplier',
+        'ferrous and non-ferrous scrap dealer',
+        'scrap metal export to Asia',
+        'Asia scrap metal market',
+        'metal recycling company',
+        'eco-friendly scrap trading',
+        'industrial scrap recycling',
+        'sustainable metal trade'
+    ],
     openGraph: {
         title: 'Renova Trade – Metal Scrap Trading',
-        description: 'Renova Trade - Sourcing and trading ferrous and non-ferrous scrap globally. HMS, shredded scrap, copper, aluminum, stainless steel.',
+    description: 'Renova Trade - Global sourcing and export of ferrous and non-ferrous scrap including HMS, shredded scrap, copper, aluminum, stainless steel, and brass. Serving international buyers and supporting sustainable metal recycling and export to Asia.',
         url: 'https://renovatrade.fi',
         siteName: 'Renova Trade',
         images: [
@@ -28,7 +51,7 @@ export const metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Renova Trade',
-        description: 'International metal scrap trading: HMS, shredded scrap, copper, aluminum, stainless steel.',
+    description: 'International metal scrap trading and export — HMS, shredded scrap, copper, aluminum, stainless steel. Renova Trade supplies global buyers and focuses on sustainable recycling.',
     },
     robots: {
         index: true,
