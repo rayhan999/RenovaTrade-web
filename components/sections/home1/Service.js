@@ -30,7 +30,7 @@ export default function Service() {
                                     <span className="icon-coding"></span>
                                 </div> */}
                                 <div className="services-one__content" style={{ flex: 1 }}>
-                                    <h3 className="services-one__title"><Link href="website-development">Heavy Melting Steel</Link></h3>
+                                    <h3 className="services-one__title"><Link href="">Heavy Melting Steel</Link></h3>
                                     <p className="services-one__text">HMS-1 (high density/6mm, non-galvanized or blackened steel)  and HMS-2 (galvanized or blackened, 3mm)
 
 
@@ -53,7 +53,7 @@ export default function Service() {
                                     <span className="icon-curve"></span>
                                 </div> */}
                                 <div className="services-one__content" style={{ flex: 1 }}>
-                                    <h3 className="services-one__title"><Link href="seo-content-writting">Shredded Scrap
+                                    <h3 className="services-one__title"><Link href="">Shredded Scrap
 </Link></h3>
                                     <p className="services-one__text">Homogeneous furnace feeding, and magnetically separated auto or mixed scrap.
 </p>
@@ -75,7 +75,7 @@ export default function Service() {
                                     <span className="icon-creative"></span>
                                 </div> */}
                                 <div className="services-one__content" style={{ flex: 1 }}>
-                                    <h3 className="services-one__title"><Link href="digital-marketing">Structural Steel Plate</Link></h3>
+                                    <h3 className="services-one__title"><Link href="">Structural Steel Plate</Link></h3>
                                     <p className="services-one__text">Construction based structural steel plates, and steel angles of different shapes.  
 </p>
                                 </div>
@@ -96,7 +96,7 @@ export default function Service() {
                                     <span className="icon-productivity"></span>
                                 </div> */}
                                 <div className="services-one__content" style={{ flex: 1 }}>
-                                    <h3 className="services-one__title"><Link href="digital-marketing">Tin Can/Plate 
+                                    <h3 className="services-one__title"><Link href="">Tin Can/Plate 
 </Link></h3>
                                     <p className="services-one__text">Beverage tin cans that are shredded and loose tin plates sheets.
 </p>
@@ -118,7 +118,7 @@ export default function Service() {
                                     <span className="icon-productivity"></span>
                                 </div> */}
                                 <div className="services-one__content">
-                                    <h3 className="services-one__title"><Link href="digital-marketing">Re-rollable scrap
+                                    <h3 className="services-one__title"><Link href="">Re-rollable scrap
 </Link></h3>
                                     <p className="services-one__text">DBRL, ship propeller scrap, and structural rolling scrap.
 </p>
@@ -140,7 +140,7 @@ export default function Service() {
                                     <span className="icon-productivity"></span>
                                 </div> */}
                                 <div className="services-one__content">
-                                    <h3 className="services-one__title"><Link href="digital-marketing">Railway Scrap
+                                    <h3 className="services-one__title"><Link href="">Railway Scrap
 </Link></h3>
                                     <p className="services-one__text">Railway plates, axles, lines, wheels, and sleepers along with mix scraps.</p>
                                 </div>
@@ -175,7 +175,7 @@ export default function Service() {
                                     <span className="icon-coding"></span>
                                 </div> */}
                                 <div className="services-one__content" style={{ flex: 1 }}>
-                                    <h3 className="services-one__title"><Link href="website-development">Aluminum Scrap
+                                    <h3 className="services-one__title"><Link href="">Aluminum Scrap
 </Link></h3>
                                     <p className="services-one__text">Different types of aluminum cast molds, automotive aluminum, and aluminum TT. 
 
@@ -199,7 +199,7 @@ export default function Service() {
                                     <span className="icon-curve"></span>
                                 </div> */}
                                 <div className="services-one__content" style={{ flex: 1 }}>
-                                    <h3 className="services-one__title"><Link href="seo-content-writting">Stainless steel
+                                    <h3 className="services-one__title"><Link href="">Stainless steel
 </Link></h3>
                                     <p className="services-one__text">Stainless steel from kitchenware, process plant stainless, production offcuts.
 </p>
@@ -221,7 +221,7 @@ export default function Service() {
                                     <span className="icon-creative"></span>
                                 </div> */}
                                 <div className="services-one__content" style={{ flex: 1 }}>
-                                    <h3 className="services-one__title"><Link href="digital-marketing">Copper & Copper Aloys
+                                    <h3 className="services-one__title"><Link href="">Copper & Copper Aloys
 </Link></h3>
                                     <p className="services-one__text">Copper from insulated wire, bare bright copper, copper turnings, brass castings, radiators etc. 
 </p>

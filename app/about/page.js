@@ -68,11 +68,11 @@ export default function Home() {
                                         <p>Efficient and friendly service</p>
                                     </li>
                                 </ul>
-                                <div className="about-three__year">
+                                {/* <div className="about-three__year">
                                     <div className="about-three__year-shape"></div>
                                     <p>Since
                                         <br/> 2025</p>
-                                </div>
+                                </div> */}
                             </div>
                             <div className="about-three__btn-box">
                                 <Link href="contact" className="about-three__btn thm-btn">Contact us</Link>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://renovatrade.fi/sitemap.xml
+
+# Crawl-delay can be added if needed, e.g.,
+# Crawl-delay: 10

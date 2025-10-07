@@ -1,6 +1,7 @@
 
 import Layout from "@/components/layout/Layout"
 import Cta from "@/components/sections/home1/Cta"
+import ContactPageForm from '@/components/sections/home1/ContactPageForm'
 import Link from "next/link"
 export default function Home() {
 
@@ -35,87 +36,7 @@ export default function Home() {
                                 <h2 className="section-title__title">Request for Our Free
                                     <br/> Consultation</h2>
                             </div>
-                            <form className="contact-form-validated contact-two__form"
-                                method="post" >
-                                <div className="row">
-                                    <div className="col-xl-6 col-lg-6">
-                                        <div className="contact-two__input-box">
-                                            <input type="text" name="name" placeholder="Your Name" required/>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-6 col-lg-6">
-                                        <div className="contact-two__input-box">
-                                            <input type="email" name="email" placeholder="Email Address" required/>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-6 col-lg-6">
-                                        <div className="contact-two__input-box">
-                                            <input type="text" name="Phone" placeholder="Phone Number" required/>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-6 col-lg-6">
-                                        <div className="contact-two__input-box">
-                                            <input type="text" name="Phone" placeholder="Subject" required/>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-6 col-lg-6">
-                                        {/* <div className="contact-two__input-box">
-                                            <input type="text" name="query" placeholder="Your Query" required/>
-                                        </div> */}
-                                        <div className="contact-one__input-box">
-                                            <textarea name="query" placeholder="Your Query" required rows={5} className="form-control" />
-                                            {/* <div className="contact-one__input-box-icon">
-                                                <span className="icon-phone-call"></span>
-                                            </div> */}
-                                        </div>
-                                    </div>
-                                    {/* <div className="col-xl-3 col-lg-3 col-md-6">
-                                        <div className="contact-two__input-box">
-                                            <div className="contact-two__input-box-icon">
-                                                <span className="icon-calender"></span>
-                                            </div>
-                                            <input type="text" name="date" placeholder="Select Date" id="datepicker"/>
-                                        </div>
-                                    </div> */}
-                                    {/* <div className="col-xl-3 col-lg-3 col-md-6">
-                                        <div className="contact-two__input-box">
-                                            <div className="select-box">
-                                                <select className="selectmenu wide">
-                                                    <option >Select Age</option>
-                                                    <option>20</option>
-                                                    <option>30</option>
-                                                    <option>40</option>
-                                                    <option>50</option>
-                                                    <option>60</option>
-                                                    <option>70</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div> */}
-                                    {/* <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="contact-two__input-box">
-                                            <div className="select-box">
-                                                <select className="selectmenu wide">
-                                                    <option >Select Subject</option>
-                                                    <option>Type Of Service 01</option>
-                                                    <option>Type Of Service 02</option>
-                                                    <option>Type Of Service 03</option>
-                                                    <option>Type Of Service 04</option>
-                                                    <option>Type Of Service 05</option>
-                                                    <option>Type Of Service 06</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div> */}
-                                    <div className="col-xl-3 col-lg-6 col-md-6 " style={{ display: 'flex', alignItems: 'center', marginBottom:'24px'}}>
-                                        <div className="contact-two__btn-box">
-                                            <button type="submit" className="thm-btn contact-two__btn">Submit
-                                                Message</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <div className="result"></div>
+                            <ContactPageForm />
                             <p className="contact-two__left-text">* After sending request. We’ll contact you for more
                                 details about charter.</p>
                         </div>

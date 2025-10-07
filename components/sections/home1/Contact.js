@@ -1,6 +1,44 @@
 'use client'
 import Link from "next/link"
+import { useState } from 'react'
+
 export default function Contact() {
+    const [status, setStatus] = useState(null)
+    const [loading, setLoading] = useState(false)
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        setLoading(true)
+        setStatus(null)
+        const form = e.currentTarget
+        const fd = new FormData(form)
+        const data = {
+            username: fd.get('username') || '',
+            email: fd.get('email') || '',
+            phone: fd.get('phone') || '',
+            subject: fd.get('subject') || '',
+            query: fd.get('query') || '',
+        }
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            })
+            const json = await res.json()
+            if (res.ok) {
+                setStatus({ type: 'success', message: 'Message sent successfully.' })
+                form.reset()
+            } else {
+                setStatus({ type: 'error', message: json.error || 'Failed to send message.' })
+            }
+        } catch (err) {
+            setStatus({ type: 'error', message: err.message || 'Failed to send message.' })
+        } finally {
+            setLoading(false)
+        }
+    }
+
     return (
         <>
         {/*Contact One Start*/}
@@ -16,7 +54,7 @@ export default function Contact() {
                                 <img src="assets/images/shapes/contact-one-form-shape-1.png" alt=""/>
                             </div>
                             <form className="contact-form-validated contact-one__form"
-                                method="post" >
+                                method="post" onSubmit={handleSubmit}>
                                 <div className="row">
                                     <div className="col-xl-12">
                                         <div className="contact-one__input-box">
@@ -44,7 +82,7 @@ export default function Contact() {
                                     </div>
                                     <div className="col-xl-12">
                                         <div className="contact-one__input-box">
-                                            <input type="text" name="phone" placeholder="Subject" required/>
+                                            <input type="text" name="subject" placeholder="Subject" required/>
                                             {/* <div className="contact-one__input-box-icon">
                                                 <span className="icon-phone-call"></span>
                                             </div> */}
@@ -75,12 +113,18 @@ export default function Contact() {
                                     </div> */}
                                     <div className="col-xl-12">
                                         <div className="contact-one__btn-box">
-                                            <button type="submit" className="thm-btn contact-one__btn">Submit Now</button>
+                                            <button type="submit" className="thm-btn contact-one__btn" disabled={loading}>{loading ? 'Sending...' : 'Submit Now'}</button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
-                            <div className="result"></div>
+                            <div className="result">
+                                {status && (
+                                    <div className={status.type === 'success' ? 'alert alert-success' : 'alert alert-danger'} role="alert">
+                                        {status.message}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                     <div className="col-xl-8 col-lg-7">

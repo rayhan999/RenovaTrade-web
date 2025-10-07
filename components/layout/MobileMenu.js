@@ -32,7 +32,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                     <span className="mobile-nav__close mobile-nav__toggler" onClick={handleMobileMenu} ><i className="fa fa-times"></i></span>
 
                     <div className="logo-box">
-                        <Link href="/" aria-label="logo image"><img src="assets/images/resources/renova_logo.png" width="200" alt="" /></Link>
+                        <Link href="/" aria-label="logo image"><img src="assets/images/resources/renova_logo_white.png" width="200" alt="" /></Link>
                     </div>
 
                     <div className="mobile-nav__container">
@@ -84,32 +84,32 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                                     </ul>
                                     <button className={isActive.key == 5 ? "expanded open" : ""} onClick={() => handleToggle(5)}><span className="fa fa-angle-right" /></button>
                                 </li> */}
-                                <li><Link href="/">Home</Link></li>
-                                <li><Link href="/about">Who we are</Link></li>
-                                {/* <li className={isActive.key == 5 ? "dropdown current" : "dropdown"}><Link href="/#">Misc</Link>
+                                <li><Link href="/" onClick={handleMobileMenu}>Home</Link></li>
+                                <li><Link href="/about" onClick={handleMobileMenu}>Who we are</Link></li>
+                                {/* <li className={isActive.key == 5 ? "dropdown current" : "dropdown"}><Link href="/#" onClick={handleMobileMenu}>Misc</Link>
                                     <ul style={{ display: `${isActive.key == 5 ? "block" : "none"}` }}>                                 
-                                        <li><Link href="blog">Connect with us</Link></li>
-                        <li><Link href="blog">History</Link></li>
-                        <li><Link href="blog-details">By Laws</Link></li>
-                        <li><Link href="blog-details">Covid19 Guidelines</Link></li>
+                                        <li><Link href="blog" onClick={handleMobileMenu}>Connect with us</Link></li>
+                        <li><Link href="blog" onClick={handleMobileMenu}>History</Link></li>
+                        <li><Link href="blog-details" onClick={handleMobileMenu}>By Laws</Link></li>
+                        <li><Link href="blog-details" onClick={handleMobileMenu}>Covid19 Guidelines</Link></li>
                                     </ul>
                                     <button className={isActive.key == 5 ? "expanded open" : ""} onClick={() => handleToggle(5)}><span className="fa fa-angle-right" /></button>
                                 </li> */}
-                                <li><Link href="#">Products</Link></li>
-                                {/* <li><Link href="#">The Board</Link></li>
-                                <li><Link href="#">NewsLetter</Link></li> */}
-                                <li><Link href="#">Contact Us</Link></li>
+                                <li><Link href="services" onClick={handleMobileMenu}>Products</Link></li>
+                                {/* <li><Link href="#" onClick={handleMobileMenu}>The Board</Link></li>
+                                <li><Link href="#" onClick={handleMobileMenu}>NewsLetter</Link></li> */}
+                                <li><Link href="contact" onClick={handleMobileMenu}>Contact Us</Link></li>
                             </ul>
                         </div>
                     </div>
                     <ul className="mobile-nav__contact list-unstyled">
                         <li>
                             <i className="fa fa-envelope"></i>
-                            <Link href="mailto:needhelp@elitecons.com">renova.trade@outlook.fi</Link>
+                            <Link href="mailto:needhelp@elitecons.com">info@renovatrade.fi</Link>
                         </li>
                         <li>
                             <i className="fa fa-phone-alt"></i>
-                            <Link href="tel:666-888-0000">666 888 0000</Link>
+                            <Link href="tel:666-888-0000">+358-413171469</Link>
                         </li>
                         <li>
                             <i className="icon-maps-and-flags"></i>

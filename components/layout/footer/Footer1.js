@@ -37,11 +37,11 @@ export default function Footer1() {
                                     <h3 className="footer-widget__title">Useful Link</h3>
                                 </div>
                                 <ul className="footer-widget__link-list list-unstyled">
-                                    <li><Link href="team">Meet the Team</Link></li>
+                                    {/* <li><Link href="team">Meet the Team</Link></li> */}
                                     <li><Link href="services">Services List</Link></li>
-                                    <li><Link href="about">Simple Process</Link></li>
-                                    <li><Link href="blog">Latest News</Link></li>
-                                    <li><Link href="contact">Contact</Link></li>
+                                    <li><Link href="about">About us</Link></li>
+                                    {/* <li><Link href="blog">Latest News</Link></li> */}
+                                    <li><Link href="contact">Contact us</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -68,7 +68,7 @@ export default function Footer1() {
                                         </div>
                                         <div className="contact">
                                             <p>Call Anytime</p>
-                                            <Link href="tel:12455689008">+124 556 890 08</Link>
+                                            <Link href="tel:12455689008">+358-413171469</Link>
                                         </div>
                                     </li>
                                 </ul>
