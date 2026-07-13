@@ -35,31 +35,29 @@ export default function About() {
                                     </div>
                                     <span className="section-title__tagline">Get to know us</span>
                                 </div>
-                                <h2 className="section-title__title">Scrap Metal Merchants</h2>
+                                <h2 className="section-title__title">Your Trusted Sourcing & Trading Partner</h2>
                             </div>
-                            {/* <h4 className="about-three__text-1">Suspendisse vel iaculis leo.Curabitur scelerisque mi porta
-                                justo fermentum porta.</h4> */}
-                           <p className="about-one__text">We bring the best value in managing the scrap metal having multiple sourcing and with the destinations across Europe and South Asia. renova Trade focuses on sourcing recyclable raw scrap metals from Europe and selling to the South Asian markets where it finds a new form to serve new purposes. We specialize in exporting the heavy metal scraps that includes HMS1, HMS2, along with different grades of stainless steels and re-rollable metals. 
-</p>
+                           <p className="about-one__text">Renova Trade provides professional sourcing, procurement, trading, and export solutions for businesses looking to source quality products from Europe. Our primary focus is metal scrap trading, supported by international sourcing for heavy equipment, industrial machinery, engineering products, and other industrial goods.</p>
+                           <p className="about-one__text">We work with trusted manufacturers and suppliers across Europe's leading industrial regions to help customers secure reliable products, competitive pricing, and dependable supply chains. Our approach is built on transparency, professionalism, responsiveness, and long-term business relationships.</p>
                             <div className="about-three__points-and-year">
                                 <ul className="about-three__points list-unstyled">
                                     <li>
                                         <div className="icon">
                                             <span className="icon-tick"></span>
                                         </div>
-                                        <p>Best prices paid for all metal</p>
+                                        <p>Transparent & professional approach</p>
                                     </li>
                                     <li>
                                         <div className="icon">
                                             <span className="icon-tick"></span>
                                         </div>
-                                        <p>Same day payments</p>
+                                        <p>Responsive communication</p>
                                     </li>
                                     <li>
                                         <div className="icon">
                                             <span className="icon-tick"></span>
                                         </div>
-                                        <p>Efficient and friendly service</p>
+                                        <p>Long-term business relationships</p>
                                     </li>
                                 </ul>
                                 {/* <div className="about-three__year">

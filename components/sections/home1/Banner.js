@@ -75,20 +75,19 @@ export default function Banner() {
           <div className="container">
             <div className="row">
               <div className="col-xl-12">
-                <div className="main-slider__content">
-                  <h2 className="main-slider__title">
-                    Leading   <br /> <span>today’s scrap </span> <br />
-                   into tomorrow’s resources
-
+                <div className="main-slider__content">                  <h2 className="main-slider__title">
+                    Connecting <br /> <span>European Industry</span> <br />
+                    with South Asian Markets
                   </h2>
                   <p className="main-slider__text">
-                   Rejuvenating       the metal to new life by connecting industries with scrap metals needs 
-                  </p>
-                  <div className="main-slider__btn-box">
+                    Finland-based international sourcing, procurement, trading, and export company connecting trusted European manufacturers with businesses across Bangladesh and South Asia.
+                  </p>                    <div className="main-slider__btn-box">
                     <Link href="contact" className="main-slider__btn thm-btn">
-                      Contact us
+                      Request a Quote
                     </Link>
-                   
+                    <Link href="/services" className="main-slider__btn thm-btn" style={{ marginLeft: '15px' }}>
+                      Our Services
+                    </Link>
                   </div>
                 </div>
               </div>

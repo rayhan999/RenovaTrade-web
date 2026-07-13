@@ -17,9 +17,7 @@ export default function Footer1() {
                             <div className="footer-widget__column footer-widget__about">
                                 <div className="footer-widget__logo">
                                     <Link href="/"><img src="assets/images/resources/renova_logo_white.png" alt="" width={260}/></Link>
-                                </div>
-                                <p className="footer-widget__about-text">Rejuvenating       the metal to new life by connecting industries with scrap metals needs 
-</p>
+                                </div>                                <p className="footer-widget__about-text">Your trusted partner for international sourcing, procurement, metal trading, and export solutions.</p>
                                 <div className="site-footer__social-box">
                                     <h3 className="site-footer__social-title">Follow On</h3>
                                     <div className="site-footer__social">
@@ -37,10 +35,10 @@ export default function Footer1() {
                                     <h3 className="footer-widget__title">Useful Link</h3>
                                 </div>
                                 <ul className="footer-widget__link-list list-unstyled">
-                                    {/* <li><Link href="team">Meet the Team</Link></li> */}
-                                    <li><Link href="services">Services List</Link></li>
+                                    <li><Link href="services">Services</Link></li>
+                                    <li><Link href="products">Products</Link></li>
                                     <li><Link href="about">About us</Link></li>
-                                    {/* <li><Link href="blog">Latest News</Link></li> */}
+                                    <li><Link href="blog">Blog</Link></li>
                                     <li><Link href="contact">Contact us</Link></li>
                                 </ul>
                             </div>

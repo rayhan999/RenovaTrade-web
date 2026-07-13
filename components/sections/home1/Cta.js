@@ -9,10 +9,11 @@ export default function Cta() {
             <div className="container">
                 <div className="row">
                     <div className="cta-one__inner">
-                        <h3 className="cta-one__title">Let's discuss about how we can help
-                            <br/> make your business better</h3>
+                        <h3 className="cta-one__title">Let's discuss how we can support
+                            <br/> your sourcing requirements</h3>
                         <div className="cta-one__btn-box">
-                            <Link href="about" className="cta-one__btn thm-btn">Let's Start</Link>
+                            <Link href="contact" className="cta-one__btn thm-btn">Request a Quote</Link>
+                            <Link href="/services" className="cta-one__btn thm-btn" style={{ marginLeft: '15px' }}>Our Services</Link>
                         </div>
                     </div>
                 </div>

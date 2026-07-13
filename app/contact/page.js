@@ -1,9 +1,22 @@
 
 import Layout from "@/components/layout/Layout"
-import Cta from "@/components/sections/home1/Cta"
 import ContactPageForm from '@/components/sections/home1/ContactPageForm'
 import Link from "next/link"
-export default function Home() {
+
+export const metadata = {
+    title: 'Contact Us - Renova Trade',
+    description: 'Get in touch with Renova Trade for metal scrap, heavy equipment, industrial machinery, or international sourcing inquiries.',
+    openGraph: {
+        title: 'Contact Us - Renova Trade',
+        description: 'Contact Renova Trade for international sourcing, procurement, metal trading, and export solutions.',
+        url: 'https://renovatrade.fi/contact',
+        siteName: 'Renova Trade',
+        type: 'website'
+    },
+    metadataBase: new URL('https://renovatrade.fi')
+}
+
+export default function ContactPage() {
 
     return (
         <>
@@ -36,6 +49,7 @@ export default function Home() {
                                 <h2 className="section-title__title">Contact us anytime
                                     </h2>
                             </div>
+                            <p className="about-one__text">Renova Trade is your trusted partner for international sourcing, procurement, metal trading, and export solutions. We connect reliable European suppliers with customers across Bangladesh and South Asia, delivering quality products, professional coordination, and dependable business partnerships.</p>
                             {/* <p className="team-details__bottom-left-text">Penatibus pulvinar hac lacinia interdum
                                     fermentum tortor aite montes aecenas pretiun dignissim facilisi top level vehicula.
                                 </p> */}

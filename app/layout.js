@@ -69,6 +69,7 @@ export const metadata = {
         shortcut: '/favicon.ico',
         apple: '/apple-touch-icon.png',
     },
+    metadataBase: new URL('https://renovatrade.fi'),
 }
 
 export default function RootLayout({ children }) {
