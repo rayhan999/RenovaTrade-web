@@ -2,9 +2,13 @@ import Layout from "@/components/layout/Layout"
 import Banner from "@/components/sections/home1/Banner"
 import About from "@/components/sections/home1/About"
 import Service from "@/components/sections/home1/Service"
+import Why from "@/components/sections/home1/Why"
+import Process from "@/components/sections/home1/Process"
+import Team from "@/components/sections/home1/Team"
+import Testimonial from "@/components/sections/home1/Testimonial"
+import Blog from "@/components/sections/home1/Blog"
 import Contact from "@/components/sections/home1/Contact"
 import Slidingtext from "@/components/sections/home1/Slidingtext"
-import Process from "@/components/sections/home1/Process"
 import Cta from "@/components/sections/home1/Cta"
 
 export const metadata = {
@@ -28,6 +32,10 @@ export default function Home() {
                 <About />
                 <Service />
                 <Process />
+                <Why />
+                <Team />
+                <Testimonial />
+                <Blog />
                 <Contact />
                 <Slidingtext />
                 <Cta />

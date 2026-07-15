@@ -26,19 +26,35 @@
 # Common
 --------------------------------------------------------------*/
 :root {
+  /* Renova Trade Design System */
+  --renova-primary: #002050;
+  --renova-primary-rgb: 0, 32, 80;
+  --renova-primary-dark: #00153A;
+  --renova-accent: #0369A1;
+  --renova-accent-rgb: 3, 105, 161;
+  --renova-accent-light: #40A0D0;
+  --renova-secondary-accent: #70C090;
+  --renova-bg: #F8FAFC;
+  --renova-surface: #FFFFFF;
+  --renova-text: #020617;
+  --renova-text-secondary: #475569;
+  --renova-text-muted: #94A3B8;
+  --renova-border: #E2E8F0;
+  --renova-muted: #E8ECF1;
+
+  /* Legacy Zefxa mapping to Renova design system */
   --zefxa-font-three: "reeyregular";
-  --zefxa-gray: #6c6b6f;
-  --zefxa-gray-rgb: 108, 107, 111;
-  --zefxa-white: #ffffff;
+  --zefxa-gray: var(--renova-text-secondary);
+  --zefxa-gray-rgb: 71, 85, 89;
+  --zefxa-white: var(--renova-surface);
   --zefxa-white-rgb: 255, 255, 255;
-  --zefxa-base: #327ea5;
-  --zefxa-base-rgb: 245, 9, 99;
-  --zefxa-base-light: rgba(var(--zefxa-base), 0.2);
-  --zefxa-base-rgb: 245, 9, 99;
-  --zefxa-black: #1c1b1f;
-  --zefxa-black-rgb: 28, 27, 31;
-  --zefxa-extra: #f4f5f8;
-  --zefxa-extra-rgb: 244, 245, 248;
+  --zefxa-base: var(--renova-accent);
+  --zefxa-base-rgb: var(--renova-accent-rgb);
+  --zefxa-base-light: rgba(var(--renova-accent-rgb), 0.2);
+  --zefxa-black: var(--renova-primary);
+  --zefxa-black-rgb: var(--renova-primary-rgb);
+  --zefxa-extra: var(--renova-bg);
+  --zefxa-extra-rgb: 248, 250, 252;
 }
 
 .row {
@@ -577,7 +593,7 @@ a.video-popup {
 }
 
 .xs-bg-black {
-  background-color: #000000;
+  background-color: #0f2a4d;
 }
 
 .xs-sidebar-group .content-inner .logo {
@@ -907,7 +923,10 @@ a.video-popup {
 }
 
 .stricky-header.main-menu {
-  background-color: var(--zefxa-black);
+  background: rgba(var(--renova-primary-rgb), 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .main-menu .main-menu__list,
@@ -1295,7 +1314,7 @@ a.video-popup {
 
 .mobile-nav__content {
   width: 300px;
-  background-color: var(--zefxa-black);
+  background-color: var(--renova-primary);
   z-index: 10;
   position: relative;
   height: 100%;
@@ -3609,6 +3628,11 @@ a.video-popup {
   display: block;
   padding: 120px 0 90px;
   z-index: 1;
+  perspective: 1200px;
+}
+
+.services-one__single {
+  transform-style: preserve-3d;
 }
 
 .services-one__big-text {
@@ -4297,6 +4321,11 @@ a.video-popup {
   counter-reset: count;
   padding: 120px 0 90px;
   z-index: 1;
+  perspective: 1200px;
+}
+
+.process-one__single {
+  transform-style: preserve-3d;
 }
 
 .process-one__single-inner {
@@ -12045,4 +12074,372 @@ a.video-popup {
 }
 
 @media only screen and (min-width: 1600px) and (max-width: 1830px) {
+}
+
+/*--------------------------------------------------------------
+# Renova Trade Design System Utilities
+--------------------------------------------------------------*/
+
+/* 3D Card */
+.renova-card-3d {
+  background: var(--renova-surface);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.02),
+    0 2px 2px rgba(0, 0, 0, 0.02),
+    0 4px 4px rgba(0, 0, 0, 0.02),
+    0 8px 8px rgba(0, 0, 0, 0.02),
+    0 16px 16px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.renova-card-3d:hover {
+  transform: translateY(-8px) translateZ(10px);
+  box-shadow:
+    0 2px 2px rgba(0, 0, 0, 0.03),
+    0 4px 4px rgba(0, 0, 0, 0.03),
+    0 8px 8px rgba(0, 0, 0, 0.03),
+    0 16px 16px rgba(0, 0, 0, 0.03),
+    0 32px 32px rgba(0, 0, 0, 0.03);
+}
+
+/* 3D Button */
+.renova-btn-3d {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--renova-accent) 0%, #2A3F52 100%);
+  border: none;
+  border-radius: 6px;
+  padding: 14px 28px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow:
+    0 4px 6px rgba(3, 105, 161, 0.25),
+    0 8px 16px rgba(3, 105, 161, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.renova-btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 12px rgba(3, 105, 161, 0.3),
+    0 16px 24px rgba(3, 105, 161, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.renova-btn-3d:active {
+  transform: translateY(0);
+  box-shadow:
+    0 2px 4px rgba(3, 105, 161, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Secondary Button */
+.renova-btn-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid var(--renova-accent);
+  border-radius: 6px;
+  padding: 12px 26px;
+  color: var(--renova-accent);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.renova-btn-secondary:hover {
+  background: var(--renova-accent);
+  color: #fff;
+}
+
+/* Glassmorphism */
+.renova-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+}
+
+/* Section backgrounds */
+.renova-bg-primary {
+  background-color: var(--renova-primary);
+}
+
+.renova-bg-accent {
+  background-color: var(--renova-accent);
+}
+
+.renova-bg-light {
+  background-color: var(--renova-bg);
+}
+
+/* Text colors */
+.renova-text-primary {
+  color: var(--renova-primary);
+}
+
+.renova-text-accent {
+  color: var(--renova-accent);
+}
+
+.renova-text-secondary {
+  color: var(--renova-text-secondary);
+}
+
+/* 3D Image treatment */
+.renova-image-3d {
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(var(--renova-primary-rgb), 0.15);
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.renova-image-3d:hover {
+  transform: perspective(1000px) rotateY(5deg) rotateX(2deg);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .renova-card-3d,
+  .renova-btn-3d,
+  .renova-image-3d {
+    transition: none;
+    transform: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Renova Trade 3D Card Effects
+--------------------------------------------------------------*/
+.services-one__single,
+.process-one__single {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-one__single:hover {
+  transform: perspective(1000px) translateY(-12px) rotateX(10deg) rotateY(-10deg) translateZ(24px);
+  box-shadow: 0 20px 40px rgba(var(--renova-primary-rgb), 0.12);
+}
+
+.process-one__single:hover {
+  transform: perspective(1000px) translateY(-12px) rotateX(10deg) rotateY(-10deg) translateZ(24px);
+  box-shadow: 0 20px 40px rgba(var(--renova-primary-rgb), 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-one__single,
+  .process-one__single {
+    transition: none;
+    transform: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Renova Trade Service Detail Page Enhancements
+--------------------------------------------------------------*/
+.service-details__img {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.service-details__img img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-details__img:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(var(--renova-primary-rgb), 0.12);
+}
+
+.service-details__service-list li a,
+.service-details__service-list li > span {
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.service-details__service-list li:hover a,
+.service-details__service-list li:hover > span {
+  color: var(--renova-accent);
+  transform: translateX(8px);
+}
+
+.service-details__need-help {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-details__need-help:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(var(--renova-primary-rgb), 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-details__img img,
+  .service-details__need-help,
+  .service-details__service-list li a,
+  .service-details__service-list li > span {
+    transition: none;
+    transform: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Renova Trade 3D Button & Modern Effects
+--------------------------------------------------------------*/
+.thm-btn {
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 6px rgba(var(--renova-primary-rgb), 0.1);
+}
+
+.thm-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(var(--renova-primary-rgb), 0.18);
+}
+
+.thm-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(var(--renova-primary-rgb), 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thm-btn {
+    transition: none;
+    transform: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Fix blue-tinted image overlays backgrounds
+--------------------------------------------------------------*/
+/* Use black backdrop behind mix-blend-mode:luminosity images so they 
+   appear desaturated/dark instead of picking up the navy primary hue. */
+.main-slider,
+.main-slider .swiper-slide,
+.main-slider-two,
+.main-slider-two .swiper-slide,
+.main-slider-three,
+.main-slider-three .swiper-slide,
+.team-one__bg-box,
+.contact-one,
+.why-we-are,
+.cta-one,
+.site-footer,
+.page-header,
+.company-benefits,
+.brand-one,
+.service-three,
+.testimonial-three,
+.business-growth,
+.service-details__need-help {
+  background-color: #0f2a4d;
+}
+
+/*--------------------------------------------------------------
+# 3D UI Effects
+--------------------------------------------------------------*/
+/* Perspective container for 3D children */
+.perspective-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* 3D tilt card: subtle rotate on hover */
+.tilt-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.tilt-3d:hover {
+  transform: rotateX(10deg) rotateY(-10deg) translateZ(24px) scale(1.02);
+}
+
+/* 3D pressable button */
+.btn-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 0 rgba(0, 32, 80, 0.35);
+}
+
+.btn-3d:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 0 rgba(0, 32, 80, 0.35);
+}
+
+.btn-3d:active {
+  transform: translateY(6px);
+  box-shadow: 0 2px 0 rgba(0, 32, 80, 0.35);
+}
+
+/* Glassmorphism card with 3D tilt */
+.glass-3d {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 32, 80, 0.12);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-3d:hover {
+  transform: translateZ(20px) rotateX(6deg) rotateY(-6deg);
+  box-shadow: 0 24px 60px rgba(0, 32, 80, 0.22);
+}
+
+/* Floating animation for hero shapes */
+.float-3d {
+  animation: float3d 5s ease-in-out infinite;
+}
+
+@keyframes float3d {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0px);
+  }
+  50% {
+    transform: translateY(-12px) translateZ(8px);
+  }
+}
+
+/* Subtle parallax depth layer */
+.depth-layer {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+/* 3D card inner content lift */
+.lift-3d {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lift-3d:hover {
+  transform: translateY(-12px) translateZ(8px);
+  box-shadow: 0 24px 48px rgba(0, 32, 80, 0.18);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .tilt-3d,
+  .btn-3d,
+  .glass-3d,
+  .lift-3d,
+  .float-3d,
+  .depth-layer {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
 }

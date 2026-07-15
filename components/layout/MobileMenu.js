@@ -33,7 +33,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
           <span className="mobile-nav__close mobile-nav__toggler" onClick={handleMobileMenu} ><i className="fa fa-times"></i></span>
 
           <div className="logo-box">
-            <Link href="/" aria-label="logo image"><img src="assets/images/resources/renova_logo_white.png" width="200" alt="" /></Link>
+            <Link href="/" aria-label="Renova Trade home"><img src="assets/images/resources/renova_logo_white.png" width="200" alt="Renova Trade" /></Link>
           </div>
 
           <div className="mobile-nav__container">
@@ -73,10 +73,10 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
           </ul>
           <div className="mobile-nav__top">
             <div className="mobile-nav__social">
-              <Link href="#" className="fab fa-twitter"></Link>
-              <Link href="#" className="fab fa-facebook-square"></Link>
-              <Link href="#" className="fab fa-pinterest-p"></Link>
-              <Link href="#" className="fab fa-instagram"></Link>
+              <Link href="#" aria-label="Twitter" className="fab fa-twitter"></Link>
+              <Link href="#" aria-label="Facebook" className="fab fa-facebook-square"></Link>
+              <Link href="#" aria-label="Pinterest" className="fab fa-pinterest-p"></Link>
+              <Link href="#" aria-label="Instagram" className="fab fa-instagram"></Link>
             </div>
           </div>
         </div>

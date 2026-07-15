@@ -10,25 +10,17 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
           <div className="main-menu-three__top-inner">
             <div className="main-menu-three__top-left">
               <div className="main-menu-three__social">
-                <Link href="#">
+                <Link href="#" aria-label="Facebook">
                   <i className="icon-facebook"></i>
                 </Link>
-                <Link href="#">
+                <Link href="#" aria-label="Google Plus">
                   <i className="icon-google-plus-logo"></i>
                 </Link>
-                <Link href="#">
+                <Link href="#" aria-label="Twitter">
                   <i className="icon-twitter"></i>
                 </Link>
               </div>
               <ul className="list-unstyled main-menu-three__contact-list">
-                {/* <li>
-                                <div className="icon">
-                                    <i className="icon-clock"></i>
-                                </div>
-                                <div className="text">
-                                    <p>MON- FRI 8AM-6PM</p>
-                                </div>
-                            </li> */}
                 <li>
                   <div className="icon">
                     <i className="icon-mail"></i>
@@ -70,34 +62,17 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
             <div className="main-menu-three__wrapper-inner">
               <div className="main-menu-three__left">
                 <div className="main-menu-three__logo">
-                  <Link href="/">
-                    <img src="assets/images/resources/renova_logo.png" alt="" width={250} />
+                  <Link href="/" aria-label="Renova Trade home">
+                    <img src="assets/images/resources/renova_logo.png" alt="Renova Trade" width={250} />
                   </Link>
                 </div>
                 <div className="main-menu-three__main-menu-box">
-                  <Link href="#" className="mobile-nav__toggler" onClick={handleMobileMenu}>
+                  <Link href="#" className="mobile-nav__toggler" onClick={handleMobileMenu} aria-label="Open mobile menu">
                     <i className="fa fa-bars"></i>
                   </Link>
                   <Menu />
                 </div>
               </div>
-              {/* <div className="main-menu-three__right">
-                            <div className="main-menu-three__search-box">
-                                <Link href="#" className="main-menu-three__search search-toggler icon-magnifying-glass" onClick={handlePopup}></Link>
-                            </div>
-                            <div className="main-menu-three__call">
-                                <div className="main-menu-three__call-icon">
-                                    <span className="icon-chat-1"></span>
-                                </div>
-                                <div className="main-menu-three__call-number">
-                                    <p>Call Anytime</p>
-                                    <h5><Link href="tel:12466688899">+124 666 888 99</Link></h5>
-                                </div>
-                            </div>
-                            <div className="main-menu-three__btn-box">
-                                <Link href="contact" className="main-menu-three__btn thm-btn">Get Free Quote</Link>
-                            </div>
-                        </div> */}
             </div>
           </div>
         </nav>
@@ -110,34 +85,17 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
               <div className="main-menu-three__wrapper-inner">
                 <div className="main-menu-three__left">
                   <div className="main-menu-three__logo">
-                    <Link href="/">
-                      <img src="assets/images/resources/renova_logo.png" alt="" width={250} />
+                    <Link href="/" aria-label="Renova Trade home">
+                      <img src="assets/images/resources/renova_logo.png" alt="Renova Trade" width={250} />
                     </Link>
                   </div>
                   <div className="main-menu-three__main-menu-box">
-                    <Link href="#" className="mobile-nav__toggler" onClick={handleMobileMenu}>
+                    <Link href="#" className="mobile-nav__toggler" onClick={handleMobileMenu} aria-label="Open mobile menu">
                       <i className="fa fa-bars"></i>
                     </Link>
                     <Menu />
                   </div>
                 </div>
-                {/* <div className="main-menu-three__right">
-                                <div className="main-menu-three__search-box">
-                                    <Link href="#" className="main-menu-three__search search-toggler icon-magnifying-glass" onClick={handlePopup}></Link>
-                                </div>
-                                <div className="main-menu-three__call">
-                                    <div className="main-menu-three__call-icon">
-                                        <span className="icon-chat-1"></span>
-                                    </div>
-                                    <div className="main-menu-three__call-number">
-                                        <p>Call Anytime</p>
-                                        <h5><Link href="tel:12466688899">+124 666 888 99</Link></h5>
-                                    </div>
-                                </div>
-                                <div className="main-menu-three__btn-box">
-                                    <Link href="contact" className="main-menu-three__btn thm-btn">Get Free Quote</Link>
-                                </div>
-                            </div> */}
               </div>
             </div>
           </nav>

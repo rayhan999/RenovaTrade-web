@@ -28,7 +28,7 @@ export default function Service() {
             text: "End-to-end procurement support including supplier coordination, negotiation, and supply chain management.",
             image: "assets/images/services/services-1-1.jpg",
             icon: "icon-productivity",
-            link: "/services/international-sourcing"
+            link: "/services/heavy-equipment"
         },
         {
             title: "Export Coordination",

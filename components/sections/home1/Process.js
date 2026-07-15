@@ -6,8 +6,7 @@ export default function Process() {
         { title: "Collect Quotations", text: "We gather detailed quotations and commercial terms from multiple suppliers." },
         { title: "Compare Offers", text: "We compare technical and commercial offers to find the best value for your business." },
         { title: "Finalize Procurement", text: "We finalize the procurement with clear terms, pricing, and delivery schedules." },
-        { title: "Coordinate Export", text: "We handle export documentation, logistics coordination, and shipping arrangements." },
-        { title: "Deliver Solutions", text: "We ensure reliable delivery and ongoing support for your sourcing needs." }
+        { title: "Coordinate Export & Delivery", text: "We handle export documentation, logistics coordination, shipping, and ongoing support." }
     ]
 
     return (

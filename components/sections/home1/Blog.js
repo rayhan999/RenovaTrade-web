@@ -21,7 +21,7 @@ export default function Blog() {
                         </div>
                         <span className="section-title__tagline">Our Blog</span>
                     </div>
-                    <h2 className="section-title__title">Academic & Reliable News Blog</h2>
+                    <h2 className="section-title__title">Industry Insights & Updates</h2>
                 </div>
                 <div className="row">
                     {/*Blog One Single Start*/}
@@ -41,10 +41,8 @@ export default function Blog() {
                                         <Link href="#"><span className="fas fa-comments"></span>02 Comment</Link>
                                     </li> */}
                                 </ul>
-                                <h3 className="blog-one__title"><Link href="blog-details">Working together, ideas come to
-                                        life</Link></h3>
-                                <p className="blog-one__text">Business is the activity of making one's
-                                    livcing or buying & selling products.</p>
+                                <h3 className="blog-one__title"><Link href="blog-details">Understanding Global Metal Scrap Grades</Link></h3>
+                                <p className="blog-one__text">A practical guide to HMS, shredded scrap, and non-ferrous grades for international buyers.</p>
                             </div>
                         </div>
                     </div>
@@ -66,10 +64,8 @@ export default function Blog() {
                                         <Link href="#"><span className="fas fa-comments"></span>02 Comment</Link>
                                     </li> */}
                                 </ul>
-                                <h3 className="blog-one__title"><Link href="blog-details">Five ways that can develop your
-                                        business</Link></h3>
-                                <p className="blog-one__text">Business is the activity of making one's
-                                    livcing or buying & selling products.</p>
+                                <h3 className="blog-one__title"><Link href="blog-details">Sourcing Heavy Equipment from Europe</Link></h3>
+                                <p className="blog-one__text">Key considerations when purchasing used industrial machinery and port equipment abroad.</p>
                             </div>
                         </div>
                     </div>
@@ -91,10 +87,8 @@ export default function Blog() {
                                         <Link href="#"><span className="fas fa-comments"></span>02 Comment</Link>
                                     </li> */}
                                 </ul>
-                                <h3 className="blog-one__title"><Link href="blog-details">Get few solutions to make a best
-                                        website</Link></h3>
-                                <p className="blog-one__text">Business is the activity of making one's
-                                    livcing or buying & selling products.</p>
+                                <h3 className="blog-one__title"><Link href="blog-details">Export Documentation Essentials</Link></h3>
+                                <p className="blog-one__text">What documents you need for smooth international shipping and customs clearance.</p>
                             </div>
                         </div>
                     </div>

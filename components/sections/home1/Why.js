@@ -24,24 +24,20 @@ export default function Why() {
                                     <div className="section-title__tagline-shape">
                                         <img src="assets/images/shapes/section-title-tagline-shape_new.png" alt=""/>
                                     </div>
-                                    <span className="section-title__tagline">Who We Are</span>
+                                    <span className="section-title__tagline">Why Choose Us</span>
                                 </div>
-                                <h2 className="section-title__title">Work that Meet your
-                                    <br/> Expectations</h2>
+                                <h2 className="section-title__title">Reliable Trade
+                                    <br/> Partnership</h2>
                             </div>
-                            <p className="why-we-are__text">There are many variations of available but the majority have
-                                suffered. Alteration in some form, lipsum is simply free text by
-                                injected humou or randomised words even believable.</p>
+                            <p className="why-we-are__text">We combine European supplier networks with deep understanding of South Asian markets to deliver dependable sourcing, trading, and export solutions.</p>
                             <ul className="why-we-are__points-box list-unstyled">
                                 <li>
                                     <div className="icon">
                                         <span className="icon-tiles"></span>
                                     </div>
                                     <div className="content">
-                                        <h3>Boost Your Sale</h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur
-                                            adipisicing elit velit sagittis eu viverra
-                                            pellentesque condimentum.</p>
+                                        <h3>Verified Suppliers</h3>
+                                        <p>We work with trusted European manufacturers and recyclers to ensure quality, compliance, and reliable supply.</p>
                                     </div>
                                 </li>
                                 <li>
@@ -49,10 +45,8 @@ export default function Why() {
                                         <span className="icon-analytics1"></span>
                                     </div>
                                     <div className="content">
-                                        <h3>Data & Analysis</h3>
-                                        <p>Lorem ipsum dolor sit amet consectetur
-                                            adipisicing elit velit sagittis eu viverra
-                                            pellentesque condimentum.</p>
+                                        <h3>End-to-End Support</h3>
+                                        <p>From supplier identification and quotation to export documentation and delivery coordination.</p>
                                     </div>
                                 </li>
                             </ul>

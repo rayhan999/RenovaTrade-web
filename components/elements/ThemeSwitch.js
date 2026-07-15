@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react"
 
 export default function ThemeSwitch() {
-    const [togglETHeme, setTogglETHeme] = useState(
-        () => JSON.parse(localStorage.getItem("togglETHeme")) || "light-theme"
-    )
+    const [togglETHeme, setTogglETHeme] = useState("light-theme")
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        const stored = JSON.parse(localStorage.getItem("togglETHeme")) || "light-theme"
+        setTogglETHeme(stored)
+        setMounted(true)
+    }, [])
+
     useEffect(() => {
         localStorage.setItem("togglETHeme", JSON.stringify(togglETHeme))
         document.body.classList.add(togglETHeme)
@@ -11,6 +17,8 @@ export default function ThemeSwitch() {
             document.body.classList.remove(togglETHeme)
         }
     }, [togglETHeme])
+
+    if (!mounted) return null
 
     return (
         <>

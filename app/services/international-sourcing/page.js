@@ -74,7 +74,7 @@ export default function InternationalSourcingPage() {
                                 </div>
                                 <div className="sidebar__single service-details__need-help">
                                     <div className="service-details__need-help-bg"
-                                        style={{ backgroundImage: ' url(assets/images/services/service-details-need-help-bg.jpg)' }} >
+                                        style={{ backgroundImage: ' url(assets/images/backgrounds/about_us_bg.jpg)' }} >
                                     </div>
                                     <h3 className="service-details__need-help-title">Need Help?</h3>
                                     <p className="service-details__need-help-text">Contact our team to discuss your sourcing requirements and receive a tailored solution.</p>
