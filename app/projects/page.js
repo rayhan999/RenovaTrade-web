@@ -1,10 +1,11 @@
 'use client'
-import Layout from "@/components/layout/Layout"
+import PageHeader from "@/components/shell/PageHeader"
 import Link from "next/link"
 export default function Home() {
     return (
         <>
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Project">
+        <>
+        <PageHeader title="Project" breadcrumbs={[{ label: "Project" }]} />
         {/*Project One Start*/}
         <section className="project-one">
             <div className="container">
@@ -135,7 +136,7 @@ export default function Home() {
             </div>
         </section>
         {/*CTA One End*/}
-        </Layout>
+        </>
         </>
     )
 }

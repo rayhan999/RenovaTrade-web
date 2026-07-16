@@ -1,5 +1,4 @@
 
-import Layout from "@/components/layout/Layout"
 import Banner from "@/components/sections/home2/Banner"
 import Blog from "@/components/sections/home2/Blog"
 import Brand from "@/components/sections/home2/Brand"
@@ -16,20 +15,18 @@ export default function Home() {
 
     return (
         <>
-            <Layout headerStyle={2} footerStyle={1}>
-                <Banner />
-                <Feature />
-                <About />
-                <Video />
-                <Project />
-                <Company />
-                <Team />
-                <Testimonial />
-                <Brand />
-                <Pricing />
-                <Blog />
-                <Cta />
-            </Layout>
+            <Banner />
+            <Feature />
+            <About />
+            <Video />
+            <Project />
+            <Company />
+            <Team />
+            <Testimonial />
+            <Brand />
+            <Pricing />
+            <Blog />
+            <Cta />
         </>
     )
 }

@@ -1,5 +1,5 @@
 'use client'
-import Layout from "@/components/layout/Layout"
+import PageHeader from "@/components/shell/PageHeader"
 import Link from "next/link"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -52,7 +52,8 @@ export default function Home() {
 
     return (
         <>
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Testimonials">
+        <>
+        <PageHeader title="Testimonials" breadcrumbs={[{ label: "Testimonials" }]} />
         {/*Testimonial Two Start*/}
         <section className="testimonial-two testimonial-four">
             <div className="testimonial-two__right-img wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
@@ -220,7 +221,7 @@ export default function Home() {
         </section>
         {/*CTA One End*/}
 
-        </Layout>
+        </>
         </>
     )
 }

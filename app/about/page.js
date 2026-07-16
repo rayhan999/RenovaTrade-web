@@ -1,83 +1,117 @@
-import Layout from "@/components/layout/Layout"
-import Link from "next/link"
+'use client'
 
-export const metadata = {
-    title: 'About Us - Renova Trade',
-    description: 'Renova Trade provides professional sourcing, procurement, trading, and export solutions, connecting European suppliers with businesses across Bangladesh and South Asia.',
-    openGraph: {
-        title: 'About Us - Renova Trade',
-        description: 'Learn about Renova Trade, a Finland-based international sourcing, procurement, and metal trading company.',
-        url: 'https://renovatrade.fi/about',
-        siteName: 'Renova Trade',
-        type: 'website'
-    },
-    metadataBase: new URL('https://renovatrade.fi')
-}
+import PageHeader from "@/components/shell/PageHeader"
+import { Check, ArrowRight, Shield, Globe, HeadphonesIcon } from "lucide-react"
+import SectionTitle from "@/components/ui/SectionTitle"
+import Button from "@/components/ui/Button"
+import AnimatedSection from "@/components/ui/AnimatedSection"
+import Credibility from "@/components/sections/about/Credibility"
+import Sustainability from "@/components/sections/home1/Sustainability"
+import Cta from "@/components/sections/home1/Cta"
+import { useLanguage } from "@/components/i18n/LanguageProvider"
 
 export default function AboutPage() {
+    const { t } = useLanguage()
+    const values = [
+        { icon: Shield, title: t('page.about.values.transparency.title'), text: t('page.about.values.transparency.text') },
+        { icon: Globe, title: t('page.about.values.global.title'), text: t('page.about.values.global.text') },
+        { icon: HeadphonesIcon, title: t('page.about.values.communication.title'), text: t('page.about.values.communication.text') },
+    ]
+    const points = [
+        t('home.about.point1'),
+        t('home.about.point2'),
+        t('home.about.point3'),
+    ]
+
     return (
         <>
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="About Us">
-        {/*About Three Start*/}
-        <section className="about-three about-four">
-            <div className="about-three__bg-box">
-                <div className="about-three__bg"
-                    style={{ backgroundImage: ' url(assets/images/backgrounds/about_us_bg.jpg)' }} >
-                </div>
-                <div className="about-three__shape-1">
-                    <img src="assets/images/shapes/about-three-shape-1.jpg" alt=""/>
-                </div>
-            </div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-xl-5 col-lg-5"></div>
-                    <div className="col-xl-7 col-lg-7">
-                        <div className="about-three__right">
-                            <div className="section-title text-left">
-                                <div className="section-title__tagline-box">
-                                    <div className="section-title__tagline-shape">
-                                        <img src="assets/images/shapes/section-title-tagline-shape_new.png" alt=""/>
-                                    </div>
-                                    <span className="section-title__tagline">Get to know us</span>
-                                </div>
-                                <h2 className="section-title__title">Your Trusted Sourcing & Trading Partner</h2>
+        <PageHeader title={t('nav.about')} breadcrumbs={[{ label: t('nav.about') }]} />
+            <section className="section-padding bg-background">
+                <div className="container-renova">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <AnimatedSection animation="fade-left" className="relative">
+                            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                                <img
+                                    src="/assets/images/resources/about_us.jpg"
+                                    alt="Renova Trade industrial operations"
+                                    className="w-full h-[400px] md:h-[500px] object-cover"
+                                />
                             </div>
-                            <p className="about-one__text">Renova Trade provides professional sourcing, procurement, trading, and export solutions for businesses looking to source quality products from Europe.</p>
-                            <p className="about-one__text">Our primary focus is metal scrap trading, supported by international sourcing for heavy equipment, industrial machinery, engineering products, and other industrial goods. We work with trusted manufacturers and suppliers across Europe's leading industrial regions to help customers secure reliable products, competitive pricing, and dependable supply chains.</p>
-                            <p className="about-one__text">Our approach is built on transparency, professionalism, responsiveness, and long-term business relationships.</p>
-                            <div className="about-three__points-and-year">
-                                <ul className="about-three__points list-unstyled">
-                                    <li>
-                                        <div className="icon">
-                                            <span className="icon-tick"></span>
+                        </AnimatedSection>
+
+                        <AnimatedSection animation="fade-right" delay={150} className="lg:pl-8">
+                            <SectionTitle
+                                tagline={t('home.about.tagline')}
+                                title={t('home.about.title')}
+                                align="left"
+                                className="mb-8"
+                            />
+                            <p className="text-secondary leading-relaxed mb-6">
+                                {t('home.about.body')}
+                            </p>
+                            <p className="text-secondary leading-relaxed mb-6">
+                                {t('home.about.description')}
+                            </p>
+                            <ul className="space-y-4 mb-8">
+                                {points.map((point) => (
+                                    <li key={point} className="flex items-start gap-3">
+                                        <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <Check className="w-4 h-4 text-accent" aria-hidden="true" />
                                         </div>
-                                        <p>Transparency & professionalism</p>
+                                        <span className="text-primary font-medium">{point}</span>
                                     </li>
-                                    <li>
-                                        <div className="icon">
-                                            <span className="icon-tick"></span>
-                                        </div>
-                                        <p>Responsive communication</p>
-                                    </li>
-                                    <li>
-                                        <div className="icon">
-                                            <span className="icon-tick"></span>
-                                        </div>
-                                        <p>Long-term business relationships</p>
-                                    </li>
-                                </ul>
+                                ))}
+                            </ul>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Button href="/services" variant="primary">
+                                    {t('home.service.title')}
+                                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                                </Button>
+                                <Button href="/contact" variant="secondary">
+                                    {t('nav.contact')}
+                                </Button>
                             </div>
-                            <div className="about-three__btn-box">
-                                <Link href="/services" className="about-three__btn thm-btn">Our Services</Link>
-                                <Link href="/contact" className="about-three__btn thm-btn" style={{ marginLeft: '15px' }}>Contact Us</Link>
-                            </div>
-                        </div>
+                        </AnimatedSection>
                     </div>
                 </div>
-            </div>
-        </section>
-        {/*About Three End*/}
-        </Layout>
+            </section>
+
+            <section className="section-padding bg-surface">
+                <div className="container-renova">
+                    <AnimatedSection animation="fade-up">
+                        <SectionTitle
+                            tagline={t('home.service.tagline')}
+                            title={t('home.service.title')}
+                            description={t('home.service.description')}
+                        />
+                    </AnimatedSection>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {values.map((value, index) => (
+                            <AnimatedSection
+                                key={value.title}
+                                animation="fade-up"
+                                delay={index * 100}
+                            >
+                                <div className="bg-background rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+                                    <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5">
+                                        <value.icon className="w-7 h-7 text-accent" aria-hidden="true" />
+                                    </div>
+                                    <h3 className="text-xl font-heading font-semibold text-primary mb-3">
+                                        {value.title}
+                                    </h3>
+                                    <p className="text-secondary text-sm leading-relaxed">
+                                        {value.text}
+                                    </p>
+                                </div>
+                            </AnimatedSection>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <Credibility />
+            <Sustainability />
+            <Cta />
         </>
     )
 }

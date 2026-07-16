@@ -1,5 +1,5 @@
 'use client'
-import Layout from "@/components/layout/Layout"
+import PageHeader from "@/components/shell/PageHeader"
 import Link from "next/link"
 import { useState } from 'react'
 export default function Home() {
@@ -23,7 +23,8 @@ export default function Home() {
 
     return (
         <>
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="farming products">
+        <>
+        <PageHeader title="farming products" breadcrumbs={[{ label: "farming products" }]} />
         {/* Start Service Details */}
         <section className="service-details">
             <div className="container">
@@ -210,7 +211,7 @@ export default function Home() {
         </section>
         {/* End Service Details */}
 
-            </Layout>
+        </>
         </>
     )
 }

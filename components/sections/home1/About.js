@@ -1,81 +1,67 @@
 'use client'
-import Link from "next/link"
+
+import { Check, ArrowRight } from "lucide-react"
+import SectionTitle from "@/components/ui/SectionTitle"
+import Button from "@/components/ui/Button"
+import AnimatedSection from "@/components/ui/AnimatedSection"
+import { DotGrid, Ring } from "@/components/ui/Decor"
+import { useLanguage } from "@/components/i18n/LanguageProvider"
+
 export default function About() {
-    return (
-        <>
-        {/*About One Start*/}
-        <section className="about-three about-four">
-            <div className="about-three__bg-box">
-                <div className="about-three__bg"
-                    style={{ backgroundImage: ' url(assets/images/resources/about_us.jpg)' }} >
-                    {/* <div className="about-three__shape-2"
-                        style={{ backgroundImage: ' url(assets/images/shapes/about-three-shape-2.png)' }} ></div> */}
-                    {/* <div className="about-three__video-link">
-                        <a onClick={() => setOpen(true)} className="video-popup">
-                            <div className="about-three__video-icon">
-                                <span className="icon-play-button"></span>
-                                <i className="ripple"></i>
-                            </div>
-                        </a>
-                    </div> */}
-                </div>
-                <div className="about-three__shape-1">
-                    <img src="assets/images/shapes/about-three-shape-1.jpg" alt=""/>
-                </div>
+  const { t } = useLanguage()
+  const points = [
+    t('home.about.point1'),
+    t('home.about.point2'),
+    t('home.about.point3'),
+  ]
+  return (
+    <section className="section-padding bg-background">
+      <div className="container-renova">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Image side */}
+          <AnimatedSection animation="fade-left" className="relative">
+            {/* Decorative frame shapes behind the photo */}
+            <DotGrid className="w-40 h-40 -top-6 -left-6 hidden md:block" aria-hidden="true" />
+            <Ring className="w-28 h-28 -bottom-8 -right-8 hidden md:block" animate="animate-float-slow" />
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="/assets/images/resources/about_us.jpg"
+                alt="Renova Trade industrial operations"
+                className="w-full h-[400px] md:h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
             </div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-xl-5 col-lg-5"></div>
-                    <div className="col-xl-7 col-lg-7">
-                        <div className="about-three__right">
-                            <div className="section-title text-left">
-                                <div className="section-title__tagline-box">
-                                    <div className="section-title__tagline-shape">
-                                        <img src="assets/images/shapes/section-title-tagline-shape_new.png" alt=""/>
-                                    </div>
-                                    <span className="section-title__tagline">Get to know us</span>
-                                </div>
-                                <h2 className="section-title__title">Your Trusted Sourcing & Trading Partner</h2>
-                            </div>
-                           <p className="about-one__text">Renova Trade provides professional sourcing, procurement, trading, and export solutions for businesses looking to source quality products from Europe. Our primary focus is metal scrap trading, supported by international sourcing for heavy equipment, industrial machinery, engineering products, and other industrial goods.</p>
-                           <p className="about-one__text">We work with trusted manufacturers and suppliers across Europe's leading industrial regions to help customers secure reliable products, competitive pricing, and dependable supply chains. Our approach is built on transparency, professionalism, responsiveness, and long-term business relationships.</p>
-                            <div className="about-three__points-and-year">
-                                <ul className="about-three__points list-unstyled">
-                                    <li>
-                                        <div className="icon">
-                                            <span className="icon-tick"></span>
-                                        </div>
-                                        <p>Transparent & professional approach</p>
-                                    </li>
-                                    <li>
-                                        <div className="icon">
-                                            <span className="icon-tick"></span>
-                                        </div>
-                                        <p>Responsive communication</p>
-                                    </li>
-                                    <li>
-                                        <div className="icon">
-                                            <span className="icon-tick"></span>
-                                        </div>
-                                        <p>Long-term business relationships</p>
-                                    </li>
-                                </ul>
-                                {/* <div className="about-three__year">
-                                    <div className="about-three__year-shape"></div>
-                                    <p>Since
-                                        <br/> 2025</p>
-                                </div> */}
-                            </div>
-                            <div className="about-three__btn-box">
-                                <Link href="contact" className="about-three__btn thm-btn">Contact us</Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {/*About One End*/}
-        
-        </>
-    )
+          </AnimatedSection>
+
+          {/* Content side */}
+          <AnimatedSection animation="fade-right" delay={150} className="lg:pl-8">
+            <SectionTitle
+              tagline={t('home.about.tagline')}
+              title={t('home.about.title')}
+              description={t('home.about.description')}
+              align="left"
+              className="mb-8"
+            />
+            <p className="text-secondary leading-relaxed mb-6">
+              {t('home.about.body')}
+            </p>
+            <ul className="space-y-4 mb-8">
+              {points.map((point) => (
+                <li key={point} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-4 h-4 text-accent" aria-hidden="true" />
+                  </div>
+                  <span className="text-primary font-medium">{point}</span>
+                </li>
+              ))}
+            </ul>
+            <Button href="/about" variant="primary">
+              {t('home.about.cta')}
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Button>
+          </AnimatedSection>
+        </div>
+      </div>
+    </section>
+  )
 }

@@ -1,11 +1,12 @@
 'use client'
 import Link from "next/link"
-import Layout from "@/components/layout/Layout"
+import PageHeader from "@/components/shell/PageHeader"
 export default function Home() {
 
     return (
         <>
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Pricing">
+        <>
+        <PageHeader title="Pricing" breadcrumbs={[{ label: "Pricing" }]} />
         {/*Pricing One Start*/}
         <section className="pricing-one">
             <div className="container">
@@ -194,7 +195,7 @@ export default function Home() {
         </section>
         {/*CTA One End*/}
 
-        </Layout>
+        </>
         </>
     )
 }

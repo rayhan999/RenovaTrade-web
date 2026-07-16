@@ -1,110 +1,131 @@
-import Layout from "@/components/layout/Layout"
-import Link from "next/link"
+import PageHeader from "@/components/shell/PageHeader"
+import ServiceSidebar from "@/components/ui/ServiceSidebar"
 import Cta from "@/components/sections/home1/Cta"
+import AnimatedSection from "@/components/ui/AnimatedSection"
+import TiltCard from "@/components/ui/TiltCard"
+import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder"
+import { Check, Layers, Cable, Boxes, CircuitBoard, TrainFront, Building, Recycle, Combine, Magnet } from "lucide-react"
 
 export const metadata = {
+  title: 'Metal Scrap Trading - Renova Trade',
+  description: 'Renova Trade sources and trades ferrous and non-ferrous metal scrap including HMS, shredded scrap, copper, aluminum, stainless steel, and brass.',
+  openGraph: {
     title: 'Metal Scrap Trading - Renova Trade',
-    description: 'Renova Trade sources and trades high-quality ferrous and non-ferrous metal scrap from Europe to South Asia. HMS, shredded scrap, copper, aluminum, stainless steel, brass, and more.',
-    openGraph: {
-        title: 'Metal Scrap Trading - Renova Trade',
-        description: 'Ferrous and non-ferrous metal scrap trading: HMS, shredded scrap, copper, aluminum, stainless steel, brass.',
-        url: 'https://renovatrade.fi/services/metal-scrap-trading',
-        siteName: 'Renova Trade',
-        type: 'website'
-    },
-    metadataBase: new URL('https://renovatrade.fi')
+    description: 'Reliable metal scrap trading and export from Europe to South Asia.',
+    url: 'https://renovatrade.fi/services/metal-scrap-trading',
+    siteName: 'Renova Trade',
+    type: 'website'
+  },
+  metadataBase: new URL('https://renovatrade.fi')
 }
 
-const products = [
-    "HMS 1 & HMS 2",
-    "Shredded Scrap",
-    "Copper Scrap",
-    "Aluminium Scrap",
-    "Stainless Steel Scrap",
-    "Brass Scrap",
-    "Electric Motor Scrap",
-    "Railway Scrap",
-    "Structural Steel Scrap"
+// Product grades from the original content draft
+const grades = [
+  { icon: Layers, name: "HMS 1 & HMS 2", text: "Heavy melting steel per ISRI 200-206 specifications." },
+  { icon: Combine, name: "Shredded Scrap", text: "Homogeneous shredded steel (ISRI 210/211) for efficient melting." },
+  { icon: Cable, name: "Copper Scrap", text: "Millberry, Berry/Candy, and mixed copper grades." },
+  { icon: Boxes, name: "Aluminium Scrap", text: "Extrusions, UBC, taint/tabor, and cast aluminium." },
+  { icon: Magnet, name: "Stainless Steel Scrap", text: "304/316 solids and turnings, sorted and graded." },
+  { icon: Recycle, name: "Brass Scrap", text: "Honey, yellow brass, and mixed brass grades." },
+  { icon: CircuitBoard, name: "Electric Motor Scrap", text: "Mixed electric motors for copper recovery." },
+  { icon: TrainFront, name: "Railway Scrap", text: "Rails (R50/R65) and rolling stock material, subject to origin documentation." },
+  { icon: Building, name: "Structural Steel Scrap", text: "Beams, plate, and demolition steel, cut to charge-box size." },
 ]
 
 const services = [
-    "Supplier identification",
-    "Quality-focused sourcing",
-    "Commercial negotiation",
-    "Export documentation",
-    "Logistics coordination",
-    "Long-term supply support"
+  "Supplier identification across European scrap yards and recyclers",
+  "Quality-focused sourcing with grading and inspection support",
+  "Commercial negotiation tied to international market indices",
+  "Export documentation: invoice, packing list, B/L, certificate of origin",
+  "Logistics coordination — containerized and break-bulk shipments",
+  "Long-term supply programs with scheduled monthly volumes",
 ]
 
 export default function MetalScrapTradingPage() {
-    return (
-        <>
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Metal Scrap Trading">
-            {/*Service Details Start*/}
-            <section className="service-details">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xl-8 col-lg-7">
-                            <div className="service-details__left">
-                                <div className="service-details__img">
-                                    <img src="assets/images/services/service_1.jpeg" alt="Metal Scrap Trading"/>
-                                </div>
-                                <h3 className="service-details__title-1">Metal Scrap Trading</h3>
-                                <p className="service-details__text-1">Metal scrap trading is one of our core business divisions. We source and trade high-quality ferrous and non-ferrous scrap from trusted European suppliers, delivering reliable materials to customers across Bangladesh and South Asia.</p>
-                                <p className="service-details__text-2">Our team focuses on quality, consistency, and transparent commercial terms. We coordinate supplier identification, inspection, documentation, and logistics to ensure smooth deliveries.</p>
-                                <div className="service-details__img-and-point-box">
-                                    <div className="service-details__point-img">
-                                        <img src="assets/images/services/service_2.jpg" alt="Metal Scrap"/>
-                                    </div>
-                                    <div className="service-details__points-box">
-                                        <h3 className="service-details__point-title">Our Services</h3>
-                                        <ul className="service-details__point list-unstyled">
-                                            {services.map((service, index) => (
-                                                <li key={index}>
-                                                    <div className="icon">
-                                                        <span className="icon-check"></span>
-                                                    </div>
-                                                    <p>{service}</p>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+  return (
+    <>
+    <PageHeader title="Metal Scrap Trading" breadcrumbs={[{ label: "Metal Scrap Trading" }]} />
+      <section className="section-padding bg-surface">
+        <div className="container-renova">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <AnimatedSection animation="fade-left" className="lg:col-span-2 space-y-8">
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src="/assets/images/services/service_1.jpeg"
+                  alt="Metal scrap trading"
+                  className="w-full h-80 object-cover"
+                />
+              </div>
+
+              <div className="bg-background rounded-2xl p-8 shadow-md">
+                <h2 className="text-3xl font-heading font-bold text-primary mb-6">
+                  Metal Scrap Trading
+                </h2>
+                <p className="text-secondary leading-relaxed mb-6">
+                  Renova Trade specializes in sourcing and trading ferrous and non-ferrous metal scrap from trusted European suppliers. We connect recyclers, foundries, and manufacturers in South Asia with reliable scrap streams that meet international quality standards.
+                </p>
+                <p className="text-secondary leading-relaxed">
+                  Our team manages supplier verification, quality inspection, pricing, documentation, and logistics coordination so our customers receive consistent material on competitive terms.
+                </p>
+              </div>
+
+              {/* Product grades — interactive card grid */}
+              <div>
+                <h3 className="text-2xl font-heading font-bold text-primary mb-6">
+                  Grades We Trade
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                  {grades.map((grade, index) => (
+                    <AnimatedSection key={grade.name} animation="fade-up" delay={index * 60}>
+                      <TiltCard className="h-full">
+                        <div className="group h-full bg-surface border border-border rounded-2xl p-5 shadow-sm hover:shadow-depth hover:border-accent/30 transition-all duration-300">
+                          <div className="w-11 h-11 rounded-xl bg-primary/5 group-hover:bg-accent/10 flex items-center justify-center mb-4 transition-colors duration-300">
+                            <grade.icon className="w-5 h-5 text-primary group-hover:text-accent transition-colors duration-300" aria-hidden="true" />
+                          </div>
+                          <h4 className="font-heading font-semibold text-primary">{grade.name}</h4>
+                          <p className="mt-1.5 text-sm text-secondary leading-relaxed">{grade.text}</p>
                         </div>
-                        <div className="col-xl-4 col-lg-5">
-                            <div className="sidebar">
-                                <div className="sidebar__single service-details__service-box">
-                                    <h3 className="sidebar__title">Products</h3>
-                                    <ul className="service-details__service-list list-unstyled">
-                                        {products.map((product, index) => (
-                                            <li key={index}>
-                                                <span>{product}<span className="fas fa-angle-right"></span></span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <div className="sidebar__single service-details__need-help">
-                                    <div className="service-details__need-help-bg"
-                                        style={{ backgroundImage: ' url(assets/images/backgrounds/about_us_bg.jpg)' }} >
-                                    </div>
-                                    <h3 className="service-details__need-help-title">Need Help?</h3>
-                                    <p className="service-details__need-help-text">Contact our team to discuss your metal scrap requirements and receive a tailored quote.</p>
-                                    <div className="service-details__need-help-number">
-                                        <div className="icon">
-                                            <span className="icon-telephone"></span>
-                                        </div>
-                                        <Link href="/contact">Contact Us</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                      </TiltCard>
+                    </AnimatedSection>
+                  ))}
                 </div>
-            </section>
-            {/*Service Details End*/}
-            <Cta />
-        </Layout>
-        </>
-    )
+              </div>
+
+              {/* Services */}
+              <div className="bg-background rounded-2xl p-8 shadow-md">
+                <h3 className="text-xl font-heading font-semibold text-primary mb-4">
+                  How We Support Your Purchase
+                </h3>
+                <ul className="space-y-3">
+                  {services.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-4 h-4 text-accent" aria-hidden="true" />
+                      </div>
+                      <span className="text-secondary">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Visual proof — replace with real operations photos */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <PhotoPlaceholder label="Graded HMS stockpile at partner yard" />
+                <PhotoPlaceholder label="Container loading & weighbridge ticket" />
+              </div>
+
+              <p className="text-secondary leading-relaxed">
+                Whether you need containerized shipments of HMS, shredded scrap, or specific non-ferrous grades, we work to match your volume, specification, and delivery requirements.
+              </p>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-right" delay={150} className="lg:col-span-1">
+              <ServiceSidebar currentHref="/services/metal-scrap-trading" />
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+      <Cta />
+    </>
+  )
 }
