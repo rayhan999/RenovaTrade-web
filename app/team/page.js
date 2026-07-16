@@ -1,175 +1,72 @@
-import Link from "next/link"
-import Layout from "@/components/layout/Layout"
-export default function Home() {
+import PageHeader from "@/components/shell/PageHeader"
+import SectionTitle from "@/components/ui/SectionTitle"
+import Cta from "@/components/sections/home1/Cta"
+import AnimatedSection from "@/components/ui/AnimatedSection"
 
-    return (
-        <>
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Our Team">
-        {/*Team Two Start*/}
-        <section className="team-two team-four">
-            <div className="container">
-                <div className="section-title text-center">
-                    <div className="section-title__tagline-box">
-                        <div className="section-title__tagline-shape">
-                            <img src="assets/images/shapes/section-title-tagline-shape_new.png" alt=""/>
-                        </div>
-                        <span className="section-title__tagline">Our Smart People</span>
-                    </div>
-                    <h2 className="section-title__title">Meet Expert & Professional
-                        <br/> Team Members</h2>
-                </div>
-                <div className="row">
-                    {/*Team Two Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div className="team-two__single">
-                            <div className="team-two__img-box">
-                                <div className="team-two__img-bg"
-                                    style={{ backgroundImage: ' url(assets/images/shapes/team-one-img-bg-shape.png)' }} >
-                                </div>
-                                <div className="team-two__img-hover-bg"
-                                    style={{ backgroundImage: ' url(assets/images/shapes/team-one-img-hover-bg-shape.png)' }} >
-                                </div>
-                                <div className="team-two__img">
-                                    <img src="assets/images/team/team-2-1.jpg" alt=""/>
-                                </div>
-                            </div>
-                            <div className="team-two__content">
-                                <div className="team-two__content-inner">
-                                    <div className="team-two__content-shape">
-                                        <img src="assets/images/shapes/team-two-content-shape.png" alt=""/>
-                                    </div>
-                                    <h3 className="team-two__title"><Link href="team-details">Alisha Martin</Link></h3>
-                                    <p className="team-two__sub-title">Managing Director</p>
-                                    <div className="team-two__social">
-                                        <Link href="#"><span className="icon-twitter"></span></Link>
-                                        <Link href="#"><span className="icon-facebook"></span></Link>
-                                        <Link href="#"><span className="icon-google-plus-logo"></span></Link>
-                                        <Link href="#"><span className="icon-pinterest"></span></Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/*Team Two Single End*/}
-                    {/*Team Two Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                        <div className="team-two__single">
-                            <div className="team-two__img-box">
-                                <div className="team-two__img-bg"
-                                    style={{ backgroundImage: ' url(assets/images/shapes/team-one-img-bg-shape.png)' }} >
-                                </div>
-                                <div className="team-two__img-hover-bg"
-                                    style={{ backgroundImage: ' url(assets/images/shapes/team-one-img-hover-bg-shape.png)' }} >
-                                </div>
-                                <div className="team-two__img">
-                                    <img src="assets/images/team/team-2-2.jpg" alt=""/>
-                                </div>
-                            </div>
-                            <div className="team-two__content">
-                                <div className="team-two__content-inner">
-                                    <div className="team-two__content-shape">
-                                        <img src="assets/images/shapes/team-two-content-shape.png" alt=""/>
-                                    </div>
-                                    <h3 className="team-two__title"><Link href="team-details">Aimee Calderon</Link></h3>
-                                    <p className="team-two__sub-title">Managing Director</p>
-                                    <div className="team-two__social">
-                                        <Link href="#"><span className="icon-twitter"></span></Link>
-                                        <Link href="#"><span className="icon-facebook"></span></Link>
-                                        <Link href="#"><span className="icon-google-plus-logo"></span></Link>
-                                        <Link href="#"><span className="icon-pinterest"></span></Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/*Team Two Single End*/}
-                    {/*Team Two Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                        <div className="team-two__single">
-                            <div className="team-two__img-box">
-                                <div className="team-two__img-bg"
-                                    style={{ backgroundImage: ' url(assets/images/shapes/team-one-img-bg-shape.png)' }} >
-                                </div>
-                                <div className="team-two__img-hover-bg"
-                                    style={{ backgroundImage: ' url(assets/images/shapes/team-one-img-hover-bg-shape.png)' }} >
-                                </div>
-                                <div className="team-two__img">
-                                    <img src="assets/images/team/team-2-3.jpg" alt=""/>
-                                </div>
-                            </div>
-                            <div className="team-two__content">
-                                <div className="team-two__content-inner">
-                                    <div className="team-two__content-shape">
-                                        <img src="assets/images/shapes/team-two-content-shape.png" alt=""/>
-                                    </div>
-                                    <h3 className="team-two__title"><Link href="team-details">Saba Kurbi</Link></h3>
-                                    <p className="team-two__sub-title">Managing Director</p>
-                                    <div className="team-two__social">
-                                        <Link href="#"><span className="icon-twitter"></span></Link>
-                                        <Link href="#"><span className="icon-facebook"></span></Link>
-                                        <Link href="#"><span className="icon-google-plus-logo"></span></Link>
-                                        <Link href="#"><span className="icon-pinterest"></span></Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/*Team Two Single End*/}
-                    {/*Team Two Single Start*/}
-                    <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                        <div className="team-two__single">
-                            <div className="team-two__img-box">
-                                <div className="team-two__img-bg"
-                                    style={{ backgroundImage: ' url(assets/images/shapes/team-one-img-bg-shape.png)' }} >
-                                </div>
-                                <div className="team-two__img-hover-bg"
-                                    style={{ backgroundImage: ' url(assets/images/shapes/team-one-img-hover-bg-shape.png)' }} >
-                                </div>
-                                <div className="team-two__img">
-                                    <img src="assets/images/team/team-2-4.jpg" alt=""/>
-                                </div>
-                            </div>
-                            <div className="team-two__content">
-                                <div className="team-two__content-inner">
-                                    <div className="team-two__content-shape">
-                                        <img src="assets/images/shapes/team-two-content-shape.png" alt=""/>
-                                    </div>
-                                    <h3 className="team-two__title"><Link href="team-details">Tamanna Tamu</Link></h3>
-                                    <p className="team-two__sub-title">Managing Director</p>
-                                    <div className="team-two__social">
-                                        <Link href="#"><span className="icon-twitter"></span></Link>
-                                        <Link href="#"><span className="icon-facebook"></span></Link>
-                                        <Link href="#"><span className="icon-google-plus-logo"></span></Link>
-                                        <Link href="#"><span className="icon-pinterest"></span></Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/*Team Two Single End*/}
-                </div>
-            </div>
-        </section>
-        {/*Team Two End*/}
+export const metadata = {
+  title: 'Our Team - Renova Trade',
+  description: 'Meet the experienced team behind Renova Trade, connecting European suppliers with South Asian markets.',
+  openGraph: {
+    title: 'Our Team - Renova Trade',
+    description: 'Meet the Renova Trade team of sourcing, procurement, and trading professionals.',
+    url: 'https://renovatrade.fi/team',
+    siteName: 'Renova Trade',
+    type: 'website'
+  },
+  metadataBase: new URL('https://renovatrade.fi')
+}
 
-        {/*CTA One Start*/}
-        <section className="cta-one">
-            <div className="cta-one__bg" style={{ backgroundImage: ' url(assets/images/backgrounds/cta-one-bg.jpg)' }} ></div>
-            <div className="container">
-                <div className="row">
-                    <div className="cta-one__inner">
-                        <h3 className="cta-one__title">Let's discuss about how we can help
-                            <br/> make your business better</h3>
-                        <div className="cta-one__btn-box">
-                            <Link href="about" className="cta-one__btn thm-btn">Let's Start</Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {/*CTA One End*/}
+const teamMembers = [
+  {
+    name: "Md Mahedi Hasan Refat",
+    role: "Founder & Procurement Manager",
+    image: "assets/images/team/team-2-1.jpg",
+  },
+]
 
-        </Layout>
-        </>
-    )
+export default function TeamPage() {
+  return (
+    <>
+    <PageHeader title="Our Team" breadcrumbs={[{ label: "Our Team" }]} />
+      <section className="section-padding bg-surface">
+        <div className="container-renova">
+          <AnimatedSection animation="fade-up">
+            <SectionTitle
+              tagline="Our Smart People"
+              title="Meet Expert & Professional Team Members"
+              description="The people behind Renova Trade bring together deep experience in international sourcing, procurement, and industrial trading."
+            />
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {teamMembers.map((member, index) => (
+              <AnimatedSection
+                key={member.name}
+                animation="fade-up"
+                delay={index * 100}
+              >
+                <div className="group bg-background rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="relative h-80 overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <h3 className="text-xl font-heading font-semibold text-white">
+                        {member.name}
+                      </h3>
+                      <p className="text-white/80 text-sm">{member.role}</p>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+      <Cta />
+    </>
+  )
 }

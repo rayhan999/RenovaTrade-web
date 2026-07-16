@@ -1,9 +1,14 @@
-import Layout from "@/components/layout/Layout"
 import Banner from "@/components/sections/home1/Banner"
+import TrustBar from "@/components/sections/home1/TrustBar"
 import About from "@/components/sections/home1/About"
 import Service from "@/components/sections/home1/Service"
+import TradeCorridor from "@/components/sections/home1/TradeCorridor"
 import Why from "@/components/sections/home1/Why"
 import Process from "@/components/sections/home1/Process"
+import Industries from "@/components/sections/home1/Industries"
+import Products from "@/components/sections/home1/Products"
+import Sustainability from "@/components/sections/home1/Sustainability"
+import OperationsGallery from "@/components/sections/home1/OperationsGallery"
 import Team from "@/components/sections/home1/Team"
 import Testimonial from "@/components/sections/home1/Testimonial"
 import Blog from "@/components/sections/home1/Blog"
@@ -27,19 +32,23 @@ export const metadata = {
 export default function Home() {
     return (
         <>
-            <Layout headerStyle={1} footerStyle={1}>
-                <Banner />
-                <About />
-                <Service />
-                <Process />
-                <Why />
-                <Team />
-                <Testimonial />
-                <Blog />
-                <Contact />
-                <Slidingtext />
-                <Cta />
-            </Layout>
+            <Banner />
+            <TrustBar />
+            <About />
+            <Service />
+            <TradeCorridor />
+            <Process />
+            <Industries />
+            <Products />
+            <Why />
+            <Sustainability />
+            <OperationsGallery />
+            <Team />
+            <Testimonial />
+            <Blog />
+            <Contact />
+            <Slidingtext />
+            <Cta />
         </>
     )
 }

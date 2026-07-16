@@ -1,53 +1,40 @@
-import Layout from "@/components/layout/Layout"
-import Link from "next/link"
-export default function Error404() {
+'use client'
 
+import PageHeader from "@/components/shell/PageHeader"
+import Link from "next/link"
+import { Home, FileText } from "lucide-react"
+import { useLanguage } from "@/components/i18n/LanguageProvider"
+
+export default function Error404() {
+    const { t } = useLanguage()
     return (
         <>
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Page Not Found">
-        {/*Error Page Start*/}
-        <section className="error-page">
-            <div className="container">
-                <div className="row">
-                    <div className="col-xl-12">
-                        <div className="error-page__inner">
-                            <div className="error-page__title-box">
-                                <h2 className="error-page__title">404</h2>
-                            </div>
-                            <h3 className="error-page__tagline">Sorry we can't find that page!</h3>
-                            <p className="error-page__text">The page you are looking for was never existed.</p>
-                            <form className="error-page__form">
-                                <div className="error-page__form-input">
-                                    <input type="search" placeholder="Search here"/>
-                                    <button type="submit"><i className="icon-magnifying-glass"></i></button>
-                                </div>
-                            </form>
-                            <Link href="/" className="thm-btn error-page__btn">Back to home</Link>
+        <PageHeader title={t('page.notFound.title')} breadcrumbs={[{ label: t('page.notFound.title') }]} />
+            <section className="section-padding bg-background">
+                <div className="container-renova">
+                    <div className="max-w-xl mx-auto text-center">
+                        <p className="text-7xl md:text-8xl font-heading font-bold text-primary/10 leading-none select-none" aria-hidden="true">
+                            {t('page.notFound.code')}
+                        </p>
+                        <h2 className="mt-4 text-3xl md:text-4xl font-heading font-bold text-primary">
+                            {t('page.notFound.title')}
+                        </h2>
+                        <p className="mt-4 text-secondary leading-relaxed">
+                            {t('page.notFound.text')}
+                        </p>
+                        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Link href="/" className="btn-primary">
+                                <Home className="w-4 h-4" aria-hidden="true" />
+                                {t('page.notFound.home')}
+                            </Link>
+                            <Link href="/quote" className="btn-secondary">
+                                <FileText className="w-4 h-4" aria-hidden="true" />
+                                {t('page.notFound.quote')}
+                            </Link>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        {/*Error Page End*/}
-
-
-        {/*CTA One Start*/}
-        <section className="cta-one">
-            <div className="cta-one__bg" style={{ backgroundImage: ' url(assets/images/backgrounds/cta-one-bg.jpg)' }} ></div>
-            <div className="container">
-                <div className="row">
-                    <div className="cta-one__inner">
-                        <h3 className="cta-one__title">Let's discuss about how we can help
-                            <br/> make your business better</h3>
-                        <div className="cta-one__btn-box">
-                            <Link href="#" className="cta-one__btn thm-btn">Let's Start</Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {/*CTA One End*/}
-            </Layout>
+            </section>
         </>
     )
 }

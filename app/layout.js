@@ -1,10 +1,29 @@
 import "@/node_modules/react-modal-video/css/modal-video.css"
 import "../public/assets/css/zefxa.css"
+import "./globals.css"
 import 'swiper/css'
 // import "swiper/css/navigation"
 import "swiper/css/pagination"
 import 'swiper/css/free-mode';
-import { outfit, rubik } from '@/lib/font'
+import { Space_Grotesk, Inter } from 'next/font/google'
+import AppShell from "@/components/shell/AppShell"
+
+// Industrial-premium type pairing: Space Grotesk (tight-tracked grotesk headings)
+// + Inter (highly readable body). Loaded via next/font — no render-blocking import.
+const spaceGrotesk = Space_Grotesk({
+    subsets: ['latin'],
+    weight: ['400', '500', '600', '700'],
+    variable: '--font-space-grotesk',
+    display: 'swap',
+})
+
+const inter = Inter({
+    subsets: ['latin'],
+    weight: ['300', '400', '500', '600', '700'],
+    variable: '--font-inter',
+    display: 'swap',
+})
+
 export const metadata = {
     title: { default: 'Renova Trade', template: '%s | Renova Trade' },
     description: 'Renova Trade is a global metal scrap trading company and exporter, sourcing ferrous and non-ferrous scrap (HMS, shredded scrap, copper, aluminum, stainless steel, brass) and supplying international buyers. We offer reliable logistics, sustainable metal recycling, and export services across Asia and worldwide.',
@@ -39,7 +58,9 @@ export const metadata = {
         siteName: 'Renova Trade',
         images: [
             {
-                url: '/assets/images/logo/renova-og.png',
+                // TODO before launch: replace with a purpose-made 1200×630 OG image
+                // (e.g. logo over a corridor/port photo) at /assets/images/og/renova-og.png
+                url: '/assets/images/backgrounds/renova_banner_1.jpg',
                 width: 1200,
                 height: 630,
                 alt: 'Renova Trade',
@@ -78,7 +99,7 @@ export default function RootLayout({ children }) {
         "@type": "Organization",
         "name": "Renova Trade",
         "url": "https://renovatrade.fi",
-        "logo": "https://renovatrade.fi/assets/images/logo/renova-logo.png",
+        "logo": "https://renovatrade.fi/assets/images/resources/renova_logo.png",
         "contactPoint": [
             {
                 "@type": "ContactPoint",
@@ -94,10 +115,10 @@ export default function RootLayout({ children }) {
         ]
     }
     return (
-        <html lang="en" className={`${outfit.variable} ${rubik.variable}`}>
-            <body>
+        <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
+            <body className="font-body">
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-                {children}
+                <AppShell>{children}</AppShell>
             </body>
         </html>
     )

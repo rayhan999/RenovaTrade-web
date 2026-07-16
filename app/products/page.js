@@ -1,115 +1,114 @@
-import Layout from "@/components/layout/Layout"
+'use client'
+
+import PageHeader from "@/components/shell/PageHeader"
 import Link from "next/link"
+import { ArrowUpRight, Recycle, Forklift, Cog, Package, Wrench, CircuitBoard, Search } from "lucide-react"
+import SectionTitle from "@/components/ui/SectionTitle"
+import AnimatedSection from "@/components/ui/AnimatedSection"
 import Cta from "@/components/sections/home1/Cta"
+import { Blob, Ring, Diamond } from "@/components/ui/Decor"
+import { useLanguage } from "@/components/i18n/LanguageProvider"
 
-export const metadata = {
-    title: 'Products - Renova Trade',
-    description: 'Renova Trade supplies metal scrap, heavy equipment, industrial machinery, material handling equipment, engineering products, and industrial components.',
-    openGraph: {
-        title: 'Products - Renova Trade',
-        description: 'Metal scrap, heavy equipment, industrial machinery, and engineering products from Europe.',
-        url: 'https://renovatrade.fi/products',
-        siteName: 'Renova Trade',
-        type: 'website'
-    },
-    metadataBase: new URL('https://renovatrade.fi')
-}
-
-const products = [
-    {
-        title: "Metal Scrap",
-        description: "Ferrous and non-ferrous scrap including HMS, shredded scrap, copper, aluminum, stainless steel, and brass.",
-        link: "/services/metal-scrap-trading",
-        image: "assets/images/services/service_1.jpeg",
-        icon: "icon-coding"
-    },
-    {
-        title: "Heavy Equipment",
-        description: "Reach stackers, forklifts, container handlers, mobile cranes, and construction equipment.",
-        link: "/services/heavy-equipment",
-        image: "assets/images/services/service_2.jpg",
-        icon: "icon-curve"
-    },
-    {
-        title: "Industrial Machinery",
-        description: "Machinery for manufacturing, recycling, energy, and industrial plants.",
-        link: "/services/heavy-equipment",
-        image: "assets/images/services/service_3.jpg",
-        icon: "icon-creative"
-    },
-    {
-        title: "Material Handling Equipment",
-        description: "Warehouse and port equipment for logistics and material movement.",
-        link: "/services/heavy-equipment",
-        image: "assets/images/services/services-1-1.jpg",
-        icon: "icon-productivity"
-    },
-    {
-        title: "Engineering Products",
-        description: "Specialized engineering products sourced from trusted European manufacturers.",
-        link: "/services/international-sourcing",
-        image: "assets/images/services/services-1-2.jpg",
-        icon: "icon-bullhorn"
-    },
-    {
-        title: "Industrial Components",
-        description: "Components and spare parts for industrial operations and infrastructure.",
-        link: "/services/international-sourcing",
-        image: "assets/images/services/services-1-3.jpg",
-        icon: "icon-like"
-    },
-    {
-        title: "Custom Sourcing Projects",
-        description: "Tailored sourcing solutions for specific product requirements and projects.",
-        link: "/services/international-sourcing",
-        image: "assets/images/services/services-1-4.jpg",
-        icon: "icon-check"
-    }
-]
-
+/**
+ * Products — "catalog tile" design, deliberately DIFFERENT from the
+ * Core Services cards (which are image-top + floating icon chip + tag row):
+ * here each product is a full-bleed image tile with a navy gradient scrim,
+ * a large index-number watermark, a frosted-glass icon chip, bottom-anchored
+ * copy, a corner arrow, and an accent underline that draws on hover.
+ * First tile is featured (2 columns) for editorial rhythm.
+ */
 export default function ProductsPage() {
+    const { t } = useLanguage()
+    const products = [
+        { title: t('product.1.title'), description: t('product.1.text'), link: "/services/metal-scrap-trading", image: "/assets/images/services/service_1.jpeg", icon: Recycle },
+        { title: t('product.2.title'), description: t('product.2.text'), link: "/services/heavy-equipment", image: "/assets/images/services/service_2.jpg", icon: Forklift },
+        { title: t('product.3.title'), description: t('product.3.text'), link: "/services/heavy-equipment", image: "/assets/images/services/service_3.jpg", icon: Cog },
+        { title: t('product.4.title'), description: t('product.4.text'), link: "/services/heavy-equipment", image: "/assets/images/services/services-1-1.jpg", icon: Package },
+        { title: t('product.5.title'), description: t('product.5.text'), link: "/services/international-sourcing", image: "/assets/images/services/services-1-2.jpg", icon: Wrench },
+        { title: t('product.6.title'), description: t('product.6.text'), link: "/services/international-sourcing", image: "/assets/images/services/services-1-3.jpg", icon: CircuitBoard },
+        { title: t('product.7.title'), description: t('product.7.text'), link: "/services/international-sourcing", image: "/assets/images/services/services-1-4.jpg", icon: Search },
+    ]
+
     return (
         <>
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Products">
-            {/*Services One Start*/}
-            <section className="services-one">
-                <div className="container">
-                    <div className="section-title text-center">
-                        <div className="section-title__tagline-box">
-                            <div className="section-title__tagline-shape">
-                                <img src="assets/images/shapes/section-title-tagline-shape_new.png" alt=""/>
-                            </div>
-                            <span className="section-title__tagline">What We Supply</span>
-                        </div>
-                        <h2 className="section-title__title">Our Products</h2>
-                    </div>
-                    <div className="row justify-center" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'stretch', justifyContent:'center' }}>
+        <PageHeader title={t('nav.products')} breadcrumbs={[{ label: t('nav.products') }]} />
+            <section className="section-padding bg-surface relative overflow-hidden">
+                {/* Ambient shapes */}
+                <Blob color="steel" className="w-96 h-96 -top-24 -right-24" animate="animate-sway" />
+                <Ring className="w-40 h-40 -left-14 top-1/3" animate="animate-float-slow" />
+                <Diamond className="w-4 h-4 right-[8%] bottom-[12%]" animate="animate-float" />
+
+                <div className="relative container-renova">
+                    <AnimatedSection animation="fade-up">
+                        <SectionTitle
+                            tagline={t('page.products.tagline')}
+                            title={t('page.products.title')}
+                            description={t('page.products.description')}
+                        />
+                    </AnimatedSection>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {products.map((product, index) => (
-                            <div key={index} className="col-xl-4 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay={`${100 + (index * 100)}ms`} style={{ display: 'flex' }}>
-                                <div className="services-one__single" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-                                    <div className="services-one__img-box">
-                                        <div className="services-one__img">
-                                            <img src={product.image} alt={product.title}/>
-                                        </div>
+                            <AnimatedSection
+                                key={product.title}
+                                animation="fade-up"
+                                delay={index * 80}
+                                className={index === 0 ? "md:col-span-2" : ""}
+                            >
+                                <Link
+                                    href={product.link}
+                                    aria-label={product.title}
+                                    className="group relative block h-72 md:h-80 rounded-2xl overflow-hidden shadow-md hover:shadow-depth-lg transition-shadow duration-300"
+                                >
+                                    {/* Full-bleed image */}
+                                    <img
+                                        src={product.image}
+                                        alt={product.title}
+                                        loading="lazy"
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    {/* Navy scrim for legibility */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary/50 to-primary/10 transition-opacity duration-300 group-hover:from-primary-dark/95 group-hover:via-primary/60" aria-hidden="true" />
+
+                                    {/* Index watermark */}
+                                    <span
+                                        className="absolute top-3 right-5 font-heading text-6xl font-bold text-white/10 group-hover:text-accent-light/25 transition-colors duration-300 select-none"
+                                        aria-hidden="true"
+                                    >
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
+
+                                    {/* Frosted-glass icon chip */}
+                                    <div className="absolute top-4 left-4 w-11 h-11 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all duration-300 group-hover:bg-accent group-hover:border-accent">
+                                        <product.icon className="w-5 h-5" aria-hidden="true" />
                                     </div>
-                                    <div className="services-one__content-wrap" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-                                        <div className="services-one__icon">
-                                            <span className={product.icon}></span>
-                                        </div>
-                                        <div className="services-one__content" style={{ flex: 1 }}>
-                                            <h3 className="services-one__title"><Link href={product.link}>{product.title}</Link></h3>
-                                            <p className="services-one__text">{product.description}</p>
-                                        </div>
+
+                                    {/* Bottom-anchored content */}
+                                    <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                                        <h3 className="text-lg md:text-xl font-heading font-semibold text-white leading-snug">
+                                            {product.title}
+                                        </h3>
+                                        <p className="mt-1.5 text-sm text-white/70 leading-relaxed line-clamp-2">
+                                            {product.description}
+                                        </p>
+                                        <span className="mt-3 inline-flex items-center gap-1.5 text-accent-light font-semibold text-sm">
+                                            {t('page.products.request')}
+                                            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+                                        </span>
                                     </div>
-                                </div>
-                            </div>
+
+                                    {/* Accent underline draws on hover */}
+                                    <span
+                                        className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-steel to-accent-light transition-all duration-500 ease-out group-hover:w-full"
+                                        aria-hidden="true"
+                                    />
+                                </Link>
+                            </AnimatedSection>
                         ))}
                     </div>
                 </div>
             </section>
-            {/*Services One End*/}
             <Cta />
-        </Layout>
         </>
     )
 }

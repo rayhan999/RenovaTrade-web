@@ -1,128 +1,90 @@
 'use client'
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
+
 import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay, Pagination } from "swiper/modules"
+import { Quote } from "lucide-react"
+import SectionTitle from "@/components/ui/SectionTitle"
+import AnimatedSection from "@/components/ui/AnimatedSection"
+import SampleTag from "@/components/ui/SampleTag"
+import { useLanguage } from "@/components/i18n/LanguageProvider"
 
+const testimonials = [
+  {
+    name: "Johan Bergström",
+    role: "Procurement Director, Nordic Metals",
+    image: "/assets/images/testimonial/testimonial-1-1.jpg",
+    text: "[PLACEHOLDER — replace with real client quote] Renova Trade made our metal scrap sourcing from Europe straightforward. Their documentation and logistics support saved us weeks of coordination.",
+  },
+  {
+    name: "Sarah Lindqvist",
+    role: "Operations Manager, Baltic Logistics",
+    image: "/assets/images/testimonial/testimonial-1-1.jpg",
+    text: "[PLACEHOLDER — replace with real client quote] Professional team with excellent knowledge of European suppliers. They helped us find the right heavy equipment for our port operations.",
+  },
+  {
+    name: "Mikael Virtanen",
+    role: "CEO, Finnish Industrial Solutions",
+    image: "/assets/images/testimonial/testimonial-1-1.jpg",
+    text: "[PLACEHOLDER — replace with real client quote] Working with Renova Trade has been a game-changer for our international procurement. Reliable, transparent, and always responsive.",
+  },
+]
 
-const swiperOptions = {
-    modules: [Autoplay, Pagination, Navigation],
-    slidesPerView: 1,
-    spaceBetween: 0,
-    
-    loop: true,
-
-    // Navigation
-    navigation: {
-        nextEl: '.srn',
-        prevEl: '.srp',
-    },
-
-    // Pagination
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-            
-        },
-        575: {
-            slidesPerView: 1,
-            
-        },
-        767: {
-            slidesPerView: 1,
-            
-        },
-        991: {
-            slidesPerView: 1,
-            
-        },
-        1199: {
-            slidesPerView: 1,
-            
-        },
-        1350: {
-            slidesPerView: 1,
-            
-        },
-    }
-
-
-
-}
 export default function Testimonial() {
-    return (
-        <>
-        {/*Testimonial One Start*/}
-        <section className="testimonial-one">
-            <div className="container">
-                <div className="testimonial-one__inner">
-                    <div className="testimonial-one__top">
-                        <div className="section-title text-left">
-                            <div className="section-title__tagline-box">
-                                <div className="section-title__tagline-shape">
-                                    <img src="assets/images/shapes/section-title-tagline-shape_new.png" alt=""/>
-                                </div>
-                                <span className="section-title__tagline">Our Testimonials</span>
-                            </div>
-                            <h2 className="section-title__title">What they’re talking
-                                <br/> about us</h2>
-                        </div>
-                    </div>
-                    <div className="testimonial-one__main-content">
-                        <Swiper {...swiperOptions} className="swiper-container">
-                            <SwiperSlide>
-                                <div className="testimonial-one__main-content-inner">
-                                    <div className="row">
-                                        <div className="col-xl-7">
-                                            <div className="testimonial-one__left">
-                                                <div className="testimonial-one__img-box">
-                                                    <img src="assets/images/testimonial/testimonial-one-img-1.jpg"
-                                                        alt=""/>
-                                                    <div className="testimonial-one__shape-1">
-                                                        <img src="assets/images/shapes/testimonial-one-shape-1.png"
-                                                            alt=""/>
-                                                    </div>
-                                                    <div className="testimonial-one__shape-2">
-                                                        <img src="assets/images/shapes/testimonial-one-shape-2.png"
-                                                            alt=""/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-xl-5">
-                                            <div className="testimonial-one__right">
-                                                <div className="testimonial-one__single">
-                                                    <div className="testimonial-one__client-info-box">
-                                                        <div className="testimonial-one__client-img">
-                                                            <img src="assets/images/testimonial/testimonial-1-1.jpg"
-                                                                alt="Client testimonial"/>
-                                                        </div>
-                                                        <div className="testimonial-one__client-content">
-                                                            <h5 className="testimonial-one__client-name">Johan Bergström
-                                                            </h5>
-                                                            <p className="testimonial-one__client-sub-title">Procurement Director, Nordic Metals</p>
-                                                        </div>
-                                                    </div>
-                                                    <p className="testimonial-one__text">Renova Trade made our metal scrap sourcing from Europe straightforward. Their documentation and logistics support saved us weeks of coordination.</p>
-                                                    <div className="testimonial-one__quote">
-                                                        <span className="icon-quotes"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
+  const { t } = useLanguage()
+  return (
+    <section className="section-padding bg-surface">
+      <div className="container-renova">
+        <AnimatedSection animation="fade-up">
+          <SectionTitle
+            tagline={t('home.testimonial.tagline')}
+            title={t('home.testimonial.title')}
+            description={t('home.testimonial.description')}
+          />
+        </AnimatedSection>
 
-                        </Swiper>
+        <AnimatedSection animation="fade-up" delay={150}>
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            slidesPerView={1}
+            spaceBetween={24}
+            loop={true}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="testimonial-slider pb-12"
+          >
+            {testimonials.map((testimonial) => (
+              <SwiperSlide key={testimonial.name}>
+                <div className="h-full bg-background rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex items-center justify-between mb-4">
+                    <Quote className="w-10 h-10 text-accent/30" aria-hidden="true" />
+                    <SampleTag />
+                  </div>
+                  <p className="text-secondary leading-relaxed mb-6">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <h4 className="font-heading font-semibold text-primary">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-secondary text-sm">{testimonial.role}</p>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </section>
-        {/*Testimonial One End*/}
-            
-        </>
-    )
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </AnimatedSection>
+      </div>
+    </section>
+  )
 }

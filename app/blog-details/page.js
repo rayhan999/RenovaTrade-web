@@ -1,224 +1,104 @@
+'use client'
 
-import Layout from "@/components/layout/Layout"
+import PageHeader from "@/components/shell/PageHeader"
 import Link from "next/link"
-export default function Home() {
+import { Calendar, User, ArrowLeft } from "lucide-react"
+import Cta from "@/components/sections/home1/Cta"
+import AnimatedSection from "@/components/ui/AnimatedSection"
+import { useLanguage } from "@/components/i18n/LanguageProvider"
 
-    return (
-        <>
-            <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Blog Details">
-        {/*Blog Details Start*/}
-        <section className="blog-details">
-            <div className="container">
-                <div className="row">
-                    <div className="col-xl-8 col-lg-7">
-                        <div className="blog-details__left">
-                            <div className="blog-details__img">
-                                <img src="assets/images/blog/blog-details-img-1.jpg" alt=""/>
-                            </div>
-                            <div className="blog-details__content">
-                                <ul className="blog-details__meta list-unstyled">
-                                    <li>
-                                        <Link href="#"><span className="fas fa-user"></span>Admin</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#"><span className="fas fa-comments"></span>02 Comment</Link>
-                                    </li>
-                                </ul>
-                                <h3 className="blog-details__title">Basic rules of running best Marketing Services</h3>
-                                <p className="blog-details__text-1">There’re many variation of passages of Lorem Ipsum
-                                    available, but the majority have suffer alteration in
-                                    some form, by injected humour, or randomised word which don't look even slightly
-                                    believable. If you’re
-                                    going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-                                    embarrassing hidden
-                                    in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat
-                                    predefined chunks
-                                    as necessary, making this the first true generator on the Internet. It uses a
-                                    dictionary of over 200 Latin
-                                    words, combined with a handful of model sentence structures, to generate Lorem Ipsum
-                                    which looks
-                                    reasonable. The generated Lorem Ipsum is therefore always free from repetition,
-                                    injected humour, or
-                                    non-characteristic words etc.</p>
-                                <p className="blog-details__text-2">It is a long established fact that a reader will be
-                                    distracted by the readable content of a page when
-                                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                                    normal distribution
-                                    of letters, as opposed to using 'Content here, content here', making it look like
-                                    readable English. Many
-                                    desktop publishing packages and web page editors now use Lorem Ipsum as their
-                                    default model text,
-                                    and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
-                                    Various versions have
-                                    evolved over the years, sometimes by accident, sometimes on purpose injected humour
-                                    and the like.</p>
-                            </div>
-                            <div className="blog-details__comment-box">
-                                <h3 className="blog-details__comment-title-top">2 Comments</h3>
-                                <div className="blog-details__comment">
-                                    <div className="blog-details__comment-single">
-                                        <div className="blog-details__comment-img">
-                                            <img src="assets/images/blog/comment-1-1.jpg" alt=""/>
-                                        </div>
-                                        <div className="blog-details__single-content">
-                                            <h3 className="blog-details__comment-title">Robert Jonson</h3>
-                                            <p className="blog-details__comment-text">Lorem Ipsum is simply dummy text
-                                                of the printing
-                                                <br/> and typesetting industry.</p>
-                                            <div className="blog-details__comment-btn-box">
-                                                <Link href="#" className="blog-details__comment-btn thm-btn">Reply More</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="blog-details__comment-single">
-                                        <div className="blog-details__comment-img">
-                                            <img src="assets/images/blog/comment-1-2.jpg" alt=""/>
-                                        </div>
-                                        <div className="blog-details__single-content">
-                                            <h3 className="blog-details__comment-title">Robert Jonson</h3>
-                                            <p className="blog-details__comment-text">Lorem Ipsum is simply dummy text
-                                                of the printing
-                                                <br/> and typesetting industry.</p>
-                                            <div className="blog-details__comment-btn-box">
-                                                <Link href="#" className="blog-details__comment-btn thm-btn">Reply More</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+const recentPosts = [
+  { title: "Sourcing Heavy Equipment from Europe: What Buyers Should Know", href: "/blog-details", image: "/assets/images/blog/blog-1-2.jpg" },
+  { title: "Building Reliable Supply Chains Between Europe and South Asia", href: "/blog-details", image: "/assets/images/blog/blog-1-3.jpg" },
+]
+
+export default function BlogDetailsPage() {
+  const { t } = useLanguage()
+  return (
+    <>
+    <PageHeader title={t('page.blogDetails.backToNews')} breadcrumbs={[{ label: t('page.blogDetails.backToNews') }]} />
+      <article className="section-padding bg-surface">
+        <div className="container-renova">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <AnimatedSection animation="fade-left" className="lg:col-span-2">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-accent hover:text-accent-dark font-medium mb-6"
+              >
+                <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+                {t('page.blogDetails.backToNews')}
+              </Link>
+
+              <div className="bg-background rounded-2xl overflow-hidden shadow-md">
+                <img
+                  src="/assets/images/blog/blog-1-1.jpg"
+                  alt="Global metal scrap market trends"
+                  className="w-full h-80 object-cover"
+                />
+                <div className="p-8">
+                  <div className="flex flex-wrap items-center gap-4 text-secondary text-sm mb-4">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" aria-hidden="true" />
+                      <span>15 Oct 2024</span>
                     </div>
-                    <div className="col-xl-4 col-lg-5">
-                        <div className="sidebar">
-                            <div className="sidebar__single sidebar__search">
-                                <form action="#" className="sidebar__search-form">
-                                    <input type="search" placeholder="Search Here"/>
-                                    <button type="submit"><i className="icon-magnifying-glass"></i></button>
-                                </form>
-                            </div>
-                            <div className="sidebar__single sidebar__post">
-                                <h3 className="sidebar__title">Latest Posts</h3>
-                                <ul className="sidebar__post-list list-unstyled">
-                                    <li>
-                                        <div className="sidebar__post-image">
-                                            <img src="assets/images/blog/lp-1-1.jpg" alt=""/>
-                                        </div>
-                                        <div className="sidebar__post-content">
-                                            <h3><Link href="blog-details">Experiences That Connect
-                                                    With People</Link></h3>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="sidebar__post-image">
-                                            <img src="assets/images/blog/lp-1-2.jpg" alt=""/>
-                                        </div>
-                                        <div className="sidebar__post-content">
-                                            <h3><Link href="blog-details">We Build and Active Brands
-                                                    Insight</Link></h3>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="sidebar__post-image">
-                                            <img src="assets/images/blog/lp-1-3.jpg" alt=""/>
-                                        </div>
-                                        <div className="sidebar__post-content">
-                                            <h3><Link href="blog-details">A Deep Understanding Of
-                                                    Our Audience</Link></h3>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="sidebar__single sidebar__category">
-                                <h3 className="sidebar__title">Categories</h3>
-                                <ul className="sidebar__category-list list-unstyled">
-                                    <li><Link href="blog-details">Business<span className="fas fa-angle-right"></span></Link>
-                                    </li>
-                                    <li><Link href="blog-details">Introductions<span
-                                                className="fas fa-angle-right"></span></Link>
-                                    </li>
-                                    <li><Link href="blog-details">One Page Template<span
-                                                className="fas fa-angle-right"></span></Link>
-                                    </li>
-                                    <li><Link href="blog-details">Parallax Effects<span
-                                                className="fas fa-angle-right"></span></Link>
-                                    </li>
-                                    <li><Link href="blog-details">Technologies<span
-                                                className="fas fa-angle-right"></span></Link>
-                                    </li>
-                                    <li><Link href="blog-details">Video Backgrounds<span
-                                                className="fas fa-angle-right"></span></Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="sidebar__single sidebar__tags">
-                                <h3 className="sidebar__title">Tags</h3>
-                                <div className="sidebar__tags-list">
-                                    <Link href="#">Business,</Link>
-                                    <Link href="#">Agency,</Link>
-                                    <Link href="#">Technology,</Link>
-                                    <Link href="#">Parallax,</Link>
-                                    <Link href="#">Innovative,</Link>
-                                    <Link href="#">Professional,</Link>
-                                    <Link href="#">Experience,</Link>
-                                </div>
-                            </div>
-                            <div className="sidebar__single sidebar__comments">
-                                <h3 className="sidebar__title">Comments</h3>
-                                <ul className="sidebar__comments-list list-unstyled">
-                                    <li>
-                                        <div className="icon">
-                                            <span className="fas fa-comment"></span>
-                                        </div>
-                                        <p>A Wordpress Commenter on
-                                            Launch New Mobile App</p>
-                                    </li>
-                                    <li>
-                                        <div className="icon">
-                                            <span className="fas fa-comment"></span>
-                                        </div>
-                                        <p>Robert Jonson on Template: <span>Comments</span></p>
-                                    </li>
-                                    <li>
-                                        <div className="icon">
-                                            <span className="fas fa-comment"></span>
-                                        </div>
-                                        <p>A Wordpress Commenter on
-                                            Launch New Mobile App</p>
-                                    </li>
-                                    <li>
-                                        <div className="icon">
-                                            <span className="fas fa-comment"></span>
-                                        </div>
-                                        <p>Jessica Brown on Template: <span>Comments</span></p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4" aria-hidden="true" />
+                      <span>Renova Trade</span>
                     </div>
+                  </div>
+
+                  <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">
+                    Global Metal Scrap Market Trends for 2024
+                  </h1>
+
+                  <div className="max-w-none text-secondary leading-relaxed space-y-4">
+                    <p>
+                      The global metal scrap market continues to evolve in 2024, shaped by shifting supply chains, energy transition policies, and changing demand patterns across major economies. For buyers and sellers in South Asia, understanding these trends is essential for making informed procurement decisions.
+                    </p>
+                    <p>
+                      Ferrous scrap prices have remained volatile throughout the year, responding to fluctuations in steel production, construction activity, and currency movements. European suppliers have maintained steady flows of HMS and shredded scrap, though tighter environmental regulations have increased processing and documentation requirements.
+                    </p>
+                    <p>
+                      Non-ferrous scrap markets have shown more resilience. Copper and aluminum scrap continue to benefit from electrification trends, while stainless steel and brass scrap remain in steady demand across manufacturing sectors. Buyers who work with verified European suppliers are better positioned to secure consistent quality and competitive pricing.
+                    </p>
+                    <p>
+                      At Renova Trade, we monitor these market dynamics closely to help our customers source the right materials at the right time. Our focus on transparency, supplier verification, and logistics coordination ensures that our partners can navigate market uncertainty with confidence.
+                    </p>
+                  </div>
                 </div>
-            </div>
-        </section>
-        {/*Blog Details End*/}
+              </div>
+            </AnimatedSection>
 
-
-        {/*CTA One Start*/}
-        <section className="cta-one">
-            <div className="cta-one__bg" style={{ backgroundImage: ' url(assets/images/backgrounds/cta-one-bg.jpg)' }} ></div>
-            <div className="container">
-                <div className="row">
-                    <div className="cta-one__inner">
-                        <h3 className="cta-one__title">Let's discuss about how we can help
-                            <br/> make your business better</h3>
-                        <div className="cta-one__btn-box">
-                            <Link href="about" className="cta-one__btn thm-btn">Let's Start</Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {/*CTA One End*/}
-
-            </Layout>
-        </>
-    )
+            <AnimatedSection animation="fade-right" delay={150} className="lg:col-span-1">
+              <aside className="bg-background rounded-2xl p-6 shadow-md">
+                <h3 className="text-lg font-heading font-semibold text-primary mb-4">
+                  {t('page.blogDetails.recentPosts')}
+                </h3>
+                <ul className="space-y-4">
+                  {recentPosts.map((post) => (
+                    <li key={post.title}>
+                      <Link
+                        href={post.href}
+                        className="group flex items-start gap-4"
+                      >
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                        />
+                        <span className="text-sm font-medium text-primary group-hover:text-accent transition-colors line-clamp-2">
+                          {post.title}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            </AnimatedSection>
+          </div>
+        </div>
+      </article>
+      <Cta />
+    </>
+  )
 }

@@ -1,10 +1,11 @@
 import Link from "next/link"
-import Layout from "@/components/layout/Layout"
+import PageHeader from "@/components/shell/PageHeader"
 export default function Home() {
 
     return (
         <>
-        <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Project Details">
+        <>
+        <PageHeader title="Project Details" breadcrumbs={[{ label: "Project Details" }]} />
         {/*Project Details Start*/}
         <section className="project-details">
             <div className="container">
@@ -111,7 +112,7 @@ export default function Home() {
         </section>
         {/*CTA One End*/}
 
-        </Layout>
+        </>
         </>
     )
 }

@@ -1,27 +1,59 @@
 'use client'
+
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import AnimatedSection from "@/components/ui/AnimatedSection"
+import { Ring, Diamond } from "@/components/ui/Decor"
+import { useLanguage } from "@/components/i18n/LanguageProvider"
+
 export default function Cta() {
-    return (
-        <>
-        {/*CTA One Start*/}
-        <section className="cta-one">
-            <div className="cta-one__bg" style={{ backgroundImage: ' url(assets/images/backgrounds/renova_banner_1.jpg)' }} ></div>
-            <div className="container">
-                <div className="row">
-                    <div className="cta-one__inner">
-                        <h3 className="cta-one__title">Ready to source smarter?
-                            <br/> Let's discuss your requirements</h3>
-                        <div className="cta-one__btn-box">
-                            <Link href="contact" className="cta-one__btn thm-btn btn-3d">Request a Quote</Link>
-                            <Link href="/services" className="cta-one__btn thm-btn btn-3d" style={{ marginLeft: '15px' }}>Our Services</Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {/*CTA One End*/}
-        
-            
-        </>
-    )
+  const { t } = useLanguage()
+
+  return (
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url(/assets/images/backgrounds/renova_banner_1.jpg)",
+        }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-primary/85" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" aria-hidden="true" />
+
+      {/* Floating decorative shapes */}
+      <Ring tone="light" className="w-40 h-40 -left-10 top-8" animate="animate-float-slow" />
+      <Ring tone="light" className="w-16 h-16 right-[10%] top-10 border" animate="animate-float" />
+      <Diamond tone="light" className="w-4 h-4 left-[15%] bottom-12" animate="animate-sway" />
+      <Diamond tone="light" className="w-2.5 h-2.5 right-[22%] bottom-16" animate="animate-float" />
+
+      {/* Content */}
+      <div className="relative z-10 container-renova">
+        <AnimatedSection animation="scale-in" className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-6">
+            {t('home.cta.title')}
+          </h2>
+          <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+            {t('home.cta.description')}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/quote"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white rounded-lg font-semibold text-base hover:bg-accent-dark hover:-translate-y-0.5 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent focus-visible:ring-offset-primary w-full sm:w-auto"
+            >
+              {t('home.cta.quote')}
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-base hover:bg-white/10 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white focus-visible:ring-offset-primary w-full sm:w-auto"
+            >
+              {t('home.cta.services')}
+            </Link>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  )
 }

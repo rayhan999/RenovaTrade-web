@@ -4,14 +4,25 @@ import nodemailer from 'nodemailer';
 export async function POST(req) {
   try {
     const body = await req.json();
-  const { username, email, phone, company, subject, query } = body;
+    const { username = '', email = '', phone = '', company = '', subject = '', query = '' } = body || {};
 
-    // Read SMTP credentials from environment variables
-    const SMTP_HOST = process.env.ZOHO_SMTP_HOST || 'smtp.zoho.com';
-    const SMTP_PORT = process.env.ZOHO_SMTP_PORT ? Number(process.env.ZOHO_SMTP_PORT) : 465;
-    const SMTP_SECURE = process.env.ZOHO_SMTP_SECURE ? process.env.ZOHO_SMTP_SECURE === 'true' : true;
-    const SMTP_USER = process.env.ZOHO_SMTP_USER;
-    const SMTP_PASS = process.env.ZOHO_SMTP_PASS;
+    // Basic validation — both the contact form and the multi-step quote form
+    // always send these three fields.
+    if (!username.trim() || !email.trim() || !query.trim()) {
+      return new Response(JSON.stringify({ error: 'Name, email, and message are required.' }), { status: 400 });
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return new Response(JSON.stringify({ error: 'Please provide a valid email address.' }), { status: 400 });
+    }
+
+    // Read SMTP credentials from environment variables.
+    // .trim() guards against stray whitespace in .env values, which causes
+    // silent SMTP auth failures.
+    const SMTP_HOST = (process.env.ZOHO_SMTP_HOST || 'smtp.zoho.com').trim();
+    const SMTP_PORT = process.env.ZOHO_SMTP_PORT ? Number(String(process.env.ZOHO_SMTP_PORT).trim()) : 465;
+    const SMTP_SECURE = process.env.ZOHO_SMTP_SECURE ? String(process.env.ZOHO_SMTP_SECURE).trim() === 'true' : true;
+    const SMTP_USER = process.env.ZOHO_SMTP_USER?.trim();
+    const SMTP_PASS = process.env.ZOHO_SMTP_PASS?.trim();
 
     if (!SMTP_USER || !SMTP_PASS) {
       return new Response(JSON.stringify({ error: 'SMTP credentials not configured' }), { status: 500 });
@@ -45,7 +56,9 @@ export async function POST(req) {
 
     const info = await transporter.sendMail(mailOptions);
 
-    return new Response(JSON.stringify({ ok: true, info }), { status: 200 });
+    // Return only the messageId — the full nodemailer info object leaks
+    // server/transport details to the client.
+    return new Response(JSON.stringify({ ok: true, messageId: info.messageId }), { status: 200 });
   } catch (err) {
     console.error('Error sending contact email', err);
     return new Response(JSON.stringify({ error: err.message || 'Unknown error' }), { status: 500 });

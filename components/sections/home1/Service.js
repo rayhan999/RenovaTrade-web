@@ -1,89 +1,106 @@
 'use client'
-import Link from "next/link"
-export default function Service() {
-    const services = [
-        {
-            title: "Metal Scrap Trading",
-            text: "Ferrous and non-ferrous scrap including HMS, shredded scrap, copper, aluminum, stainless steel, and brass.",
-            image: "assets/images/services/service_1.jpeg",
-            icon: "icon-coding",
-            link: "/services/metal-scrap-trading"
-        },
-        {
-            title: "Heavy Equipment & Industrial Machinery",
-            text: "Equipment for ports, logistics, construction, infrastructure, manufacturing, recycling, and industrial operations.",
-            image: "assets/images/services/service_2.jpg",
-            icon: "icon-curve",
-            link: "/services/heavy-equipment"
-        },
-        {
-            title: "International Product Sourcing",
-            text: "We help you find the right European supplier for your required product, from requirement review to delivery support.",
-            image: "assets/images/services/service_3.jpg",
-            icon: "icon-creative",
-            link: "/services/international-sourcing"
-        },
-        {
-            title: "Procurement & Supply Chain Support",
-            text: "End-to-end procurement support including supplier coordination, negotiation, and supply chain management.",
-            image: "assets/images/services/services-1-1.jpg",
-            icon: "icon-productivity",
-            link: "/services/heavy-equipment"
-        },
-        {
-            title: "Export Coordination",
-            text: "Complete export documentation, logistics coordination, and delivery support for international shipments.",
-            image: "assets/images/services/services-1-2.jpg",
-            icon: "icon-bullhorn",
-            link: "/services/international-sourcing"
-        },
-        {
-            title: "Trade Consultancy",
-            text: "Expert guidance on international trade, supplier selection, commercial terms, and market entry.",
-            image: "assets/images/services/services-1-3.jpg",
-            icon: "icon-like",
-            link: "/services/international-sourcing"
-        }
-    ]
 
-    return (
-        <>
-        {/*Services One Start*/}
-        <section className="services-one">
-            <div className="container">
-                <div className="section-title text-center">
-                    <div className="section-title__tagline-box">
-                        <div className="section-title__tagline-shape">
-                            <img src="assets/images/shapes/section-title-tagline-shape_new.png" alt=""/>
-                        </div>
-                        <span className="section-title__tagline">What We Offer</span>
+import Link from "next/link"
+import { ArrowRight, Recycle, Truck, Globe } from "lucide-react"
+import SectionTitle from "@/components/ui/SectionTitle"
+import AnimatedSection from "@/components/ui/AnimatedSection"
+import TiltCard from "@/components/ui/TiltCard"
+import { Blob, Ring, Diamond } from "@/components/ui/Decor"
+import { useLanguage } from "@/components/i18n/LanguageProvider"
+
+export default function Service() {
+  const { t } = useLanguage()
+  const services = [
+    {
+      title: t('services.metalScrap.title'),
+      text: t('services.metalScrap.text'),
+      image: "/assets/images/services/service_1.jpeg",
+      link: "/services/metal-scrap-trading",
+      icon: Recycle,
+      highlights: [t('services.metalScrap.highlight1'), t('services.metalScrap.highlight2'), t('services.metalScrap.highlight3'), t('services.metalScrap.highlight4')],
+    },
+    {
+      title: t('services.heavyEquipment.title'),
+      text: t('services.heavyEquipment.text'),
+      image: "/assets/images/services/service_2.jpg",
+      link: "/services/heavy-equipment",
+      icon: Truck,
+      highlights: [t('services.heavyEquipment.highlight1'), t('services.heavyEquipment.highlight2'), t('services.heavyEquipment.highlight3'), t('services.heavyEquipment.highlight4')],
+    },
+    {
+      title: t('services.sourcing.title'),
+      text: t('services.sourcing.text'),
+      image: "/assets/images/services/service_3.jpg",
+      link: "/services/international-sourcing",
+      icon: Globe,
+      highlights: [t('services.sourcing.highlight1'), t('services.sourcing.highlight2'), t('services.sourcing.highlight3'), t('services.sourcing.highlight4')],
+    },
+  ]
+  return (
+    <section className="section-padding bg-surface relative overflow-hidden">
+      {/* Ambient decorative shapes */}
+      <Blob color="steel" className="w-[28rem] h-[28rem] -top-32 -left-32" animate="animate-sway" />
+      <Ring className="w-32 h-32 -right-10 top-24" animate="animate-float-slow" />
+      <Diamond className="w-3.5 h-3.5 left-[10%] bottom-[15%]" animate="animate-float" />
+
+      <div className="relative container-renova">
+        <AnimatedSection animation="fade-up">
+          <SectionTitle
+            tagline={t('home.service.tagline')}
+            title={t('home.service.title')}
+            description={t('home.service.description')}
+          />
+        </AnimatedSection>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <AnimatedSection key={service.title} animation="fade-up" delay={index * 100}>
+              <TiltCard className="h-full">
+                <Link
+                  href={service.link}
+                  aria-label={`Learn more about ${service.title}`}
+                  className="group flex flex-col bg-background rounded-2xl overflow-visible shadow-md hover:shadow-depth-lg transition-shadow duration-300 h-full"
+                >
+                  <div className="relative h-48">
+                    <div className="absolute inset-0 overflow-hidden rounded-t-2xl">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                    <h2 className="section-title__title">Core Services</h2>
-                </div>
-                <div className="row justify-center" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'stretch', justifyContent:'center' }}>
-                    {services.map((service, index) => (
-                        <div key={index} className="col-xl-4 col-lg-6 col-md-6 wow fadeInLeft" data-wow-delay={`${100 + (index * 100)}ms`} style={{ display: 'flex' }}>
-                            <div className="services-one__single" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-                                <div className="services-one__img-box">
-                                    <div className="services-one__img">
-                                        <img src={service.image} alt={service.title}/>
-                                    </div>
-                                </div>
-                                <div className="services-one__content-wrap" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-                                    <div className="services-one__icon">
-                                        <span className={service.icon}></span>
-                                    </div>                                        <div className="services-one__content" style={{ flex: 1 }}>
-                                            <h3 className="services-one__title"><Link href={service.link}>{service.title}</Link></h3>
-                                            <p className="services-one__text">{service.text}</p>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-        {/*Services One End*/}
-        </>
-    )
+                    {/* Floating icon chip — centered on the image/text boundary */}
+                    <div className="absolute left-6 bottom-0 translate-y-1/2 w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center shadow-accent-glow transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 z-10">
+                      <service.icon className="w-6 h-6" aria-hidden="true" />
+                    </div>
+                  </div>
+                  <div className="p-6 pt-10 flex flex-col flex-1">
+                    <h3 className="text-xl font-heading font-semibold text-primary mb-3 group-hover:text-accent transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-secondary text-sm leading-relaxed mb-4">
+                      {service.text}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {service.highlights.map((tag) => (
+                        <span key={tag} className="text-xs font-medium text-secondary bg-muted rounded-full px-2.5 py-1">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="mt-auto inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">
+                      {t('home.service.learnMore')}
+                      <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    </span>
+                  </div>
+                </Link>
+              </TiltCard>
+            </AnimatedSection>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
