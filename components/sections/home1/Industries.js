@@ -34,8 +34,8 @@ export default function Industries() {
   return (
     <section className="section-padding bg-background relative overflow-hidden" aria-labelledby="industries-heading">
       {/* Ambient decorative shapes */}
-      <Blob color="eco" className="w-96 h-96 -bottom-32 -right-24" animate="animate-sway" />
-      <Ring className="w-24 h-24 left-[6%] top-16" animate="animate-float" />
+      <Blob color="eco" className="w-96 h-96 -bottom-32 -right-24 hidden md:block" animate="animate-sway" parallax={-0.08} />
+      <Ring className="w-24 h-24 left-[6%] top-16 hidden md:block" animate="animate-float" parallax={0.1} />
 
       <div className="relative container-renova">
         <AnimatedSection animation="fade-up">
@@ -43,6 +43,7 @@ export default function Industries() {
             tagline={t('home.industries.tagline')}
             title={t('home.industries.title')}
             description={t('home.industries.description')}
+            accent
           />
         </AnimatedSection>
 

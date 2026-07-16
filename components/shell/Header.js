@@ -235,92 +235,93 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
+    </header>
+
+    {/* Mobile menu — rendered outside header to escape header's stacking context */}
+    <div
+      id="mobile-menu"
+      className={`fixed inset-0 z-[100] transition-opacity duration-300 ${
+        isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+      }`}
+      aria-hidden={!isMobileMenuOpen}
+    >
       <div
-        id="mobile-menu"
-        className={`fixed inset-0 z-[100] transition-opacity duration-300 ${
-          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onClick={() => setIsMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+      <div
+        ref={mobileMenuRef}
+        className={`absolute top-0 right-0 h-full w-full max-w-sm bg-primary text-white shadow-2xl transform transition-transform duration-300 ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        aria-hidden={!isMobileMenuOpen}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
       >
-        <div
-          className="absolute inset-0 bg-black/50"
-          onClick={() => setIsMobileMenuOpen(false)}
-          aria-hidden="true"
-        />
-        <div
-          ref={mobileMenuRef}
-          className={`absolute top-0 right-0 h-full w-full max-w-sm bg-primary text-white shadow-xl transform transition-transform duration-300 ${
-            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile navigation"
-        >
-          <div className="flex items-center justify-between p-5 border-b border-white/10">
-            <span className="text-lg font-semibold">Menu</span>
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2 text-white hover:text-accent-light transition-colors"
-              aria-label="Close mobile menu"
-            >
-              <X className="w-6 h-6" aria-hidden="true" />
-            </button>
-          </div>
-          <nav className="p-5 overflow-y-auto" aria-label="Mobile menu">
-            <ul className="space-y-1">
-              {navLinks.map((link) => (
-                <li key={link.key}>
-                  {link.children ? (
-                    <MobileDropdown link={link} onClose={() => setIsMobileMenuOpen(false)} />
-                  ) : (
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block py-3 px-3 rounded-lg font-medium transition-colors ${
-                        isActive(link.href)
-                          ? "bg-accent text-white"
-                          : "text-white/90 hover:bg-white/10"
-                      }`}
-                    >
-                      {t(link.key)}
-                    </Link>
-                  )}
-                </li>
-              ))}
-              <li>
-                <Link
-                  href="/quote"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-3 px-3 mt-4 text-center bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors"
-                >
-                  {t('nav.requestQuote')}
-                </Link>
+        <div className="flex items-center justify-between p-5 border-b border-white/10">
+          <span className="text-lg font-semibold">Menu</span>
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="p-2 text-white hover:text-accent-light transition-colors"
+            aria-label="Close mobile menu"
+          >
+            <X className="w-6 h-6" aria-hidden="true" />
+          </button>
+        </div>
+        <nav className="p-5 overflow-y-auto" aria-label="Mobile menu">
+          <ul className="space-y-1">
+            {navLinks.map((link) => (
+              <li key={link.key}>
+                {link.children ? (
+                  <MobileDropdown link={link} onClose={() => setIsMobileMenuOpen(false)} />
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block py-3 px-3 rounded-lg font-medium transition-colors ${
+                      isActive(link.href)
+                        ? "bg-accent text-white"
+                        : "text-white/90 hover:bg-white/10"
+                    }`}
+                  >
+                    {t(link.key)}
+                  </Link>
+                )}
               </li>
-              <li className="pt-4 flex justify-center">
-                <LanguageToggle dark />
-              </li>
-            </ul>
-          </nav>
-          <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-white/10 bg-primary">
-            <div className="space-y-3 text-sm text-white/80">
-              <a href="mailto:info@renovatrade.fi" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Mail className="w-4 h-4" aria-hidden="true" />
-                info@renovatrade.fi
-              </a>
-              <a href="tel:+358413171469" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone className="w-4 h-4" aria-hidden="true" />
-                +358-413171469
-              </a>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" aria-hidden="true" />
-                Keskussairaalantie 2 Jyväskylä
-              </div>
+            ))}
+            <li>
+              <Link
+                href="/quote"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-3 px-3 mt-4 text-center bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors"
+              >
+                {t('nav.requestQuote')}
+              </Link>
+            </li>
+            <li className="pt-4 flex justify-center">
+              <LanguageToggle dark />
+            </li>
+          </ul>
+        </nav>
+        <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-white/10 bg-primary">
+          <div className="space-y-3 text-sm text-white/80">
+            <a href="mailto:info@renovatrade.fi" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Mail className="w-4 h-4" aria-hidden="true" />
+              info@renovatrade.fi
+            </a>
+            <a href="tel:+358413171469" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              +358-413171469
+            </a>
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4" aria-hidden="true" />
+              Keskussairaalantie 2 Jyväskylä
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </div>
     <div aria-hidden="true" style={{ height: spacerHeight }} />
     </>
   )

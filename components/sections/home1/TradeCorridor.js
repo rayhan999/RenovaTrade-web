@@ -116,8 +116,8 @@ export default function TradeCorridor() {
         </AnimatedSection>
 
         <AnimatedSection animation="scale-in" delay={150}>
-          <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-2 md:p-6 shadow-depth-lg">
-            <div className="relative" style={{ aspectRatio: MAP_WIDTH / MAP_HEIGHT }}>
+          <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-2 md:p-6 shadow-depth-lg overflow-visible">
+            <div className="relative aspect-[3/1] md:aspect-[2/1]">
               {/*
                 Pass the SAME projection function used for the HTML label
                 overlays and route paths, so map, markers, routes, and
@@ -132,8 +132,8 @@ export default function TradeCorridor() {
               >
                 <defs>
                   <linearGradient id="corridor-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#38BDF8" />
-                    <stop offset="100%" stopColor="#34D399" />
+                    <stop offset="0%" stopColor="#489FC7" />
+                    <stop offset="100%" stopColor="#70BC91" />
                   </linearGradient>
                 </defs>
 
@@ -169,7 +169,7 @@ export default function TradeCorridor() {
                 {/* Moving cargo dots */}
                 {!reducedMotion &&
                   routePaths.map((route, i) => (
-                    <circle key={`dot-${i}`} r="2" fill="#34D399">
+                    <circle key={`dot-${i}`} r="2" fill="#70BC91">
                       <animateMotion
                         dur={`${7 + i * 2}s`}
                         repeatCount="indefinite"
@@ -184,13 +184,13 @@ export default function TradeCorridor() {
                     <g>
                       <circle
                         r={hub.side === "origin" ? 3 : 3.5}
-                        fill={hub.side === "origin" ? "#38BDF8" : "#34D399"}
+                        fill={hub.side === "origin" ? "#489FC7" : "#70BC91"}
                         opacity="0.25"
                         className={reducedMotion ? "" : "animate-pulse-soft"}
                       />
                       <circle
                         r="1.75"
-                        fill={hub.side === "origin" ? "#38BDF8" : "#34D399"}
+                        fill={hub.side === "origin" ? "#489FC7" : "#70BC91"}
                       />
                     </g>
                   </Marker>
@@ -203,7 +203,7 @@ export default function TradeCorridor() {
                 return (
                   <div
                     key={label.name}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 text-[10px] md:text-xs font-semibold tracking-[0.15em] text-white/50 uppercase pointer-events-none"
+                    className="absolute -translate-x-1/2 -translate-y-1/2 text-[10px] md:text-xs font-semibold tracking-[0.15em] text-white/50 uppercase pointer-events-none hidden md:block"
                     style={{ left: `${pos.left}%`, top: `${pos.top}%` }}
                   >
                     {label.name}
@@ -239,7 +239,7 @@ export default function TradeCorridor() {
                     <div className="text-xs md:text-sm font-semibold text-white/90 whitespace-nowrap">
                       {hub.name}
                     </div>
-                    <div className="text-[10px] md:text-xs text-white/60 whitespace-nowrap">
+                    <div className="text-[10px] md:text-xs text-white/60 whitespace-nowrap hidden md:block">
                       {hub.detail}
                     </div>
                   </div>

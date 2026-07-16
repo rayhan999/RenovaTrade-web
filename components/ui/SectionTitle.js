@@ -1,4 +1,4 @@
-export default function SectionTitle({ tagline, title, description, align = "center", dark = false, className = "" }) {
+export default function SectionTitle({ tagline, title, description, align = "center", dark = false, accent = false, className = "" }) {
   const alignClass = align === "left" ? "text-left" : align === "right" ? "text-right" : "text-center"
   const descAlignClass = align === "left" ? "mx-0" : align === "right" ? "ml-auto mr-0" : "mx-auto"
   
@@ -26,6 +26,13 @@ export default function SectionTitle({ tagline, title, description, align = "cen
         }`}>
           {title}
         </h2>
+      )}
+      {accent && (
+        <span className="mt-4 inline-flex items-center justify-center" aria-hidden="true">
+          <span className={`w-2 h-2 rotate-45 ${dark ? "bg-accent-light" : "bg-accent"}`} />
+          <span className={`w-16 h-px mx-2 ${dark ? "bg-white/30" : "bg-accent/30"}`} />
+          <span className={`w-1.5 h-1.5 rotate-45 ${dark ? "bg-white/50" : "bg-accent/50"}`} />
+        </span>
       )}
       {description && (
         <p className={`mt-4 max-w-2xl text-base md:text-lg ${

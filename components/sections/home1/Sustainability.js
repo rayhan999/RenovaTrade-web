@@ -5,6 +5,7 @@ import Link from "next/link"
 import AnimatedSection from "@/components/ui/AnimatedSection"
 import CountUp from "@/components/ui/CountUp"
 import SampleTag from "@/components/ui/SampleTag"
+import { Ring, Diamond, DotGrid } from "@/components/ui/Decor"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
 
 export default function Sustainability() {
@@ -16,7 +17,11 @@ export default function Sustainability() {
   ]
   return (
     <section className="section-padding bg-surface relative overflow-hidden" aria-labelledby="sustainability-heading">
-      <div className="container-renova">
+      <Ring className="w-32 h-32 -right-10 top-20 hidden md:block" animate="animate-float-slow" parallax={0.1} />
+      <Diamond className="w-3 h-3 left-[6%] top-[18%] hidden md:block" animate="animate-bob-y" parallax={0.06} />
+      <DotGrid className="w-40 h-40 right-[8%] bottom-[12%] opacity-30 hidden md:block" parallax={-0.04} />
+
+      <div className="relative container-renova">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <AnimatedSection animation="fade-left">
@@ -59,7 +64,7 @@ export default function Sustainability() {
                 <div
                   className="absolute inset-0 opacity-[0.07]"
                   style={{
-                    backgroundImage: "radial-gradient(circle, #34D399 1px, transparent 1px)",
+                    backgroundImage: "radial-gradient(circle, #70BC91 1px, transparent 1px)",
                     backgroundSize: "24px 24px",
                   }}
                   aria-hidden="true"

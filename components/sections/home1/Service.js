@@ -39,9 +39,9 @@ export default function Service() {
   return (
     <section className="section-padding bg-surface relative overflow-hidden">
       {/* Ambient decorative shapes */}
-      <Blob color="steel" className="w-[28rem] h-[28rem] -top-32 -left-32" animate="animate-sway" />
-      <Ring className="w-32 h-32 -right-10 top-24" animate="animate-float-slow" />
-      <Diamond className="w-3.5 h-3.5 left-[10%] bottom-[15%]" animate="animate-float" />
+      <Blob color="steel" className="w-[28rem] h-[28rem] -top-32 -left-32" animate="animate-sway" parallax={-0.1} />
+      <Ring className="w-32 h-32 -right-10 top-24 hidden md:block" animate="animate-float-slow" parallax={0.12} />
+      <Diamond className="w-3.5 h-3.5 left-[10%] bottom-[15%] hidden md:block" animate="animate-float" parallax={0.08} />
 
       <div className="relative container-renova">
         <AnimatedSection animation="fade-up">
@@ -49,6 +49,7 @@ export default function Service() {
             tagline={t('home.service.tagline')}
             title={t('home.service.title')}
             description={t('home.service.description')}
+            accent
           />
         </AnimatedSection>
 

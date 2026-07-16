@@ -3,6 +3,7 @@
 import SectionTitle from "@/components/ui/SectionTitle"
 import AnimatedSection from "@/components/ui/AnimatedSection"
 import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder"
+import { ShapeField, Ring } from "@/components/ui/Decor"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
 
 const shots = [
@@ -18,13 +19,17 @@ export default function OperationsGallery() {
   const { t } = useLanguage()
 
   return (
-    <section className="section-padding bg-background" aria-labelledby="operations-heading">
-      <div className="container-renova">
+    <section className="section-padding bg-background relative overflow-hidden" aria-labelledby="operations-heading">
+      <ShapeField variant="light" density="minimal" />
+      <Ring className="w-28 h-28 -left-8 bottom-20 hidden md:block" animate="animate-float" parallax={0.08} />
+
+      <div className="relative container-renova">
         <AnimatedSection animation="fade-up">
           <SectionTitle
             tagline={t('home.gallery.tagline')}
             title={t('home.gallery.title')}
             description={t('home.gallery.description')}
+            accent
           />
         </AnimatedSection>
 

@@ -42,8 +42,8 @@ export default function Banner() {
       >
         <defs>
           <linearGradient id="route-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#34D399" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#489FC7" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#70BC91" stopOpacity="0.9" />
           </linearGradient>
         </defs>
         {/* Europe (left) → South Asia (right) arcs */}
@@ -51,12 +51,12 @@ export default function Banner() {
         <path d="M 240 320 Q 720 120 1200 420" fill="none" stroke="url(#route-grad)" strokeWidth="1" strokeDasharray="4 12" className={reducedMotion ? "" : "animate-dash-flow"} style={{ animationDuration: "5s" }} />
         <path d="M 140 440 Q 700 260 1240 520" fill="none" stroke="url(#route-grad)" strokeWidth="1" strokeDasharray="3 14" className={reducedMotion ? "" : "animate-dash-flow"} style={{ animationDuration: "7s" }} />
         {/* Origin / destination nodes */}
-        <circle cx="180" cy="210" r="5" fill="#38BDF8" className={reducedMotion ? "" : "animate-pulse-soft"} />
-        <circle cx="240" cy="320" r="4" fill="#38BDF8" className={reducedMotion ? "" : "animate-pulse-soft"} style={{ animationDelay: "0.8s" }} />
-        <circle cx="140" cy="440" r="4" fill="#38BDF8" className={reducedMotion ? "" : "animate-pulse-soft"} style={{ animationDelay: "1.4s" }} />
-        <circle cx="1260" cy="330" r="6" fill="#34D399" className={reducedMotion ? "" : "animate-pulse-soft"} style={{ animationDelay: "0.4s" }} />
-        <circle cx="1200" cy="420" r="4" fill="#34D399" className={reducedMotion ? "" : "animate-pulse-soft"} style={{ animationDelay: "1.1s" }} />
-        <circle cx="1240" cy="520" r="4" fill="#34D399" className={reducedMotion ? "" : "animate-pulse-soft"} style={{ animationDelay: "1.8s" }} />
+        <circle cx="180" cy="210" r="5" fill="#489FC7" className={reducedMotion ? "" : "animate-pulse-soft"} />
+        <circle cx="240" cy="320" r="4" fill="#489FC7" className={reducedMotion ? "" : "animate-pulse-soft"} style={{ animationDelay: "0.8s" }} />
+        <circle cx="140" cy="440" r="4" fill="#489FC7" className={reducedMotion ? "" : "animate-pulse-soft"} style={{ animationDelay: "1.4s" }} />
+        <circle cx="1260" cy="330" r="6" fill="#70BC91" className={reducedMotion ? "" : "animate-pulse-soft"} style={{ animationDelay: "0.4s" }} />
+        <circle cx="1200" cy="420" r="4" fill="#70BC91" className={reducedMotion ? "" : "animate-pulse-soft"} style={{ animationDelay: "1.1s" }} />
+        <circle cx="1240" cy="520" r="4" fill="#70BC91" className={reducedMotion ? "" : "animate-pulse-soft"} style={{ animationDelay: "1.8s" }} />
       </svg>
 
       {/* Content */}

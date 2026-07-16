@@ -7,25 +7,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // ── Nordic Navy & Azure ─────────────────────────────────────────
-        // Derived from the Renova Trade logo (deep navy + bright azure)
-        // with a teal-green sustainability accent. See design-system.md §1.
+        // ── Logo-exact palette ──────────────────────────────────────────
+        // Taken directly from the Renova Trade logo swatches:
+        //   Navy #0A2354 (wordmark) · Blue #213D6E (mid-tone)
+        //   Cyan #489FC7 (swirl left) · Green #70BC91 (swirl right)
         primary: {
-          DEFAULT: '#002050', // logo navy — headers, dark sections, body headings
-          dark: '#001233',    // near-black navy — footer depth, hero overlays
-          light: '#0A3A78',   // lifted navy — gradients, dark-surface cards
+          DEFAULT: '#0A2354', // logo navy — headers, footer, dark sections
+          dark: '#06152F',    // deepened logo navy — hero overlays, depth
+          light: '#213D6E',   // logo mid-blue — gradients, dark-surface cards
         },
         secondary: '#33415C', // blue-graphite — body/secondary text (10.2:1 on white)
         accent: {
-          DEFAULT: '#0369A1', // azure — CTAs, links, highlights (5.9:1 with white text)
-          light: '#38BDF8',   // sky azure — icons/accents on dark surfaces
+          DEFAULT: '#0369A1', // deepened logo cyan — CTAs/links (5.9:1 w/ white text; #489FC7 itself fails contrast on white)
+          light: '#489FC7',   // logo cyan — icons/accents on dark surfaces (5.1:1 on navy)
           dark: '#075985',    // pressed/hover state
         },
         steel: {
-          DEFAULT: '#38BDF8', // cool accent for icons on dark (matches accent.light)
+          DEFAULT: '#489FC7', // logo cyan — cool accent for icons on dark
           dark: '#0369A1',
         },
-        eco: '#34D399',       // teal-green — sustainability accents on dark surfaces
+        eco: '#70BC91',       // logo green — sustainability accents (6.7:1 on navy)
         surface: '#FFFFFF',
         background: '#F8FAFC',
         muted: '#E8EEF5',
@@ -37,13 +38,13 @@ module.exports = {
         body: ['var(--font-inter)', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        sm: '0 1px 2px rgba(0,18,51,0.05)',
-        md: '0 4px 6px rgba(0,18,51,0.08)',
-        lg: '0 10px 15px rgba(0,18,51,0.08)',
-        xl: '0 20px 25px rgba(0,18,51,0.12)',
+        sm: '0 1px 2px rgba(6,21,47,0.05)',
+        md: '0 4px 6px rgba(6,21,47,0.08)',
+        lg: '0 10px 15px rgba(6,21,47,0.08)',
+        xl: '0 20px 25px rgba(6,21,47,0.12)',
         // layered "engineered metal" elevation per design-system.md §12
-        depth: '0 1px 1px rgba(0,18,51,0.03), 0 2px 2px rgba(0,18,51,0.03), 0 4px 4px rgba(0,18,51,0.03), 0 8px 8px rgba(0,18,51,0.03), 0 16px 16px rgba(0,18,51,0.03)',
-        'depth-lg': '0 2px 2px rgba(0,18,51,0.04), 0 4px 4px rgba(0,18,51,0.04), 0 8px 8px rgba(0,18,51,0.04), 0 16px 16px rgba(0,18,51,0.04), 0 32px 32px rgba(0,18,51,0.04)',
+        depth: '0 1px 1px rgba(6,21,47,0.03), 0 2px 2px rgba(6,21,47,0.03), 0 4px 4px rgba(6,21,47,0.03), 0 8px 8px rgba(6,21,47,0.03), 0 16px 16px rgba(6,21,47,0.03)',
+        'depth-lg': '0 2px 2px rgba(6,21,47,0.04), 0 4px 4px rgba(6,21,47,0.04), 0 8px 8px rgba(6,21,47,0.04), 0 16px 16px rgba(6,21,47,0.04), 0 32px 32px rgba(6,21,47,0.04)',
         'accent-glow': '0 8px 24px rgba(3,105,161,0.35)',
       },
       spacing: {
@@ -66,8 +67,12 @@ module.exports = {
         // Ambient decorative motion (shapes/blobs) — slow & subtle
         'float': 'float 7s ease-in-out infinite',
         'float-slow': 'float 12s ease-in-out infinite',
+        'float-x': 'float-x 6s ease-in-out infinite',
+        'float-y': 'float-y 5s ease-in-out infinite',
         'spin-slow': 'spin-slow 40s linear infinite',
         'sway': 'sway 9s ease-in-out infinite',
+        'bob-x': 'bob-x 5s ease-in-out infinite',
+        'bob-y': 'bob-y 4s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -81,6 +86,22 @@ module.exports = {
           '0%, 100%': { transform: 'translateX(0) translateY(0)' },
           '33%': { transform: 'translateX(12px) translateY(-8px)' },
           '66%': { transform: 'translateX(-8px) translateY(6px)' },
+        },
+        'float-x': {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(18px)' },
+        },
+        'float-y': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-18px)' },
+        },
+        'bob-x': {
+          '0%, 100%': { transform: 'translateX(-12px)' },
+          '50%': { transform: 'translateX(12px)' },
+        },
+        'bob-y': {
+          '0%, 100%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(10px)' },
         },
         marquee: {
           '0%': { transform: 'translateX(0)' },

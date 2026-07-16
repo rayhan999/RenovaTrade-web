@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Send, Phone, Mail, MapPin, FileText, ArrowRight } from "lucide-react"
 import SectionTitle from "@/components/ui/SectionTitle"
 import AnimatedSection from "@/components/ui/AnimatedSection"
+import { ShapeField, Ring, Diamond } from "@/components/ui/Decor"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
 
 export default function Contact() {
@@ -48,6 +49,10 @@ export default function Contact() {
 
   return (
     <section className="section-padding bg-primary relative overflow-hidden">
+      <ShapeField variant="dark" density="minimal" />
+      <Ring tone="light" className="w-32 h-32 -right-10 top-24 hidden md:block" animate="animate-float-slow" parallax={0.1} />
+      <Diamond tone="light" className="w-3 h-3 left-[8%] bottom-16 hidden md:block" animate="animate-bob-y" parallax={0.06} />
+
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -67,6 +72,7 @@ export default function Contact() {
               tagline={t('contact.tagline')}
               title={t('contact.title')}
               align="left"
+              accent
               className="mb-8"
             />
             <form onSubmit={handleSubmit} className="space-y-5">

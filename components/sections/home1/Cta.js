@@ -23,10 +23,10 @@ export default function Cta() {
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" aria-hidden="true" />
 
       {/* Floating decorative shapes */}
-      <Ring tone="light" className="w-40 h-40 -left-10 top-8" animate="animate-float-slow" />
-      <Ring tone="light" className="w-16 h-16 right-[10%] top-10 border" animate="animate-float" />
-      <Diamond tone="light" className="w-4 h-4 left-[15%] bottom-12" animate="animate-sway" />
-      <Diamond tone="light" className="w-2.5 h-2.5 right-[22%] bottom-16" animate="animate-float" />
+      <Ring tone="light" className="w-40 h-40 -left-10 top-8 hidden md:block" animate="animate-float-slow" parallax={-0.08} />
+      <Ring tone="light" className="w-16 h-16 right-[10%] top-10 border hidden md:block" animate="animate-float" parallax={0.1} />
+      <Diamond tone="light" className="w-4 h-4 left-[15%] bottom-12 hidden md:block" animate="animate-sway" parallax={0.06} />
+      <Diamond tone="light" className="w-2.5 h-2.5 right-[22%] bottom-16 hidden md:block" animate="animate-float" parallax={0.12} />
 
       {/* Content */}
       <div className="relative z-10 container-renova">

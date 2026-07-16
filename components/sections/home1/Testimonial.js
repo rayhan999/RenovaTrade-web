@@ -6,6 +6,7 @@ import { Quote } from "lucide-react"
 import SectionTitle from "@/components/ui/SectionTitle"
 import AnimatedSection from "@/components/ui/AnimatedSection"
 import SampleTag from "@/components/ui/SampleTag"
+import { ShapeField, Ring, Diamond } from "@/components/ui/Decor"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
 
 const testimonials = [
@@ -32,13 +33,18 @@ const testimonials = [
 export default function Testimonial() {
   const { t } = useLanguage()
   return (
-    <section className="section-padding bg-surface">
-      <div className="container-renova">
+    <section className="section-padding bg-surface relative overflow-hidden">
+      <ShapeField variant="light" density="minimal" />
+      <Ring className="w-24 h-24 right-[8%] top-16 hidden md:block" animate="animate-float" parallax={0.1} />
+      <Diamond className="w-3 h-3 left-[8%] bottom-24 hidden md:block" animate="animate-bob-y" parallax={0.06} />
+
+      <div className="relative container-renova">
         <AnimatedSection animation="fade-up">
           <SectionTitle
             tagline={t('home.testimonial.tagline')}
             title={t('home.testimonial.title')}
             description={t('home.testimonial.description')}
+            accent
           />
         </AnimatedSection>
 

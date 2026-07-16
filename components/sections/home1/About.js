@@ -21,8 +21,8 @@ export default function About() {
           {/* Image side */}
           <AnimatedSection animation="fade-left" className="relative">
             {/* Decorative frame shapes behind the photo */}
-            <DotGrid className="w-40 h-40 -top-6 -left-6 hidden md:block" aria-hidden="true" />
-            <Ring className="w-28 h-28 -bottom-8 -right-8 hidden md:block" animate="animate-float-slow" />
+            <DotGrid className="w-40 h-40 -top-6 -left-6 hidden md:block" aria-hidden="true" parallax={-0.04} />
+            <Ring className="w-28 h-28 -bottom-8 -right-8 hidden md:block" animate="animate-float-slow" parallax={0.08} />
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="/assets/images/resources/about_us.jpg"
@@ -40,6 +40,7 @@ export default function About() {
               title={t('home.about.title')}
               description={t('home.about.description')}
               align="left"
+              accent
               className="mb-8"
             />
             <p className="text-secondary leading-relaxed mb-6">

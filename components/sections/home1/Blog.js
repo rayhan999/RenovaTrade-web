@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Calendar, ArrowRight } from "lucide-react"
 import SectionTitle from "@/components/ui/SectionTitle"
 import AnimatedSection from "@/components/ui/AnimatedSection"
+import { ShapeField, Blob, Diamond } from "@/components/ui/Decor"
 import { posts as allPosts } from "@/lib/posts"
 
 // Latest three from the shared insights hub data (placeholder-marked there).
@@ -9,13 +10,18 @@ const posts = allPosts.slice(0, 3)
 
 export default function Blog() {
   return (
-    <section className="section-padding bg-background">
-      <div className="container-renova">
+    <section className="section-padding bg-background relative overflow-hidden">
+      <ShapeField variant="light" density="minimal" />
+      <Blob color="steel" className="w-56 h-56 -bottom-20 -right-20 opacity-40 hidden md:block" animate="animate-sway" parallax={-0.08} />
+      <Diamond className="w-3 h-3 left-[7%] top-[20%] hidden md:block" animate="animate-bob-y" parallax={0.1} />
+
+      <div className="relative container-renova">
         <AnimatedSection animation="fade-up">
           <SectionTitle
             tagline="News & Market Insights"
             title="Industry Insights & Updates"
             description="Stay informed with the latest trends, market updates, and best practices in international trade."
+            accent
           />
         </AnimatedSection>
 

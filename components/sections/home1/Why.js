@@ -34,6 +34,7 @@ export default function Why() {
             title={t('home.why.title')}
             description={t('home.why.description')}
             dark
+            accent
           />
         </AnimatedSection>
 

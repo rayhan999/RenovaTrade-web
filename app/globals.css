@@ -7,15 +7,15 @@
     /* Renova Trade Design System — Nordic Navy & Azure
        Base: deep logo navy; Accent: azure for CTAs/links;
        Eco: teal-green for the sustainability story. */
-    --color-primary: #002050;
-    --color-primary-dark: #001233;
-    --color-primary-light: #0A3A78;
+    --color-primary: #0A2354;
+    --color-primary-dark: #06152F;
+    --color-primary-light: #213D6E;
     --color-secondary: #33415C;
     --color-accent: #0369A1;
-    --color-accent-light: #38BDF8;
+    --color-accent-light: #489FC7;
     --color-accent-dark: #075985;
-    --color-steel: #38BDF8;
-    --color-eco: #34D399;
+    --color-steel: #489FC7;
+    --color-eco: #70BC91;
     --color-surface: #FFFFFF;
     --color-background: #F8FAFC;
     --color-muted: #E8EEF5;
@@ -24,13 +24,13 @@
     --color-ring: #002050;
 
     /* Legacy Renova variables for compatibility */
-    --renova-primary: #002050;
-    --renova-primary-rgb: 0, 32, 80;
-    --renova-primary-dark: #001233;
+    --renova-primary: #0A2354;
+    --renova-primary-rgb: 10, 35, 84;
+    --renova-primary-dark: #06152F;
     --renova-accent: #0369A1;
     --renova-accent-rgb: 3, 105, 161;
-    --renova-accent-light: #38BDF8;
-    --renova-secondary-accent: #34D399;
+    --renova-accent-light: #489FC7;
+    --renova-secondary-accent: #70BC91;
     --renova-bg: #F8FAFC;
     --renova-surface: #FFFFFF;
     --renova-text: #001233;

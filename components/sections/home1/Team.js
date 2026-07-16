@@ -4,6 +4,7 @@ import Link from "next/link"
 import SectionTitle from "@/components/ui/SectionTitle"
 import AnimatedSection from "@/components/ui/AnimatedSection"
 import SampleTag from "@/components/ui/SampleTag"
+import { ShapeField, Blob, Diamond } from "@/components/ui/Decor"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
 
 const teamMembers = [
@@ -17,13 +18,18 @@ const teamMembers = [
 export default function Team() {
   const { t } = useLanguage()
   return (
-    <section className="section-padding bg-background">
-      <div className="container-renova">
+    <section className="section-padding bg-background relative overflow-hidden">
+      <ShapeField variant="light" density="minimal" />
+      <Blob color="accent" className="w-48 h-48 -top-16 -right-16 opacity-40 hidden md:block" animate="animate-sway" parallax={-0.08} />
+      <Diamond className="w-3 h-3 right-[10%] bottom-[15%] hidden md:block" animate="animate-bob-y" parallax={0.1} />
+
+      <div className="relative container-renova">
         <AnimatedSection animation="fade-up">
           <SectionTitle
             tagline={t('home.team.tagline')}
             title={t('home.team.title')}
             description={t('home.team.description')}
+            accent
           />
         </AnimatedSection>
 

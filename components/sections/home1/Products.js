@@ -4,6 +4,7 @@ import Link from "next/link"
 import { ArrowRight, Recycle, Forklift, Cog } from "lucide-react"
 import SectionTitle from "@/components/ui/SectionTitle"
 import AnimatedSection from "@/components/ui/AnimatedSection"
+import { ShapeField, Blob, Diamond } from "@/components/ui/Decor"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
 
 export default function Products() {
@@ -15,12 +16,16 @@ export default function Products() {
   ]
   return (
     <section className="section-padding bg-background relative overflow-hidden">
+      <ShapeField variant="light" />
+      <Blob color="eco" className="w-64 h-64 -top-16 -left-16 opacity-40 hidden md:block" animate="animate-sway" parallax={-0.08} />
+
       <div className="relative container-renova">
         <AnimatedSection animation="fade-up">
           <SectionTitle
             tagline={t('home.products.tagline')}
             title={t('home.products.title')}
             description={t('home.products.description')}
+            accent
           />
         </AnimatedSection>
 
