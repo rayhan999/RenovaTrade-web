@@ -13,9 +13,9 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu, handleS
                     <div className="main-menu__top-inner">
                         <div className="main-menu__top-left">
                             <div className="main-menu__social">
-                                <Link href="#"><i className="icon-facebook"></i></Link>
-                                <Link href="#"><i className="icon-google-plus-logo"></i></Link>
-                                <Link href="#"><i className="icon-twitter"></i></Link>
+                                <Link href="#" aria-label="Facebook"><i className="fab fa-facebook"></i></Link>
+                                <Link href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></Link>
+                                <Link href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></Link>
                             </div>
                             <ul className="list-unstyled main-menu__contact-list">
                                 <li>
@@ -23,7 +23,7 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu, handleS
                                         <i className="icon-phone-call"></i>
                                     </div>
                                     <div className="text">
-                                        <p><Link href="tel:0012346823705">+00 (1234) 682 3705</Link>
+                                        <p><Link href="tel:+358413171469">+358-413171469</Link>
                                         </p>
                                     </div>
                                 </li>
@@ -32,7 +32,7 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu, handleS
                                         <i className="icon-mail"></i>
                                     </div>
                                     <div className="text">
-                                        <p><Link href="mailto:needhelp@company.com">needhelp@company.com</Link>
+                                        <p><Link href="mailto:info@renovatrade.fi">info@renovatrade.fi</Link>
                                         </p>
                                     </div>
                                 </li>
@@ -41,13 +41,13 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu, handleS
                                         <i className="icon-maps-and-flags"></i>
                                     </div>
                                     <div className="text">
-                                        <p>80 Broklyn Golden Street UK</p>
+                                        <p>Keskussairaalantie 2, Jyväskylä</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div className="main-menu__top-right">
-                            <p className="main-menu__top-text">We Provide High Quality & Cost Effective Services</p>
+                            <p className="main-menu__top-text">Global Sourcing · Metal Trading · Export Solutions</p>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu, handleS
                         <div className="main-menu__wrapper-inner">
                             <div className="main-menu__left">
                                 <div className="main-menu__logo">
-                                    <Link href="/"><img src="assets/images/resources/logo-1.png" alt=""/></Link>
+                                    <Link href="/"><img src="assets/images/resources/renova_logo_white.png" alt="Renova Trade" width="200"/></Link>
                                 </div>
                                 <div className="main-menu__main-menu-box">
                                     <Link href="#" className="mobile-nav__toggler" onClick={handleMobileMenu}><i className="fa fa-bars"></i></Link>
@@ -67,11 +67,10 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu, handleS
                             </div>
                             <div className="main-menu__right">
                                 <div className="main-menu__cart-search-box">
-                                    <Link href="#" className="main-menu__search search-toggler icon-magnifying-glass" onClick={handlePopup}></Link>
-                                    <Link href="#" className="main-menu__cart"><span className="icon-shopping-cart"></span></Link>
+                                    <Link href="#" className="main-menu__search search-toggler icon-magnifying-glass" onClick={handlePopup} aria-label="Search"></Link>
                                 </div>
                                 <div className="main-menu__btn-box">
-                                    <Link href="contact" className="main-menu__btn thm-btn">Get Free Quote</Link>
+                                    <Link href="contact" className="main-menu__btn thm-btn">Get in Touch</Link>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +86,7 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu, handleS
                             <div className="main-menu__wrapper-inner">
                                 <div className="main-menu__left">
                                     <div className="main-menu__logo">
-                                        <Link href="/"><img src="assets/images/resources/logo-1.png" alt=""/></Link>
+                                        <Link href="/"><img src="assets/images/resources/renova_logo.png" alt="Renova Trade" width="200"/></Link>
                                     </div>
                                     <div className="main-menu__main-menu-box">
                                         <Link href="#" className="mobile-nav__toggler" onClick={handleMobileMenu}><i className="fa fa-bars"></i></Link>
@@ -96,8 +95,8 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu, handleS
                                 </div>
                                 <div className="main-menu__right">
                                     <div className="main-menu__cart-search-box">
-                                        <Link href="#" className="main-menu__search search-toggler icon-magnifying-glass" onClick={handlePopup}></Link>
-                                        <Link href="#" className="main-menu__cart"><span className="icon-shopping-cart"></span></Link>
+                                        <Link href="#" className="main-menu__search search-toggler icon-magnifying-glass" onClick={handlePopup} aria-label="Search"></Link>
+                                        <Link href="#" className="main-menu__cart" aria-label="Cart"><span className="icon-shopping-cart"></span></Link>
                                     </div>
                                     <div className="main-menu__btn-box">
                                         <Link href="contact" className="main-menu__btn thm-btn">Get Free Quote</Link>

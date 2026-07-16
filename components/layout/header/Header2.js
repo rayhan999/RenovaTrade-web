@@ -1,4 +1,3 @@
-
 import Link from "next/link"
 import Menu from "../Menu"
 import MobileMenu from "../MobileMenu"
@@ -12,14 +11,14 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
                 <div className="container">
                     <div className="main-header-two__wrapper-inner">
                         <div className="main-menu-two__logo">
-                            <Link href="/"><img src="assets/images/resources/logo-1.png" alt=""/></Link>
+                            <Link href="/"><img src="assets/images/resources/renova_logo_white.png" alt="Renova Trade"/></Link>
                         </div>
                         <div className="main-menu-two__top">
                             <div className="main-menu-two__social">
-                                <Link href="#"><i className="icon-twitter"></i></Link>
-                                <Link href="#"><i className="icon-facebook"></i></Link>
-                                <Link href="#"><i className="icon-pinterest"></i></Link>
-                                <Link href="#"><i className="icon-instagram"></i></Link>
+                                <Link href="#" aria-label="Twitter"><i className="icon-twitter"></i></Link>
+                                <Link href="#" aria-label="Facebook"><i className="icon-facebook"></i></Link>
+                                <Link href="#" aria-label="Pinterest"><i className="icon-pinterest"></i></Link>
+                                <Link href="#" aria-label="Instagram"><i className="icon-instagram"></i></Link>
                             </div>
                             <ul className="list-unstyled main-menu-two__contact-list">
                                 <li>
@@ -53,7 +52,7 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
                                     <div className="main-menu-two__right">
                                         <div className="main-menu-two__search-box">
                                             <Link href="#"
-                                                className="main-menu-two__search search-toggler icon-magnifying-glass" onClick={handlePopup}></Link>
+                                                className="main-menu-two__search search-toggler icon-magnifying-glass" onClick={handlePopup} aria-label="Search"></Link>
                                         </div>
                                         <div className="main-menu-two__btn-box">
                                             <Link href="contact" className="main-menu-two__btn thm-btn">Get Free Quote</Link>
@@ -81,7 +80,7 @@ export default function Header2({ scroll, handlePopup, handleSidebar, handleMobi
                             <div className="main-menu-two__right">
                                 <div className="main-menu-two__search-box">
                                     <Link href="#"
-                                        className="main-menu-two__search search-toggler icon-magnifying-glass" onClick={handlePopup}></Link>
+                                        className="main-menu-two__search search-toggler icon-magnifying-glass" onClick={handlePopup} aria-label="Search"></Link>
                                 </div>
                                 <div className="main-menu-two__btn-box">
                                     <Link href="contact" className="main-menu-two__btn thm-btn">Get Free Quote</Link>

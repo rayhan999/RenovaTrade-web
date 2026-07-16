@@ -69,7 +69,7 @@ export default function ContactPageForm() {
             </div>
           </div>
           <div className="col-xl-6 col-lg-6">
-            <div className="contact-one__input-box">
+            <div className="contact-two__input-box">
               <textarea name="query" placeholder="Your Query" required rows={5} className="form-control" />
             </div>
           </div>

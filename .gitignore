@@ -13,7 +13,7 @@ pnp.js
 /build
 
 # misc
-DS_Store
+**/.DS_Store
 *.pem
 
 # debug
@@ -23,7 +23,8 @@ yarn-error.log*
 pnpm-debug.log*
 
 # local env files
-env*.local
+.env
+.env*
 
 # vercel
 vercel
@@ -31,3 +32,19 @@ vercel
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# editor
+.vscode/
+.idea/
+
+# claude
+.claude/
+
+# project docs & temp files
+*.docx
+*.pdf
+cleanup-plan.md
+implementation-plan.md
+image-prompts.md
+design-system.md
+New Text Document.txt

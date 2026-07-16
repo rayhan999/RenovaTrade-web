@@ -4,7 +4,7 @@ import 'swiper/css'
 // import "swiper/css/navigation"
 import "swiper/css/pagination"
 import 'swiper/css/free-mode';
-import { dmSans, manrope } from '@/lib/font'
+import { outfit, rubik } from '@/lib/font'
 export const metadata = {
     title: { default: 'Renova Trade', template: '%s | Renova Trade' },
     description: 'Renova Trade is a global metal scrap trading company and exporter, sourcing ferrous and non-ferrous scrap (HMS, shredded scrap, copper, aluminum, stainless steel, brass) and supplying international buyers. We offer reliable logistics, sustainable metal recycling, and export services across Asia and worldwide.',
@@ -69,6 +69,7 @@ export const metadata = {
         shortcut: '/favicon.ico',
         apple: '/apple-touch-icon.png',
     },
+    metadataBase: new URL('https://renovatrade.fi'),
 }
 
 export default function RootLayout({ children }) {
@@ -93,7 +94,7 @@ export default function RootLayout({ children }) {
         ]
     }
     return (
-        <html lang="en" className={`${dmSans.variable} ${manrope.variable}`}>
+        <html lang="en" className={`${outfit.variable} ${rubik.variable}`}>
             <body>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
                 {children}

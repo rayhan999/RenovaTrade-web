@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Renova Trade Design System — Nordic Navy & Azure
+       Base: deep logo navy; Accent: azure for CTAs/links;
+       Eco: teal-green for the sustainability story. */
+    --color-primary: #002050;
+    --color-primary-dark: #001233;
+    --color-primary-light: #0A3A78;
+    --color-secondary: #33415C;
+    --color-accent: #0369A1;
+    --color-accent-light: #38BDF8;
+    --color-accent-dark: #075985;
+    --color-steel: #38BDF8;
+    --color-eco: #34D399;
+    --color-surface: #FFFFFF;
+    --color-background: #F8FAFC;
+    --color-muted: #E8EEF5;
+    --color-border: #DEE7F0;
+    --color-destructive: #DC2626;
+    --color-ring: #002050;
+
+    /* Legacy Renova variables for compatibility */
+    --renova-primary: #002050;
+    --renova-primary-rgb: 0, 32, 80;
+    --renova-primary-dark: #001233;
+    --renova-accent: #0369A1;
+    --renova-accent-rgb: 3, 105, 161;
+    --renova-accent-light: #38BDF8;
+    --renova-secondary-accent: #34D399;
+    --renova-bg: #F8FAFC;
+    --renova-surface: #FFFFFF;
+    --renova-text: #001233;
+    --renova-text-secondary: #33415C;
+    --renova-text-muted: #7C8DB0;
+    --renova-border: #DEE7F0;
+    --renova-muted: #E8EEF5;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-primary font-body antialiased;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold text-primary;
+    letter-spacing: -0.02em; /* tight grotesk tracking for headings only */
+  }
+
+  a {
+    @apply text-accent transition-colors duration-200;
+  }
+
+  a:hover {
+    @apply text-accent-dark;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* Focus visible styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-offset-2 ring-primary;
+  }
+
+  /* Reduced motion preference — static fallback for ALL animations */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-renova {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-28;
+  }
+
+  .section-title {
+    @apply mb-10 md:mb-14 text-center;
+  }
+
+  .section-title__tagline {
+    @apply inline-flex items-center gap-2 text-accent font-medium text-sm uppercase tracking-wider;
+  }
+
+  .section-title__heading {
+    @apply mt-3 text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary leading-tight;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm md:text-base transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-accent-glow focus-visible:ring-accent;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white focus-visible:ring-primary;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-primary hover:bg-muted focus-visible:ring-primary;
+  }
+
+  .card {
+    @apply bg-surface rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-lg border border-border bg-surface text-primary placeholder:text-secondary/60 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all duration-200;
+  }
+
+  /* Underline-draw micro-interaction for inline text links */
+  .link-draw {
+    @apply relative no-underline;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 250ms ease-out;
+  }
+
+  .link-draw:hover,
+  .link-draw:focus-visible {
+    background-size: 100% 2px;
+  }
+
+  /* Small "Sample content" badge — marks placeholder data to replace before launch */
+  .sample-tag {
+    @apply inline-flex items-center gap-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide;
+  }
+
+  .sample-tag--dark {
+    @apply bg-amber-500/15 text-amber-300 border-amber-400/30;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* GPU-friendly 3D tilt surface */
+  .tilt-surface {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  /* Pause looping animations for reduced motion (belt & suspenders) */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee,
+    .animate-kenburns,
+    .animate-dash-flow,
+    .animate-pulse-soft,
+    .animate-float,
+    .animate-float-slow,
+    .animate-spin-slow,
+    .animate-sway {
+      animation: none !important;
+    }
+  }
+}

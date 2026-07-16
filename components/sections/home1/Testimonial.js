@@ -97,19 +97,15 @@ export default function Testimonial() {
                                                     <div className="testimonial-one__client-info-box">
                                                         <div className="testimonial-one__client-img">
                                                             <img src="assets/images/testimonial/testimonial-1-1.jpg"
-                                                                alt=""/>
+                                                                alt="Client testimonial"/>
                                                         </div>
                                                         <div className="testimonial-one__client-content">
-                                                            <h5 className="testimonial-one__client-name">Kendra Pual
+                                                            <h5 className="testimonial-one__client-name">Johan Bergström
                                                             </h5>
-                                                            <p className="testimonial-one__client-sub-title">Web
-                                                                Designer</p>
+                                                            <p className="testimonial-one__client-sub-title">Procurement Director, Nordic Metals</p>
                                                         </div>
                                                     </div>
-                                                    <p className="testimonial-one__text">We are privileged to workwith
-                                                        hundreds of future
-                                                        this business,including many of the world's top
-                                                        software,and brands business</p>
+                                                    <p className="testimonial-one__text">Renova Trade made our metal scrap sourcing from Europe straightforward. Their documentation and logistics support saved us weeks of coordination.</p>
                                                     <div className="testimonial-one__quote">
                                                         <span className="icon-quotes"></span>
                                                     </div>
@@ -119,100 +115,7 @@ export default function Testimonial() {
                                     </div>
                                 </div>
                             </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="testimonial-one__main-content-inner">
-                                    <div className="row">
-                                        <div className="col-xl-7">
-                                            <div className="testimonial-one__left">
-                                                <div className="testimonial-one__img-box">
-                                                    <img src="assets/images/testimonial/testimonial-one-img-1.jpg"
-                                                        alt=""/>
-                                                    <div className="testimonial-one__shape-1">
-                                                        <img src="assets/images/shapes/testimonial-one-shape-1.png"
-                                                            alt=""/>
-                                                    </div>
-                                                    <div className="testimonial-one__shape-2">
-                                                        <img src="assets/images/shapes/testimonial-one-shape-2.png"
-                                                            alt=""/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-xl-5">
-                                            <div className="testimonial-one__right">
-                                                <div className="testimonial-one__single">
-                                                    <div className="testimonial-one__client-info-box">
-                                                        <div className="testimonial-one__client-img">
-                                                            <img src="assets/images/testimonial/testimonial-1-2.jpg"
-                                                                alt=""/>
-                                                        </div>
-                                                        <div className="testimonial-one__client-content">
-                                                            <h5 className="testimonial-one__client-name">Adam Smith
-                                                            </h5>
-                                                            <p className="testimonial-one__client-sub-title">Web
-                                                                Designer</p>
-                                                        </div>
-                                                    </div>
-                                                    <p className="testimonial-one__text">We are privileged to workwith
-                                                        hundreds of future
-                                                        this business,including many of the world's top
-                                                        software,and brands business</p>
-                                                    <div className="testimonial-one__quote">
-                                                        <span className="icon-quotes"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="testimonial-one__main-content-inner">
-                                    <div className="row">
-                                        <div className="col-xl-7">
-                                            <div className="testimonial-one__left">
-                                                <div className="testimonial-one__img-box">
-                                                    <img src="assets/images/testimonial/testimonial-one-img-1.jpg"
-                                                        alt=""/>
-                                                    <div className="testimonial-one__shape-1">
-                                                        <img src="assets/images/shapes/testimonial-one-shape-1.png"
-                                                            alt=""/>
-                                                    </div>
-                                                    <div className="testimonial-one__shape-2">
-                                                        <img src="assets/images/shapes/testimonial-one-shape-2.png"
-                                                            alt=""/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-xl-5">
-                                            <div className="testimonial-one__right">
-                                                <div className="testimonial-one__single">
-                                                    <div className="testimonial-one__client-info-box">
-                                                        <div className="testimonial-one__client-img">
-                                                            <img src="assets/images/testimonial/testimonial-1-3.jpg"
-                                                                alt=""/>
-                                                        </div>
-                                                        <div className="testimonial-one__client-content">
-                                                            <h5 className="testimonial-one__client-name">Sarika paul
-                                                            </h5>
-                                                            <p className="testimonial-one__client-sub-title">Web
-                                                                Designer</p>
-                                                        </div>
-                                                    </div>
-                                                    <p className="testimonial-one__text">We are privileged to workwith
-                                                        hundreds of future
-                                                        this business,including many of the world's top
-                                                        software,and brands business</p>
-                                                    <div className="testimonial-one__quote">
-                                                        <span className="icon-quotes"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
+
                         </Swiper>
                     </div>
                 </div>
