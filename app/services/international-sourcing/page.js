@@ -48,7 +48,7 @@ export default function InternationalSourcingPage() {
                   International Sourcing & Procurement
                 </h2>
                 <p className="text-secondary leading-relaxed mb-6">
-                  Renova Trade acts as your procurement partner in Europe. We help businesses across Bangladesh and South Asia find reliable suppliers, negotiate competitive terms, and manage the complexities of international purchasing.
+                  Renova Trade acts as your procurement partner in Europe. We help businesses across South Asia find reliable suppliers, negotiate competitive terms, and manage the complexities of international purchasing.
                 </p>
                 <p className="text-secondary leading-relaxed mb-8">
                   From the first requirement to final delivery, we provide hands-on coordination to reduce risk, save time, and ensure transparency.

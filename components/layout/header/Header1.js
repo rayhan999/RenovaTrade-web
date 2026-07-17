@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Menu from "../Menu"
 import MobileMenu from "../MobileMenu"
+import { ADDRESS } from "@/lib/constants"
 
 export default function Header1({ scroll, handlePopup, handleMobileMenu, handleSidebar }) {
     return (
@@ -41,7 +42,7 @@ export default function Header1({ scroll, handlePopup, handleMobileMenu, handleS
                                         <i className="icon-maps-and-flags"></i>
                                     </div>
                                     <div className="text">
-                                        <p>Keskussairaalantie 2, Jyväskylä</p>
+                                        <p>{ADDRESS}</p>
                                     </div>
                                 </li>
                             </ul>

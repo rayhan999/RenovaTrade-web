@@ -11,6 +11,9 @@ export default function Cta() {
 
   return (
     <section className="relative py-20 md:py-28 overflow-hidden">
+      {/* Top accent divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-steel/40 to-transparent" aria-hidden="true" />
+
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -19,8 +22,8 @@ export default function Cta() {
         }}
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-primary/85" aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" aria-hidden="true" />
+      <div className="absolute inset-0 bg-primary/55" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/50" aria-hidden="true" />
 
       {/* Floating decorative shapes */}
       <Ring tone="light" className="w-40 h-40 -left-10 top-8" animate="animate-float-slow" />
@@ -54,6 +57,9 @@ export default function Cta() {
           </div>
         </AnimatedSection>
       </div>
+
+      {/* Bottom accent divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-steel/40 to-transparent" aria-hidden="true" />
     </section>
   )
 }

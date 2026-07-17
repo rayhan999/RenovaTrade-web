@@ -1,8 +1,7 @@
 import { Landmark, Network, FileCheck2, ShieldCheck } from "lucide-react"
 import SectionTitle from "@/components/ui/SectionTitle"
 import AnimatedSection from "@/components/ui/AnimatedSection"
-import CountUp from "@/components/ui/CountUp"
-import SampleTag from "@/components/ui/SampleTag"
+import { BUSINESS_ID } from "@/lib/constants"
 
 /**
  * Trust & credibility section (About page).
@@ -23,11 +22,10 @@ const pillars = [
     text: (
       <>
         Renova Trade is a private limited company registered in Finland and
-        listed in the Finnish Trade Register.
-        {/* TODO before launch: insert real Business ID, e.g. “Business ID (Y-tunnus): 1234567-8” */}
+        listed in the Finnish Trade Register. Business ID (Y-tunnus): {BUSINESS_ID}.
         {" "}Operating from inside the EU means our contracts, invoicing, and
         export procedures follow European commercial law — giving buyers in
-        Bangladesh and South Asia a counterparty they can verify.
+        South Asia a counterparty they can verify.
       </>
     ),
   },
@@ -73,13 +71,7 @@ const pillars = [
   },
 ]
 
-// ⚠️ PLACEHOLDER figures — replace with real numbers, then remove SampleTag.
-const networkStats = [
-  { end: 40, suffix: "+", label: "Vetted supplier partners" },
-  { end: 12, suffix: "+", label: "European regions covered" },
-  { end: 5, suffix: "+", label: "Years of trading experience" },
-  { end: 100, suffix: "%", label: "Shipments with full document sets" },
-]
+
 
 export default function Credibility() {
   return (
@@ -109,26 +101,7 @@ export default function Credibility() {
           ))}
         </div>
 
-        {/* Network stats */}
-        <AnimatedSection animation="fade-up" delay={150}>
-          <div className="relative mt-12 bg-primary rounded-2xl px-6 py-8 md:px-10 shadow-depth-lg">
-            <div className="absolute top-3 right-4">
-              <SampleTag dark label="Sample figures" />
-            </div>
-            <dl className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {networkStats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <dd className="text-3xl md:text-4xl font-heading font-bold text-white order-first">
-                    <CountUp end={stat.end} suffix={stat.suffix} />
-                  </dd>
-                  <dt className="mt-2 text-xs md:text-sm text-white/70 font-medium uppercase tracking-wide">
-                    {stat.label}
-                  </dt>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </AnimatedSection>
+
       </div>
     </section>
   )

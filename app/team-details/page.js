@@ -1,5 +1,6 @@
 import Link from "next/link"
 import PageHeader from "@/components/shell/PageHeader"
+import { ADDRESS } from "@/lib/constants"
 export default function Home() {
 
     return (
@@ -82,7 +83,7 @@ export default function Home() {
                                             <p>Nationality : <span>American</span></p>
                                         </li>
                                         <li>
-                                            <p>Address : <span>Raselina, New York</span></p>
+                                            <p>Address : <span>{ADDRESS}</span></p>
                                         </li>
                                     </ul>
                                 </div>

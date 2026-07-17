@@ -8,9 +8,7 @@ import Process from "@/components/sections/home1/Process"
 import Industries from "@/components/sections/home1/Industries"
 import Products from "@/components/sections/home1/Products"
 import Sustainability from "@/components/sections/home1/Sustainability"
-import OperationsGallery from "@/components/sections/home1/OperationsGallery"
 import Team from "@/components/sections/home1/Team"
-import Testimonial from "@/components/sections/home1/Testimonial"
 import Blog from "@/components/sections/home1/Blog"
 import Contact from "@/components/sections/home1/Contact"
 import Slidingtext from "@/components/sections/home1/Slidingtext"
@@ -18,7 +16,7 @@ import Cta from "@/components/sections/home1/Cta"
 
 export const metadata = {
     title: 'Renova Trade - International Sourcing & Metal Trading',
-    description: 'Renova Trade is a Finland-based international sourcing, procurement, trading, and export company connecting European manufacturers with businesses across Bangladesh and South Asia.',
+    description: 'Renova Trade is a Finland-based international sourcing, procurement, trading, and export company connecting European manufacturers with businesses across South Asia.',
     openGraph: {
         title: 'Renova Trade - International Sourcing & Metal Trading',
         description: 'Connecting European Industry with South Asian Markets.',
@@ -33,7 +31,7 @@ export default function Home() {
     return (
         <>
             <Banner />
-            <TrustBar />
+            {/* <TrustBar /> */}
             <About />
             <Service />
             <TradeCorridor />
@@ -42,9 +40,7 @@ export default function Home() {
             <Products />
             <Why />
             <Sustainability />
-            <OperationsGallery />
             <Team />
-            <Testimonial />
             <Blog />
             <Contact />
             <Slidingtext />

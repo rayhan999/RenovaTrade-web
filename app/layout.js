@@ -7,6 +7,7 @@ import "swiper/css/pagination"
 import 'swiper/css/free-mode';
 import { Space_Grotesk, Inter } from 'next/font/google'
 import AppShell from "@/components/shell/AppShell"
+import { PHONE, EMAIL, WEBSITE } from "@/lib/constants"
 
 // Industrial-premium type pairing: Space Grotesk (tight-tracked grotesk headings)
 // + Inter (highly readable body). Loaded via next/font — no render-blocking import.
@@ -26,34 +27,10 @@ const inter = Inter({
 
 export const metadata = {
     title: { default: 'Renova Trade', template: '%s | Renova Trade' },
-    description: 'Renova Trade is a global metal scrap trading company and exporter, sourcing ferrous and non-ferrous scrap (HMS, shredded scrap, copper, aluminum, stainless steel, brass) and supplying international buyers. We offer reliable logistics, sustainable metal recycling, and export services across Asia and worldwide.',
-    keywords: [
-        'metal scrap trading company',
-        'scrap metal exporter',
-        'buy and sell metal scrap',
-        'scrap trading company in Asia',
-        'international metal scrap dealer',
-        'Renova Trade scrap metal',
-        'metal recycling and export',
-        'global scrap trading company',
-        'scrap metal supplier',
-        'iron scrap exporter',
-        'copper scrap trading company',
-        'aluminum scrap supplier',
-        'stainless steel scrap buyer',
-        'brass scrap exporter',
-        'heavy melting scrap supplier',
-        'ferrous and non-ferrous scrap dealer',
-        'scrap metal export to Asia',
-        'Asia scrap metal market',
-        'metal recycling company',
-        'eco-friendly scrap trading',
-        'industrial scrap recycling',
-        'sustainable metal trade'
-    ],
+    description: 'Renova Trade is a Finland-based international sourcing, procurement, trading, and export company connecting European manufacturers with businesses across South Asia.',
     openGraph: {
-        title: 'Renova Trade – Metal Scrap Trading',
-    description: 'Renova Trade - Global sourcing and export of ferrous and non-ferrous scrap including HMS, shredded scrap, copper, aluminum, stainless steel, and brass. Serving international buyers and supporting sustainable metal recycling and export to Asia.',
+        title: 'Renova Trade – International Sourcing & Metal Trading',
+        description: 'Finland-based sourcing and export partner connecting European industry with South Asian markets. Metal scrap, heavy equipment, and procurement services.',
         url: 'https://renovatrade.fi',
         siteName: 'Renova Trade',
         images: [
@@ -72,7 +49,7 @@ export const metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Renova Trade',
-    description: 'International metal scrap trading and export — HMS, shredded scrap, copper, aluminum, stainless steel. Renova Trade supplies global buyers and focuses on sustainable recycling.',
+        description: 'Finland-based international sourcing and metal trading. Connecting European suppliers with South Asian buyers.',
     },
     robots: {
         index: true,
@@ -103,9 +80,9 @@ export default function RootLayout({ children }) {
         "contactPoint": [
             {
                 "@type": "ContactPoint",
-                "telephone": "+358-XX-XXXXXXX",
+                "telephone": PHONE,
                 "contactType": "customer service",
-                "email": "info@renovatrade.fi",
+                "email": EMAIL,
                 "areaServed": "FI"
             }
         ],

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown, Phone, Mail, MapPin } from "lucide-react"
 import LanguageToggle from "./LanguageToggle"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
+import { ADDRESS, PHONE, EMAIL } from "@/lib/constants"
 
 // Labels are translation keys — resolved through useLanguage() so the
 // EN / বাংলা toggle can localize navigation without structural changes.
@@ -146,8 +147,8 @@ export default function Header() {
         isVisible || isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      {/* Top bar */}
-      <div className="bg-primary text-white py-2.5 text-sm">
+      {/* Top bar — hidden on mobile, shown on md+ */}
+      <div className="hidden md:block bg-primary text-white py-2.5 text-sm">
         <div className="container-renova flex items-center justify-between">
           <div className="hidden md:flex items-center gap-6">
             <a href="mailto:info@renovatrade.fi" className="flex items-center gap-2 text-white/90 hover:text-accent-light transition-colors">
@@ -285,41 +286,40 @@ export default function Header() {
                     >
                       {t(link.key)}
                     </Link>
-                  )}
-                </li>
-              ))}
-              <li>
-                <Link
-                  href="/quote"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-3 px-3 mt-4 text-center bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors"
-                >
-                  {t('nav.requestQuote')}
-                </Link>
-              </li>
-              <li className="pt-4 flex justify-center">
-                <LanguageToggle dark />
-              </li>
-            </ul>
-          </nav>
-          <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-white/10 bg-primary">
-            <div className="space-y-3 text-sm text-white/80">
-              <a href="mailto:info@renovatrade.fi" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Mail className="w-4 h-4" aria-hidden="true" />
-                info@renovatrade.fi
-              </a>
-              <a href="tel:+358413171469" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone className="w-4 h-4" aria-hidden="true" />
-                +358-413171469
-              </a>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" aria-hidden="true" />
-                Keskussairaalantie 2 Jyväskylä
-              </div>
+                  )}              </li>
+            ))}
+            <li>
+              <Link
+                href="/quote"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-3 px-3 mt-4 text-center bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors"
+              >
+                {t('nav.requestQuote')}
+              </Link>
+            </li>
+            <li className="pt-4 flex justify-center">
+              <LanguageToggle dark upward />
+            </li>
+          </ul>
+        </nav>
+        <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-white/10 bg-primary">
+          <div className="space-y-3 text-sm text-white/80">
+            <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 hover:text-white transition-colors">
+              <Mail className="w-4 h-4" aria-hidden="true" />
+              {EMAIL}
+            </a>
+            <a href={`tel:${PHONE.replace(/-/g, '')}`} className="flex items-center gap-2 hover:text-white transition-colors">
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              {PHONE}
+            </a>
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4" aria-hidden="true" />
+              {ADDRESS}
             </div>
           </div>
         </div>
       </div>
+    </div>
     </header>
     <div aria-hidden="true" style={{ height: spacerHeight }} />
     </>

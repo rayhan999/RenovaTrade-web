@@ -4,7 +4,7 @@ import { Recycle, Leaf, Factory, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import AnimatedSection from "@/components/ui/AnimatedSection"
 import CountUp from "@/components/ui/CountUp"
-import SampleTag from "@/components/ui/SampleTag"
+import { Ring, Diamond, DotGrid } from "@/components/ui/Decor"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
 
 export default function Sustainability() {
@@ -86,9 +86,6 @@ export default function Sustainability() {
                   <p className="mt-6 text-xs text-white/40">
                     {t('home.sustainability.stat.note')}
                   </p>
-                  <div className="mt-3">
-                    <SampleTag dark label={t('home.sustainability.stat.verify')} />
-                  </div>
                 </div>
               </div>
             </div>

@@ -6,6 +6,7 @@ import { Send, Phone, Mail, MapPin, FileText, ArrowRight } from "lucide-react"
 import SectionTitle from "@/components/ui/SectionTitle"
 import AnimatedSection from "@/components/ui/AnimatedSection"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
+import { PHONE, EMAIL, ADDRESS } from "@/lib/constants"
 
 export default function Contact() {
   const [status, setStatus] = useState(null)
@@ -177,22 +178,22 @@ export default function Contact() {
               {t('contact.body')}
             </p>
             <div className="space-y-5">
-              <a href="tel:+358413171469" className="flex items-center gap-4 text-white/90 hover:text-white transition-colors group">
+              <a href={`tel:${PHONE.replace(/-/g, '')}`} className="flex items-center gap-4 text-white/90 hover:text-white transition-colors group">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
                   <Phone className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
                   <div className="text-sm text-white/60">{t('contact.call')}</div>
-                  <div className="font-semibold">+358-413171469</div>
+                  <div className="font-semibold">{PHONE}</div>
                 </div>
               </a>
-              <a href="mailto:info@renovatrade.fi" className="flex items-center gap-4 text-white/90 hover:text-white transition-colors group">
+              <a href={`mailto:${EMAIL}`} className="flex items-center gap-4 text-white/90 hover:text-white transition-colors group">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
                   <Mail className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
                   <div className="text-sm text-white/60">{t('contact.emailLabel')}</div>
-                  <div className="font-semibold">info@renovatrade.fi</div>
+                  <div className="font-semibold">{EMAIL}</div>
                 </div>
               </a>
               <div className="flex items-center gap-4 text-white/90">
@@ -201,7 +202,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-white/60">{t('contact.visit')}</div>
-                  <div className="font-semibold">Keskussairaalantie 2 Jyväskylä</div>
+                  <div className="font-semibold">{ADDRESS}</div>
                 </div>
               </div>
             </div>

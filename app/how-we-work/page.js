@@ -17,7 +17,7 @@ export default function HowWeWorkPage() {
       title: t('page.howWeWork.tradeTerms.title'),
       items: [
         "FOB (Free On Board) — you arrange main freight; we deliver cleared cargo on board at the European port.",
-        "CFR (Cost & Freight) — we book and pay ocean freight to your named port, typically Chattogram.",
+        "CFR (Cost & Freight) — we book and pay ocean freight to your named South Asian port.",
         "CIF (Cost, Insurance & Freight) — as CFR, plus marine cargo insurance arranged by us.",
         "Other terms (EXW, FCA, CPT) available by agreement for specific cargo.",
       ],

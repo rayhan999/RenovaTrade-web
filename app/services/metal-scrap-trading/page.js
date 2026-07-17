@@ -3,7 +3,6 @@ import ServiceSidebar from "@/components/ui/ServiceSidebar"
 import Cta from "@/components/sections/home1/Cta"
 import AnimatedSection from "@/components/ui/AnimatedSection"
 import TiltCard from "@/components/ui/TiltCard"
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder"
 import { Check, Layers, Cable, Boxes, CircuitBoard, TrainFront, Building, Recycle, Combine, Magnet } from "lucide-react"
 
 export const metadata = {
@@ -106,12 +105,6 @@ export default function MetalScrapTradingPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              {/* Visual proof — replace with real operations photos */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <PhotoPlaceholder label="Graded HMS stockpile at partner yard" />
-                <PhotoPlaceholder label="Container loading & weighbridge ticket" />
               </div>
 
               <p className="text-secondary leading-relaxed">

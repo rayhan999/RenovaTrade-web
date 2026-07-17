@@ -15,10 +15,9 @@ import { useLanguage } from "@/components/i18n/LanguageProvider"
  * corridor with precise pin placement and animated routes.
  *
  * Pins always sit at their true geographic coordinates (no offset tricks).
- * Where two hubs are close enough that their text labels would overlap
- * (Helsinki / Baltic & Nordic suppliers, Chattogram / Dhaka), only the
- * LABEL TEXT gets a small vertical nudge (`labelDy`) — the pin dot itself
- * never moves, so the map stays accurate at a glance.
+ * Where two hubs are close enough that their text labels would overlap,
+ * only the LABEL TEXT gets a small vertical nudge (`labelDy`) — the pin
+ * dot itself never moves, so the map stays accurate at a glance.
  */
 
 const geoUrl = "/assets/data/world-110m.json"
@@ -29,7 +28,7 @@ const MAP_HEIGHT = 400
 
 // Mercator projection tuned to show Europe through South Asia.
 // Frames lon ≈ -22°…122°, lat ≈ 12°N…64°N on the 800×400 canvas, so
-// Helsinki (60.2°N) and Chattogram (22.4°N) both sit comfortably inside.
+// Helsinki (60.2°N) and South Asian hubs (≈20–30°N) both sit comfortably inside.
 const PROJECTION_CENTER = [50, 43]
 const PROJECTION_SCALE = 320
 
@@ -42,10 +41,14 @@ const originHubs = [
 ]
 
 const destinationHubs = [
-  // Chattogram and Dhaka are only ~210km apart — same label-nudge treatment.
-  { name: "Chattogram", detail: "Primary port of discharge", coordinates: [91.7832, 22.3569], labelDy: 12 },
-  { name: "Dhaka", detail: "Buyer coordination", coordinates: [90.4125, 23.8103], labelAbove: true, labelDy: -12 },
-  { name: "South Asia", detail: "Regional markets", coordinates: [78.9629, 20.5937] },
+  // South Asian hub network — spread across the subcontinent so the map
+  // reads "South Asia" rather than "Bangladesh only".
+  { name: "Chattogram", detail: "Port of discharge", coordinates: [91.7832, 22.3569], labelDy: 12 },
+  { name: "Mumbai", detail: "India — buyer coordination", coordinates: [72.8777, 19.0760], labelAbove: true, labelDy: -12 },
+  // Karachi uses `labelAbove: true` like Mumbai, but with `dy=-15` instead of
+  // `-12` so the two label blocks occupy separate vertical bands along the
+  // South Asian corridor and don't sit on top of each other.
+  { name: "Karachi", detail: "Pakistan — regional markets", coordinates: [67.0011, 24.8607], labelAbove: true, labelDy: -15 },
 ]
 
 const routes = [
@@ -56,7 +59,7 @@ const routes = [
 
 // Note: these are real lon/lat — [85, 35] would be Tibet, not South Asia.
 const regionLabels = [
-  { name: "EUROPE", coordinates: [15, 57] },        // southern Scandinavia / Baltic
+  { name: "EUROPE", coordinates: [15, 44] },        // south of Central Europe hub label with a clear vertical gap; clears Baltic/Helsinki labels above
   { name: "SOUTH ASIA", coordinates: [76, 16] },    // peninsular India
 ]
 

@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link";
 import { useState } from "react";
+import { ADDRESS } from "@/lib/constants";
 
 const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
   const [isActive, setIsActive] = useState({
@@ -68,7 +69,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
             </li>
             <li>
               <i className="icon-maps-and-flags"></i>
-              <p>Keskussairaalantie 2 Jyväskylä</p>
+              <p>{ADDRESS}</p>
             </li>
           </ul>
           <div className="mobile-nav__top">

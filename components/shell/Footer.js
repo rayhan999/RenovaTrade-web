@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Mail, Phone, MapPin } from "lucide-react"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
+import { BUSINESS_ID, EMAIL, PHONE, ADDRESS } from "@/lib/constants"
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -40,8 +41,11 @@ export default function Footer() {
             <p className="text-white/70 text-sm leading-relaxed mb-4">
               {t('footer.description')}
             </p>
-            <p className="text-white/50 text-xs leading-relaxed mb-6">
+            <p className="text-white/50 text-xs leading-relaxed mb-2">
               {t('footer.registered')}
+            </p>
+            <p className="text-white/50 text-xs leading-relaxed mb-6">
+              Business ID (Y-tunnus): {BUSINESS_ID}
             </p>
             <div className="flex items-center gap-3">
               <a href="https://twitter.com/renovatrade" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors">
@@ -126,15 +130,15 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3 text-white/70">
                 <Phone className="w-4 h-4 text-accent-light" />
-                <a href="tel:+358413171469" className="hover:text-white transition-colors">+358-413171469</a>
+                <a href={`tel:${PHONE.replace(/-/g, '')}`} className="hover:text-white transition-colors">{PHONE}</a>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <Mail className="w-4 h-4 text-accent-light" />
-                <a href="mailto:info@renovatrade.fi" className="hover:text-white transition-colors">info@renovatrade.fi</a>
+                <a href={`mailto:${EMAIL}`} className="hover:text-white transition-colors">{EMAIL}</a>
               </li>
               <li className="flex items-start gap-3 text-white/70">
                 <MapPin className="w-4 h-4 text-accent-light mt-0.5" />
-                <span>Keskussairaalantie 2 Jyväskylä</span>
+                <span>{ADDRESS}</span>
               </li>
             </ul>
           </div>
@@ -146,8 +150,8 @@ export default function Footer() {
         <div className="container-renova py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-white/60">
           <p>&copy; {new Date().getFullYear()} Renova Trade. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
-            <Link href="#" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
+            <Link href="/terms-of-service" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>
