@@ -130,11 +130,11 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3 text-white/70">
                 <Phone className="w-4 h-4 text-accent-light" />
-                <a href={`tel:${PHONE.replace(/-/g, '')}`} className="hover:text-white transition-colors">{PHONE}</a>
+                <a href={`tel:${PHONE.replace(/-/g, '')}`} className="hover:text-white text-accent-light transition-colors">{PHONE}</a>
               </li>
               <li className="flex items-center gap-3 text-white/70">
                 <Mail className="w-4 h-4 text-accent-light" />
-                <a href={`mailto:${EMAIL}`} className="hover:text-white transition-colors">{EMAIL}</a>
+                <a href={`mailto:${EMAIL}`} className="hover:text-white text-accent-light transition-colors">{EMAIL}</a>
               </li>
               <li className="flex items-start gap-3 text-white/70">
                 <MapPin className="w-4 h-4 text-accent-light mt-0.5" />

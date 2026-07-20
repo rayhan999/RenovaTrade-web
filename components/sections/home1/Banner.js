@@ -9,7 +9,7 @@ import { useLanguage } from "@/components/i18n/LanguageProvider"
  * Hero — layered parallax-style background:
  *  1. Photo with slow Ken Burns pan (transform-only, GPU-friendly)
  *  2. Steel-navy gradient overlays for text contrast
- *  3. Subtle animated SVG trade-route arcs (Europe → South Asia motif)
+ *  3. Subtle animated SVG trade-route arcs (Europe → Global Markets motif)
  * All motion disabled under prefers-reduced-motion; arcs hidden on mobile.
  */
 export default function Banner() {
@@ -46,7 +46,7 @@ export default function Banner() {
             <stop offset="100%" stopColor="#34D399" stopOpacity="0.9" />
           </linearGradient>
         </defs>
-        {/* Europe (left) → South Asia (right) arcs */}
+        {/* Europe (left) → Global Markets (right) arcs */}
         <path d="M 180 210 Q 720 -40 1260 330" fill="none" stroke="url(#route-grad)" strokeWidth="1.5" strokeDasharray="6 10" className={reducedMotion ? "" : "animate-dash-flow"} />
         <path d="M 240 320 Q 720 120 1200 420" fill="none" stroke="url(#route-grad)" strokeWidth="1" strokeDasharray="4 12" className={reducedMotion ? "" : "animate-dash-flow"} style={{ animationDuration: "5s" }} />
         <path d="M 140 440 Q 700 260 1240 520" fill="none" stroke="url(#route-grad)" strokeWidth="1" strokeDasharray="3 14" className={reducedMotion ? "" : "animate-dash-flow"} style={{ animationDuration: "7s" }} />
