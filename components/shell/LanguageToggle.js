@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from "react"
-import { ChevronDown, Globe } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
 import { LANGUAGES } from "@/lib/translations"
 
@@ -101,15 +101,14 @@ export default function LanguageToggle({ dark = false, upward = false }) {
         onKeyDown={handleButtonKeyDown}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
-        aria-label="Select language"
-        className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold transition-colors cursor-pointer ${
+        aria-label={`Select language (current: ${currentLanguage.code.toUpperCase()})`}
+        className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-semibold tracking-wider transition-colors cursor-pointer ${
           dark
             ? "bg-white/10 border border-white/15 text-white hover:bg-white/20"
             : "bg-muted border border-border text-primary hover:bg-border"
         }`}
       >
-        <Globe className="w-4 h-4" aria-hidden="true" />
-        <span>{currentLanguage.label}</span>
+        <span>{currentLanguage.code.toUpperCase()}</span>
         <ChevronDown
           className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
           aria-hidden="true"
@@ -120,7 +119,7 @@ export default function LanguageToggle({ dark = false, upward = false }) {
         <div
           role="listbox"
           aria-label="Languages"
-          className={`absolute right-0 min-w-[10rem] rounded-xl shadow-lg border z-50 overflow-hidden ${
+          className={`absolute right-0 min-w-[4rem] rounded-xl shadow-lg border z-50 overflow-hidden ${
             upward ? "bottom-full mb-2" : "mt-2 top-full"
           } ${
             dark ? "bg-primary border-white/15" : "bg-white border-border"
@@ -139,7 +138,7 @@ export default function LanguageToggle({ dark = false, upward = false }) {
                 onClick={() => handleSelect(l.code)}
                 onKeyDown={(e) => handleOptionKeyDown(e, index)}
                 lang={l.code}
-                className={`w-full text-left px-4 py-2.5 text-sm font-medium transition-colors cursor-pointer ${
+                className={`w-full text-left px-4 py-2.5 text-sm font-bold tracking-wider transition-colors cursor-pointer ${
                   active
                     ? dark
                       ? "bg-accent text-white"
@@ -149,7 +148,7 @@ export default function LanguageToggle({ dark = false, upward = false }) {
                       : "text-secondary hover:bg-muted"
                 }`}
               >
-                {l.label}
+                {l.code.toUpperCase()}
               </button>
             )
           })}

@@ -141,134 +141,154 @@ export default function Header() {
 
   return (
     <>
-    <header
-      ref={headerRef}
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-transform duration-300 ease-in-out ${
-        isVisible || isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
-      {/* Top bar — hidden on mobile, shown on md+ */}
-      <div className="hidden md:block bg-primary text-white py-2.5 text-sm">
-        <div className="container-renova flex items-center justify-between">
-          <div className="hidden md:flex items-center gap-6">
-            <a href="mailto:info@renovatrade.fi" className="flex items-center gap-2 text-white/90 hover:text-accent-light transition-colors">
-              <Mail className="w-4 h-4" aria-hidden="true" />
-              <span>info@renovatrade.fi</span>
-            </a>
-            <a href="tel:+358413171469" className="flex items-center gap-2 text-white/90 hover:text-accent-light transition-colors">
-              <Phone className="w-4 h-4" aria-hidden="true" />
-              <span>+358-413171469</span>
-            </a>
-          </div>
-          <div className="flex-1 md:flex-none flex items-center justify-end gap-4">
-            <span className="text-white/80 hidden lg:inline">{t('header.tagline')}</span>
-            <LanguageToggle dark />
-          </div>
-        </div>
-      </div>
-
-      {/* Main nav */}
-      <nav
-        className={`transition-all duration-300 ${
-          isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-3" : "bg-white py-5"
+      <header
+        ref={headerRef}
+        className={`fixed top-0 left-0 right-0 z-50 w-full transition-transform duration-300 ease-in-out ${
+          isVisible || isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
-        aria-label="Main navigation"
       >
-        <div className="container-renova flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0 lg:mr-8" aria-label="Renova Trade home">
-            <img
-              src="/assets/images/resources/renova_logo.png"
-              alt="Renova Trade"
-              className="h-10 md:h-12 w-auto"
-            />
-          </Link>
-
-          {/* Desktop nav */}
-          <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {navLinks.map((link) => (
-              <li key={link.key} className="relative">
-                {link.children ? (
-                  <DesktopDropdown
-                    link={link}
-                    isActive={isActive(link.href)}
-                    isOpen={openDropdown === link.key}
-                    onToggle={() =>
-                      setOpenDropdown(openDropdown === link.key ? null : link.key)
-                    }
-                    onClose={() => setOpenDropdown(null)}
-                  />
-                ) : (
-                  <Link
-                    href={link.href}
-                    className={`font-medium text-sm xl:text-base transition-colors link-draw ${
-                      isActive(link.href)
-                        ? "text-accent"
-                        : "text-primary hover:text-accent"
-                    }`}
-                  >
-                    {t(link.key)}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          {/* CTA + Mobile toggle */}
-          <div className="flex items-center gap-4">
-            <Link
-              href="/quote"
-              className="hidden md:inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-accent text-white rounded-lg font-semibold text-sm hover:bg-accent-dark hover:shadow-accent-glow transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
-            >
-              {t('nav.requestQuote')}
-            </Link>
-            <button
-              ref={mobileToggleRef}
-              onClick={() => setIsMobileMenuOpen(true)}
-              className="lg:hidden p-2 text-primary hover:text-accent transition-colors"
-              aria-label="Open mobile menu"
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              <Menu className="w-6 h-6" aria-hidden="true" />
-            </button>
+        {/* Top bar — hidden on mobile, shown on md+ */}
+        <div className="hidden md:block bg-primary text-white py-2.5 text-sm">
+          <div className="container-renova flex items-center justify-between">
+            <div className="hidden md:flex items-center gap-6">
+              <a href="mailto:info@renovatrade.fi" className="flex items-center gap-2 text-white/90 hover:text-accent-light transition-colors">
+                <Mail className="w-4 h-4" aria-hidden="true" />
+                <span>info@renovatrade.fi</span>
+              </a>
+              <a href="tel:+358413171469" className="flex items-center gap-2 text-white/90 hover:text-accent-light transition-colors">
+                <Phone className="w-4 h-4" aria-hidden="true" />
+                <span>+358-413171469</span>
+              </a>
+            </div>
+            <div className="flex-1 md:flex-none flex items-center justify-end gap-4">
+              <span className="text-white/80 hidden lg:inline">{t('header.tagline')}</span>
+              <LanguageToggle dark />
+            </div>
           </div>
         </div>
-      </nav>
 
-      {/* Mobile menu */}
+        {/* Main nav */}
+        <nav
+          className={`transition-all duration-300 ${
+            isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-3" : "bg-white py-5"
+          }`}
+          aria-label="Main navigation"
+        >
+          <div className="container-renova flex items-center justify-between">
+            {/* Logo */}
+            <Link href="/" className="flex-shrink-0 lg:mr-8" aria-label="Renova Trade home">
+              <img
+                src="/assets/images/resources/renova_logo.png"
+                alt="Renova Trade"
+                className="h-10 md:h-12 w-auto"
+              />
+            </Link>
+
+            {/* Desktop nav */}
+            <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
+              {navLinks.map((link) => (
+                <li key={link.key} className="relative">
+                  {link.children ? (
+                    <DesktopDropdown
+                      link={link}
+                      isActive={isActive(link.href)}
+                      isOpen={openDropdown === link.key}
+                      onToggle={() =>
+                        setOpenDropdown(openDropdown === link.key ? null : link.key)
+                      }
+                      onClose={() => setOpenDropdown(null)}
+                    />
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className={`font-medium text-sm xl:text-base transition-colors link-draw ${
+                        isActive(link.href)
+                          ? "text-accent"
+                          : "text-primary hover:text-accent"
+                      }`}
+                    >
+                      {t(link.key)}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA + Mobile toggle */}
+            <div className="flex items-center gap-4">
+              <Link
+                href="/quote"
+                className="hidden md:inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-accent text-white rounded-lg font-semibold text-sm hover:bg-accent-dark hover:shadow-accent-glow transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+              >
+                {t('nav.requestQuote')}
+              </Link>
+              <button
+                ref={mobileToggleRef}
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="lg:hidden p-2 text-primary hover:text-accent transition-colors"
+                aria-label="Open mobile menu"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
+              >
+                <Menu className="w-6 h-6" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      {/* Mobile menu — rendered as a sibling of <header> (not inside it) so the
+          `fixed inset-0` backdrop wrapper fills the viewport.
+          Why outside <header>? The header applies `transition-transform` and a
+          `translateY(...)` for the hide-on-scroll animation. Per the CSS spec,
+          any `transform` on an ancestor creates a containing block for its
+          `position: fixed` descendants — so nesting the menu inside <header>
+          collapsed the wrapper to the header's ~70px height, leaving the hero
+          to bleed through. Keeping it as a sibling restores the intended
+          full-screen overlay.
+          We toggle `inert` (not aria-hidden) so the browser auto-moves focus
+          out of the drawer when it closes — avoids the
+          "aria-hidden on focused element" a11y warning. */}
       <div
         id="mobile-menu"
         className={`fixed inset-0 z-[100] transition-opacity duration-300 ${
-          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          isMobileMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
         }`}
-        aria-hidden={!isMobileMenuOpen}
+        inert={!isMobileMenuOpen ? "" : undefined}
       >
+        {/* Backdrop — heavy dim + blur so the hero behind it doesn't compete with the drawer */}
         <div
-          className="absolute inset-0 bg-black/50"
+          className="absolute inset-0 bg-black/70 backdrop-blur-sm"
           onClick={() => setIsMobileMenuOpen(false)}
           aria-hidden="true"
         />
+        {/* Drawer panel — slides in from the right edge */}
         <div
           ref={mobileMenuRef}
-          className={`absolute top-0 right-0 h-full w-full max-w-sm bg-primary text-white shadow-xl transform transition-transform duration-300 ${
+          className={`absolute top-0 right-0 h-full w-full max-w-sm bg-primary text-white shadow-2xl ring-1 ring-white/10 transform transition-transform duration-300 ease-out ${
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation"
         >
-          <div className="flex items-center justify-between p-5 border-b border-white/10">
-            <span className="text-lg font-semibold">Menu</span>
+          <div className="flex items-center justify-between p-5 border-b border-white/10 bg-primary-dark/30">
+            <span className="inline-flex items-center gap-2 text-lg font-semibold">
+              <span className="text-white/60 text-xs uppercase tracking-[0.18em] font-medium">Menu</span>
+            </span>
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2 text-white hover:text-accent-light transition-colors"
+              className="p-2 -mr-2 text-white hover:text-accent-light hover:bg-white/10 rounded-lg transition-colors"
               aria-label="Close mobile menu"
             >
               <X className="w-6 h-6" aria-hidden="true" />
             </button>
           </div>
-          <nav className="p-5 overflow-y-auto" aria-label="Mobile menu">
+          <nav
+            className="p-5 overflow-y-auto"
+            aria-label="Mobile menu"
+            style={{ maxHeight: "calc(100dvh - 13rem)" }}
+          >
             <ul className="space-y-1">
               {navLinks.map((link) => (
                 <li key={link.key}>
@@ -286,42 +306,44 @@ export default function Header() {
                     >
                       {t(link.key)}
                     </Link>
-                  )}              </li>
-            ))}
-            <li>
-              <Link
-                href="/quote"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-3 px-3 mt-4 text-center bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors"
-              >
-                {t('nav.requestQuote')}
-              </Link>
-            </li>
-            <li className="pt-4 flex justify-center">
-              <LanguageToggle dark upward />
-            </li>
-          </ul>
-        </nav>
-        <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-white/10 bg-primary">
-          <div className="space-y-3 text-sm text-white/80">
-            <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 hover:text-white transition-colors">
-              <Mail className="w-4 h-4" aria-hidden="true" />
-              {EMAIL}
-            </a>
-            <a href={`tel:${PHONE.replace(/-/g, '')}`} className="flex items-center gap-2 hover:text-white transition-colors">
-              <Phone className="w-4 h-4" aria-hidden="true" />
-              {PHONE}
-            </a>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" aria-hidden="true" />
-              {ADDRESS}
+                  )}
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/quote"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 py-3 px-3 mt-4 text-center bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors"
+                >
+                  {t('nav.requestQuote')}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </li>
+              <li className="pt-4 flex justify-center">
+                <LanguageToggle dark upward />
+              </li>
+            </ul>
+          </nav>
+          <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-white/10 bg-primary-dark/40">
+            <div className="space-y-3 text-sm text-white/80">
+              <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 hover:text-white transition-colors">
+                <Mail className="w-4 h-4" aria-hidden="true" />
+                {EMAIL}
+              </a>
+              <a href={`tel:${PHONE.replace(/-/g, '')}`} className="flex items-center gap-2 hover:text-white transition-colors">
+                <Phone className="w-4 h-4" aria-hidden="true" />
+                {PHONE}
+              </a>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" aria-hidden="true" />
+                {ADDRESS}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    </header>
-    <div aria-hidden="true" style={{ height: spacerHeight }} />
+
+      <div aria-hidden="true" style={{ height: spacerHeight }} />
     </>
   )
 }

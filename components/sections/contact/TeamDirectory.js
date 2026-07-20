@@ -40,13 +40,25 @@ export default function TeamDirectory() {
               delay={index * 100}
             >
               <div className="group bg-background rounded-2xl p-6 border border-secondary/10 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                {/* Initials avatar — primary gradient placeholder until a real photo is added. */}
-                <div
-                  className="w-20 h-20 rounded-full bg-gradient-to-br from-primary via-primary-light to-steel flex items-center justify-center text-white font-heading font-semibold text-2xl mb-5 select-none shadow-md group-hover:shadow-lg transition-shadow"
-                  aria-hidden="true"
-                >
-                  {memberInitials(member.name)}
-                </div>
+                {/* Portrait if `member.image` is set; gradient initials fallback otherwise. */}
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    loading="lazy"
+                    decoding="async"
+                    width="80"
+                    height="80"
+                    className="w-20 h-20 rounded-full object-cover mb-5 shadow-md group-hover:shadow-lg transition-shadow ring-2 ring-white"
+                  />
+                ) : (
+                  <div
+                    className="w-20 h-20 rounded-full bg-gradient-to-br from-primary via-primary-light to-steel flex items-center justify-center text-white font-heading font-semibold text-2xl mb-5 select-none shadow-md group-hover:shadow-lg transition-shadow"
+                    aria-hidden="true"
+                  >
+                    {memberInitials(member.name)}
+                  </div>
+                )}
 
                 <h3 className="text-lg font-heading font-semibold text-primary">
                   {member.name}
