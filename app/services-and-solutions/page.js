@@ -44,15 +44,15 @@ export default function ServicesAndSolutionsPage() {
     const { t } = useLanguage()
     const products = [
         // ── Product items (7) ──
-        { title: t('product.1.title'), description: t('product.1.text'), link: "/services/metal-scrap-trading", image: "/assets/real_Images/real-scrap-yard-hero-01.jpg", icon: Recycle },
-        { title: t('product.2.title'), description: t('product.2.text'), link: "/services/heavy-equipment", image: "/assets/real_Images/real-port-cranes-yards-01.jpg", icon: Forklift },
-        { title: t('product.3.title'), description: t('product.3.text'), link: "/services/heavy-equipment", image: "/assets/real_Images/real-shredder-line-01.jpg", icon: Cog },
-        { title: t('product.4.title'), description: t('product.4.text'), link: "/services/heavy-equipment", image: "/assets/real_Images/real-forklift-yard-01.jpg", icon: Package },
-        { title: t('product.5.title'), description: t('product.5.text'), link: "/services/international-sourcing", image: "/assets/real_Images/real-container-scrap-01.jpg", icon: Wrench },
-        { title: t('product.6.title'), description: t('product.6.text'), link: "/services/international-sourcing", image: "/assets/real_Images/real-reach-stacker-01.jpg", icon: CircuitBoard },        { title: t('product.7.title'), description: t('product.7.text'), link: "/services/international-sourcing", image: "/assets/real_Images/real-copper-scrap-01.jpg", icon: Search },
+        { title: t('product.1.title'), description: t('product.1.text'), link: "/services/metal-scrap-trading", image: "/assets/real-images/real-scrap-yard-hero-01.jpg", icon: Recycle },
+        { title: t('product.2.title'), description: t('product.2.text'), link: "/services/heavy-equipment", image: "/assets/real-images/real-port-cranes-yards-01.jpg", icon: Forklift },
+        { title: t('product.3.title'), description: t('product.3.text'), link: "/services/heavy-equipment", image: "/assets/real-images/real-shredder-line-01.jpg", icon: Cog },
+        { title: t('product.4.title'), description: t('product.4.text'), link: "/services/heavy-equipment", image: "/assets/real-images/real-forklift-yard-01.jpg", icon: Package },
+        { title: t('product.5.title'), description: t('product.5.text'), link: "/services/international-sourcing", image: "/assets/real-images/real-container-scrap-01.jpg", icon: Wrench },
+        { title: t('product.6.title'), description: t('product.6.text'), link: "/services/international-sourcing", image: "/assets/real-images/real-reach-stacker-01.jpg", icon: CircuitBoard },        { title: t('product.7.title'), description: t('product.7.text'), link: "/services/international-sourcing", image: "/assets/real-images/real-copper-scrap-01.jpg", icon: Search },
         // ── Non-redundant Core Service tile appended (Metal Scrap Trading + Heavy Equipment
         //    service tiles are pruned because they duplicate product.1 + product.2 titles) ──
-        { title: t('services.sourcing.title'), description: t('services.sourcing.text'), link: "/services/international-sourcing", image: "/assets/real_Images/real-port-yards-01.jpg", icon: Globe2 },
+        { title: t('services.sourcing.title'), description: t('services.sourcing.text'), link: "/services/international-sourcing", image: "/assets/real-images/real-port-yards-01.jpg", icon: Globe2 },
     ] 
 
     return (

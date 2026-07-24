@@ -37,7 +37,7 @@ export default function InternationalSourcingPage() {
             <AnimatedSection animation="fade-left" className="lg:col-span-2 space-y-8">
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="/assets/real_Images/real-banner-cinematic-wide-01.jpg"
+                  src="/assets/real-images/real-banner-cinematic-wide-01.jpg"
                   alt="International sourcing and procurement"
                   className="w-full h-80 object-cover"
                 />

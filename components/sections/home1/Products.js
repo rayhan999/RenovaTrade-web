@@ -29,9 +29,9 @@ import { useLanguage } from "@/components/i18n/LanguageProvider"
 export default function Products() {
   const { t } = useLanguage()
   const products = [
-    { title: t('product.1.title'), description: t('product.1.text'), link: "/services/metal-scrap-trading", image: "/assets/real_Images/real-scrap-yard-hero-01.jpg", icon: Recycle },
-    { title: t('product.2.title'), description: t('product.2.text'), link: "/services/heavy-equipment", image: "/assets/real_Images/real-forklift-yard-01.jpg", icon: Forklift },
-    { title: t('product.3.title'), description: t('product.3.text'), link: "/services/heavy-equipment", image: "/assets/real_Images/real-reach-stacker-01.jpg", icon: Cog },
+    { title: t('product.1.title'), description: t('product.1.text'), link: "/services/metal-scrap-trading", image: "/assets/real-images/real-scrap-yard-hero-01.jpg", icon: Recycle },
+    { title: t('product.2.title'), description: t('product.2.text'), link: "/services/heavy-equipment", image: "/assets/real-images/real-forklift-yard-01.jpg", icon: Forklift },
+    { title: t('product.3.title'), description: t('product.3.text'), link: "/services/heavy-equipment", image: "/assets/real-images/real-reach-stacker-01.jpg", icon: Cog },
   ]
   return (
     <section className="section-padding bg-background relative overflow-hidden">

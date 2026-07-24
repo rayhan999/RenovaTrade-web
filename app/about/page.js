@@ -32,7 +32,7 @@ export default function AboutPage() {
                         <AnimatedSection animation="fade-left" className="relative">
                             <div className="relative rounded-2xl overflow-hidden shadow-xl">
                                 <img
-                                    src="/assets/real_Images/real-trade-corridor-banner-01.jpg"
+                                    src="/assets/real-images/real-trade-corridor-banner-01.jpg"
                                     alt="Renova Trade industrial operations"
                                     className="w-full h-[400px] md:h-[500px] object-cover"
                                 />

@@ -14,7 +14,7 @@ export default function Service() {
     {
       title: t('services.metalScrap.title'),
       text: t('services.metalScrap.text'),
-      image: "/assets/real_Images/real-port-cranes-yards-01.jpg",
+      image: "/assets/real-images/real-port-cranes-yards-01.jpg",
       link: "/services/metal-scrap-trading",
       icon: Recycle,
       highlights: [t('services.metalScrap.highlight1'), t('services.metalScrap.highlight2'), t('services.metalScrap.highlight3'), t('services.metalScrap.highlight4')],
@@ -22,7 +22,7 @@ export default function Service() {
     {
       title: t('services.heavyEquipment.title'),
       text: t('services.heavyEquipment.text'),
-      image: "/assets/real_Images/real-shredder-line-01.jpg",
+      image: "/assets/real-images/real-shredder-line-01.jpg",
       link: "/services/heavy-equipment",
       icon: Truck,
       highlights: [t('services.heavyEquipment.highlight1'), t('services.heavyEquipment.highlight2'), t('services.heavyEquipment.highlight3'), t('services.heavyEquipment.highlight4')],
@@ -30,7 +30,7 @@ export default function Service() {
     {
       title: t('services.sourcing.title'),
       text: t('services.sourcing.text'),
-      image: "/assets/real_Images/real-container-scrap-01.jpg",
+      image: "/assets/real-images/real-container-scrap-01.jpg",
       link: "/services/international-sourcing",
       icon: Globe,
       highlights: [t('services.sourcing.highlight1'), t('services.sourcing.highlight2'), t('services.sourcing.highlight3'), t('services.sourcing.highlight4')],

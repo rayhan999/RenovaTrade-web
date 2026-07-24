@@ -33,7 +33,7 @@ export default function Banner() {
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <div
           className={`absolute inset-0 bg-cover bg-center bg-no-repeat ${reducedMotion ? "" : "animate-kenburns"}`}
-          style={{ backgroundImage: "url(/assets/real_Images/real-banner-cinematic-wide-01.jpg)" }}
+          style={{ backgroundImage: "url(/assets/real-images/real-banner-cinematic-wide-01.jpg)" }}
         />
       </div>
 

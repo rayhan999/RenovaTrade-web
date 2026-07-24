@@ -50,7 +50,7 @@ export default function MetalScrapTradingPage() {
             <AnimatedSection animation="fade-left" className="lg:col-span-2 space-y-8">
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="/assets/real_Images/real-scrap-yard-hero-01.jpg"
+                  src="/assets/real-images/real-scrap-yard-hero-01.jpg"
                   alt="Metal scrap trading"
                   className="w-full h-80 object-cover"
                 />
