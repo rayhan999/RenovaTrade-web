@@ -24,8 +24,8 @@ const pillars = [
         Renova Trade is a private limited company registered in Finland and
         listed in the Finnish Trade Register. Business ID (Y-tunnus): {BUSINESS_ID}.
         {" "}Operating from inside the EU means our contracts, invoicing, and
-        export procedures follow European commercial law — giving buyers in
-        South Asia a counterparty they can verify.
+        export procedures follow European commercial law — giving buyers across
+        global industrial markets a counterparty they can verify.
       </>
     ),
   },

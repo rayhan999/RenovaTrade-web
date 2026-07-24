@@ -10,22 +10,33 @@ import { ADDRESS, PHONE, EMAIL } from "@/lib/constants"
 
 // Labels are translation keys — resolved through useLanguage() so the
 // EN / বাংলা toggle can localize navigation without structural changes.
+//
+// "Services & Solutions" is the canonical primary landing tab. With the
+// URL move to /services-and-solutions (turn 19), the tab lands on the
+// 10-tile combined catalog page. The dropdown lists:
+//   - All Services & Solutions (the canonical catalog at /services-and-solutions)
+//   - Each individual Core Service detail page
+//   - Work approach (→ /how-we-work), per the user's turn-1 brief that the
+//     work-approach page nests under Services & Solutions rather than as a
+//     top-level tab.
+// alsoActive keeps the tab lit when the user is on any of the individual
+// service detail pages (/services/metal-scrap-trading etc.) so they can
+// see where they are in the dropdown tree.
 const navLinks = [
   { key: "nav.home", href: "/" },
-  { key: "nav.about", href: "/about" },
   {
-    key: "nav.services",
-    href: "/services",
+    key: "nav.servicesSolutions",
+    href: "/services-and-solutions",
     children: [
-      { key: "nav.allServices", href: "/services" },
-      { key: "nav.metalScrap", href: "/services/metal-scrap-trading" },
-      { key: "nav.heavyEquipment", href: "/services/heavy-equipment" },
-      { key: "nav.sourcing", href: "/services/international-sourcing" },
+      { key: "nav.allServices", href: "/services-and-solutions" },
+      // { key: "nav.metalScrap", href: "/services/metal-scrap-trading" },
+      // { key: "nav.heavyEquipment", href: "/services/heavy-equipment" },
+      // { key: "nav.sourcing", href: "/services/international-sourcing" },
+      { key: "nav.workApproach", href: "/how-we-work" },
     ],
   },
-  { key: "nav.products", href: "/products" },
+  { key: "nav.about", href: "/about" },
   { key: "nav.industries", href: "/industries" },
-  { key: "nav.howWeWork", href: "/how-we-work" },
   { key: "nav.contact", href: "/contact" },
 ]
 
@@ -134,9 +145,19 @@ export default function Header() {
     }
   }, [isMobileMenuOpen])
 
-  const isActive = (href) => {
+  // A top-level link with a dropdown stays active when:
+  //   - pathname starts with its href, OR
+  //   - pathname matches any child href.
+  // The Services & Solutions dropdown covers both /services-and-solutions
+  // (the catalog landing) and all /services/* detail routes (the three
+  // Core Services) plus /how-we-work — so any of those keeps the tab lit.
+  const isActive = (href, children) => {
     if (href === "/") return pathname === "/"
-    return pathname.startsWith(href)
+    if (pathname.startsWith(href)) return true
+    if (children?.some((child) => pathname === child.href || pathname.startsWith(child.href + "/"))) {
+      return true
+    }
+    return false
   }
 
   return (
@@ -170,7 +191,7 @@ export default function Header() {
         {/* Main nav */}
         <nav
           className={`transition-all duration-300 ${
-            isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-3" : "bg-white py-5"
+            isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-2" : "bg-white py-2.5"
           }`}
           aria-label="Main navigation"
         >
@@ -180,7 +201,7 @@ export default function Header() {
               <img
                 src="/assets/images/resources/renova_logo.png"
                 alt="Renova Trade"
-                className="h-10 md:h-12 w-auto"
+                className="h-8 md:h-10 w-auto"
               />
             </Link>
 
@@ -191,7 +212,7 @@ export default function Header() {
                   {link.children ? (
                     <DesktopDropdown
                       link={link}
-                      isActive={isActive(link.href)}
+                      isActive={isActive(link.href, link.children)}
                       isOpen={openDropdown === link.key}
                       onToggle={() =>
                         setOpenDropdown(openDropdown === link.key ? null : link.key)
@@ -293,13 +314,12 @@ export default function Header() {
               {navLinks.map((link) => (
                 <li key={link.key}>
                   {link.children ? (
-                    <MobileDropdown link={link} onClose={() => setIsMobileMenuOpen(false)} />
+                    <MobileDropdown link={link} isActive={isActive(link.href, link.children)} onClose={() => setIsMobileMenuOpen(false)} />
                   ) : (
                     <Link
                       href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block py-3 px-3 rounded-lg font-medium transition-colors ${
-                        isActive(link.href)
+                      onClick={() => setIsMobileMenuOpen(false)}                        className={`block py-3 px-3 rounded-lg font-medium transition-colors ${
+                        isActive(link.href, link.children)
                           ? "bg-accent text-white"
                           : "text-white/90 hover:bg-white/10"
                       }`}
@@ -425,16 +445,25 @@ function DesktopDropdown({ link, isActive, isOpen, onToggle, onClose }) {
   )
 }
 
-function MobileDropdown({ link, onClose }) {
+function MobileDropdown({ link, isActive, onClose }) {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   const { t } = useLanguage()
+
+  // Auto-open the dropdown when the user is on one of the child routes
+  // (e.g. /services/metal-scrap-trading) so they can see where they are
+  // without an extra tap.
+  useEffect(() => {
+    if (isActive) setIsOpen(true)
+  }, [isActive])
 
   return (
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-3 px-3 rounded-lg font-medium text-white/90 hover:bg-white/10 transition-colors cursor-pointer"
+        className={`w-full flex items-center justify-between py-3 px-3 rounded-lg font-medium transition-colors cursor-pointer ${
+          isActive ? "bg-accent/15 text-white" : "text-white/90 hover:bg-white/10"
+        }`}
         aria-expanded={isOpen}
       >
         {t(link.key)}

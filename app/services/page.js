@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Explore Renova Trade services: metal scrap trading, heavy equipment & industrial machinery, and international sourcing & procurement.',
   openGraph: {
     title: 'Renova Trade Services',
-    description: 'Metal scrap trading, heavy equipment, and international sourcing services connecting Europe with South Asia.',
+    description: 'Metal scrap trading, heavy equipment, and international sourcing services connecting Europe with global markets.',
     url: 'https://renovatrade.fi/services',
     siteName: 'Renova Trade',
     type: 'website'

@@ -7,10 +7,18 @@ import { useLanguage } from "@/components/i18n/LanguageProvider"
 
 /**
  * Hero — layered parallax-style background:
- *  1. Photo with slow Ken Burns pan (transform-only, GPU-friendly)
- *  2. Steel-navy gradient overlays for text contrast
+ *  1. Real operations photo (1600×816 cinematic widescreen, Ken Burns pan)
+ *  2. Lighter steel-navy gradient overlays so the photo reads through
  *  3. Subtle animated SVG trade-route arcs (Europe → Global Markets motif)
  * All motion disabled under prefers-reduced-motion; arcs hidden on mobile.
+ *
+ * Overlay opacities were reduced so the hero photo reads through:
+ *   - Full-panel bg-primary/80 → bg-primary/40
+ *   - Gradient from/95→80→60 → from/65→50→35
+ * Text contrast is preserved by the photo's natural navy tones + white
+ * copy. The right-side gradient stop is held at 35% so the bordered
+ * CTA button and trust-signal row stay legible over the brightest part
+ * of the photo.
  */
 export default function Banner() {
   const reducedMotion = useReducedMotion()
@@ -25,13 +33,14 @@ export default function Banner() {
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <div
           className={`absolute inset-0 bg-cover bg-center bg-no-repeat ${reducedMotion ? "" : "animate-kenburns"}`}
-          style={{ backgroundImage: "url(/assets/images/backgrounds/renova_banner_2.webp)" }}
+          style={{ backgroundImage: "url(/assets/real_Images/real-banner-cinematic-wide-01.jpg)" }}
         />
       </div>
 
-      {/* Overlays */}
-      <div className="absolute inset-0 bg-primary/80" aria-hidden="true" />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" aria-hidden="true" />
+      {/* Overlays — lightened so the hero photo is clearly visible while
+          keeping white copy readable across all photo regions */}
+      <div className="absolute inset-0 bg-primary/40" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/65 via-primary/50 to-primary/35" aria-hidden="true" />
 
       {/* Animated trade-route arcs — decorative, desktop only */}
       <svg
@@ -62,10 +71,14 @@ export default function Banner() {
       {/* Content */}
       <div className="relative z-10 container-renova py-20 md:py-28 lg:py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight text-balance">
+          {/* h1 + subtitle carry their own contrast via a soft black drop-shadow
+              so white copy stays legible regardless of how bright the right edge
+              of the photo gets (belt-and-suspenders for the lower-opacity
+              gradient stop) */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
             {t('home.banner.title.raw')}
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
             {t('home.banner.subtitle')}
           </p>
 

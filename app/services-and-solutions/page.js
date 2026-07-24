@@ -2,7 +2,7 @@
 
 import PageHeader from "@/components/shell/PageHeader"
 import Link from "next/link"
-import { ArrowUpRight, Recycle, Forklift, Cog, Package, Wrench, CircuitBoard, Search } from "lucide-react"
+import { ArrowUpRight, Recycle, Forklift, Cog, Package, Wrench, CircuitBoard, Search, Globe2 } from "lucide-react"
 import SectionTitle from "@/components/ui/SectionTitle"
 import AnimatedSection from "@/components/ui/AnimatedSection"
 import Cta from "@/components/sections/home1/Cta"
@@ -10,28 +10,54 @@ import { Blob, Ring, Diamond } from "@/components/ui/Decor"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
 
 /**
- * Products — "catalog tile" design, deliberately DIFFERENT from the
- * Core Services cards (which are image-top + floating icon chip + tag row):
- * here each product is a full-bleed image tile with a navy gradient scrim,
- * a large index-number watermark, a frosted-glass icon chip, bottom-anchored
- * copy, a corner arrow, and an accent underline that draws on hover.
- * First tile is featured (2 columns) for editorial rhythm.
+ * Services & Solutions — at the canonical /services-and-solutions URL.
+ * Per the user's brief, the page presents "all items from products + the
+ * 1st 3 Core Services added" as a single browsable index.
+ *
+ * Tile order (top-down, left-to-right):
+ *   - Tiles 1–7 are the seven product items from lib/translations.js
+ *     (product.1-7): Metal Scrap, Heavy Equipment, Industrial Machinery,
+ *     Material Handling Equipment, Engineering Products, Industrial
+ *     Components, and Custom Sourcing Projects. Each routes to the closest
+ *     owning service detail page.
+ *   - Tile 8 is the one Core Service (lib/services.js) appended to the
+ *     product list that doesn't duplicate a product title: International
+ *     Sourcing & Procurement.
+ *   - The Metal Scrap Trading and Heavy Equipment service tiles are
+ *     intentionally pruned because they duplicate Tile 1 (Metal Scrap)
+ *     and Tile 2 (Heavy Equipment) titles respectively. Catalog now
+ *     hosts 7 distinct products + 1 distinct Core Service = 8 tiles
+ *     total.
+ *
+ * Service tiles use a distinct image set (services-2-*.jpg) so they're
+ * visually differentiated from the product tiles above even when both
+ * route to the same detail page.
+ *
+ * The "catalog tile" visual treatment: full-bleed image, navy gradient
+ * scrim, frosted-glass icon chip, large index watermark, bottom-anchored
+ * copy, corner arrow, and an accent underline that draws on hover.
+ * Layout: 3 cards per row (grid-cols-1 sm:grid-cols-2 md:grid-cols-3) per
+ * the user's brief. 8 tiles render as 3 + 3 + 2 with the final row's
+ * trailing tile centered for visual balance.
  */
-export default function ProductsPage() {
+export default function ServicesAndSolutionsPage() {
     const { t } = useLanguage()
     const products = [
-        { title: t('product.1.title'), description: t('product.1.text'), link: "/services/metal-scrap-trading", image: "/assets/images/services/service_1.jpeg", icon: Recycle },
-        { title: t('product.2.title'), description: t('product.2.text'), link: "/services/heavy-equipment", image: "/assets/images/services/service_2.jpg", icon: Forklift },
-        { title: t('product.3.title'), description: t('product.3.text'), link: "/services/heavy-equipment", image: "/assets/images/services/service_3.jpg", icon: Cog },
-        { title: t('product.4.title'), description: t('product.4.text'), link: "/services/heavy-equipment", image: "/assets/images/services/services-1-1.jpg", icon: Package },
-        { title: t('product.5.title'), description: t('product.5.text'), link: "/services/international-sourcing", image: "/assets/images/services/services-1-2.jpg", icon: Wrench },
-        { title: t('product.6.title'), description: t('product.6.text'), link: "/services/international-sourcing", image: "/assets/images/services/services-1-3.jpg", icon: CircuitBoard },
-        { title: t('product.7.title'), description: t('product.7.text'), link: "/services/international-sourcing", image: "/assets/images/services/services-1-4.jpg", icon: Search },
-    ]
+        // ── Product items (7) ──
+        { title: t('product.1.title'), description: t('product.1.text'), link: "/services/metal-scrap-trading", image: "/assets/real_Images/real-scrap-yard-hero-01.jpg", icon: Recycle },
+        { title: t('product.2.title'), description: t('product.2.text'), link: "/services/heavy-equipment", image: "/assets/real_Images/real-port-cranes-yards-01.jpg", icon: Forklift },
+        { title: t('product.3.title'), description: t('product.3.text'), link: "/services/heavy-equipment", image: "/assets/real_Images/real-shredder-line-01.jpg", icon: Cog },
+        { title: t('product.4.title'), description: t('product.4.text'), link: "/services/heavy-equipment", image: "/assets/real_Images/real-forklift-yard-01.jpg", icon: Package },
+        { title: t('product.5.title'), description: t('product.5.text'), link: "/services/international-sourcing", image: "/assets/real_Images/real-container-scrap-01.jpg", icon: Wrench },
+        { title: t('product.6.title'), description: t('product.6.text'), link: "/services/international-sourcing", image: "/assets/real_Images/real-reach-stacker-01.jpg", icon: CircuitBoard },        { title: t('product.7.title'), description: t('product.7.text'), link: "/services/international-sourcing", image: "/assets/real_Images/real-copper-scrap-01.jpg", icon: Search },
+        // ── Non-redundant Core Service tile appended (Metal Scrap Trading + Heavy Equipment
+        //    service tiles are pruned because they duplicate product.1 + product.2 titles) ──
+        { title: t('services.sourcing.title'), description: t('services.sourcing.text'), link: "/services/international-sourcing", image: "/assets/real_Images/real-port-yards-01.jpg", icon: Globe2 },
+    ] 
 
     return (
         <>
-        <PageHeader title={t('nav.products')} breadcrumbs={[{ label: t('nav.products') }]} />
+        <PageHeader title={t('page.products.pageTitle')} breadcrumbs={[{ label: t('page.products.pageTitle') }]} />
             <section className="section-padding bg-surface relative overflow-hidden">
                 {/* Ambient shapes */}
                 <Blob color="steel" className="w-96 h-96 -top-24 -right-24" animate="animate-sway" />
@@ -47,13 +73,12 @@ export default function ProductsPage() {
                         />
                     </AnimatedSection>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {products.map((product, index) => (
                             <AnimatedSection
                                 key={product.title}
                                 animation="fade-up"
-                                delay={index * 80}
-                                className={index === 0 ? "md:col-span-2" : ""}
+                                delay={index * 60}
                             >
                                 <Link
                                     href={product.link}

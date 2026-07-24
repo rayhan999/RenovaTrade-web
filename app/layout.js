@@ -27,10 +27,10 @@ const inter = Inter({
 
 export const metadata = {
     title: { default: 'Renova Trade', template: '%s | Renova Trade' },
-    description: 'Renova Trade is a Finland-based international sourcing, procurement, trading, and export company connecting European manufacturers with businesses across South Asia.',
+    description: 'Renova Trade is a Finland-based international sourcing, procurement, trading, and export company connecting European manufacturers with businesses across global industrial markets.',
     openGraph: {
         title: 'Renova Trade – International Sourcing & Metal Trading',
-        description: 'Finland-based sourcing and export partner connecting European industry with South Asian markets. Metal scrap, heavy equipment, and procurement services.',
+        description: 'Finland-based sourcing and export partner connecting European industry with global industrial markets. Metal scrap, heavy equipment, and procurement services.',
         url: 'https://renovatrade.fi',
         siteName: 'Renova Trade',
         images: [
@@ -49,7 +49,7 @@ export const metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Renova Trade',
-        description: 'Finland-based international sourcing and metal trading. Connecting European suppliers with South Asian buyers.',
+        description: 'Finland-based international sourcing and metal trading. Connecting European suppliers with global industrial buyers.',
     },
     robots: {
         index: true,

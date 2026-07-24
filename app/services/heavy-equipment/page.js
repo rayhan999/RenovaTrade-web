@@ -50,7 +50,7 @@ export default function HeavyEquipmentPage() {
             <AnimatedSection animation="fade-left" className="lg:col-span-2 space-y-8">
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="/assets/images/services/service_2.jpg"
+                  src="/assets/real_Images/real-port-cranes-yards-01.jpg"
                   alt="Heavy equipment and industrial machinery"
                   className="w-full h-80 object-cover"
                 />

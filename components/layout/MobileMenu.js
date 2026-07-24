@@ -3,6 +3,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { ADDRESS } from "@/lib/constants";
 
+// LEGACY mobile menu — mirrors the active <Header /> structure. The
+// "Services & Solutions" dropdown lists only the three core services plus
+// the renamed "Work approach"; overlapping product tiles were removed to
+// deduplicate against the curated /products page.
 const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
   const [isActive, setIsActive] = useState({
     status: false,
@@ -43,16 +47,17 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                 <li><Link href="/" onClick={handleMobileMenu}>Home</Link></li>
                 <li><Link href="/about" onClick={handleMobileMenu}>About Us</Link></li>
                 <li className={isActive.key == 1 ? "dropdown current" : "dropdown"}>
-                  <Link href="/services">Services</Link>
+                  <Link href="/services">Services &amp; Solutions</Link>
                   <ul style={{ display: `${isActive.key == 1 ? "block" : "none"}` }}>
                     <li><Link href="/services" onClick={handleMobileMenu}>All Services</Link></li>
                     <li><Link href="/services/metal-scrap-trading" onClick={handleMobileMenu}>Metal Scrap Trading</Link></li>
-                    <li><Link href="/services/heavy-equipment" onClick={handleMobileMenu}>Heavy Equipment & Industrial Machinery</Link></li>
-                    <li><Link href="/services/international-sourcing" onClick={handleMobileMenu}>International Sourcing & Procurement</Link></li>
+                    <li><Link href="/services/heavy-equipment" onClick={handleMobileMenu}>Heavy Equipment &amp; Industrial Machinery</Link></li>
+                    <li><Link href="/services/international-sourcing" onClick={handleMobileMenu}>International Sourcing &amp; Procurement</Link></li>
+                    <li><Link href="/how-we-work" onClick={handleMobileMenu}>Work approach</Link></li>
                   </ul>
                   <button className={isActive.key == 1 ? "expanded open" : ""} onClick={() => handleToggle(1)}><span className="fa fa-angle-right" /></button>
                 </li>
-                <li><Link href="/products" onClick={handleMobileMenu}>Products</Link></li>
+                <li><Link href="/industries" onClick={handleMobileMenu}>Industries</Link></li>
                 <li><Link href="/blog" onClick={handleMobileMenu}>Blog</Link></li>
                 <li><Link href="/contact" onClick={handleMobileMenu}>Contact Us</Link></li>
               </ul>

@@ -11,7 +11,7 @@ export const metadata = {
   description: 'End-to-end international sourcing and procurement support from requirement review to supplier identification, negotiation, and delivery.',
   openGraph: {
     title: 'International Sourcing & Procurement - Renova Trade',
-    description: 'European supplier sourcing and procurement support for businesses across South Asia.',
+    description: 'European supplier sourcing and procurement support for businesses across global industrial markets.',
     url: 'https://renovatrade.fi/services/international-sourcing',
     siteName: 'Renova Trade',
     type: 'website'
@@ -37,7 +37,7 @@ export default function InternationalSourcingPage() {
             <AnimatedSection animation="fade-left" className="lg:col-span-2 space-y-8">
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="/assets/images/services/service_3.jpg"
+                  src="/assets/real_Images/real-banner-cinematic-wide-01.jpg"
                   alt="International sourcing and procurement"
                   className="w-full h-80 object-cover"
                 />
@@ -48,7 +48,7 @@ export default function InternationalSourcingPage() {
                   International Sourcing & Procurement
                 </h2>
                 <p className="text-secondary leading-relaxed mb-6">
-                  Renova Trade acts as your procurement partner in Europe. We help businesses across South Asia find reliable suppliers, negotiate competitive terms, and manage the complexities of international purchasing.
+                  Renova Trade acts as your procurement partner in Europe. We help businesses across global industrial markets find reliable European suppliers, negotiate competitive terms, and manage the complexities of international purchasing.
                 </p>
                 <p className="text-secondary leading-relaxed mb-8">
                   From the first requirement to final delivery, we provide hands-on coordination to reduce risk, save time, and ensure transparency.

@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'How We Work',
-  description: 'A transparent, seven-step process for sourcing, procurement, and export coordination from European suppliers to South Asian buyers.',
+  description: 'A transparent, seven-step process for sourcing, procurement, and export coordination from European suppliers to global industrial buyers.',
   openGraph: {
     title: 'How We Work - Renova Trade',
     description: 'Our seven-step sourcing, procurement, and export process explained.',

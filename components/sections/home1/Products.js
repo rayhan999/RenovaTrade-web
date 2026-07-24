@@ -6,12 +6,32 @@ import SectionTitle from "@/components/ui/SectionTitle"
 import AnimatedSection from "@/components/ui/AnimatedSection"
 import { useLanguage } from "@/components/i18n/LanguageProvider"
 
+/**
+ * Homepage "Services & Solutions" preview — first 3 of the 10-tile catalog
+ * at /services-and-solutions with a "Show more" CTA pointing there.
+ *
+ * This section unifies the homepage's old Products and Core Services
+ * sections into a single 3-tile preview, matching the canonical
+ * "Services & Solutions" identity on the catalog page.
+ *
+ * The 3 tiles below are the catalog's first 3 entries: Metal Scrap,
+ * Heavy Equipment, Industrial Machinery. They are product tiles by
+ * coincidence — the catalog's first 3 positions are all products, with
+ * the 3 Core Service tiles appended at positions 8–10. The SectionTitle
+ * "Our Services & Solutions" intentionally covers the wider catalog, so
+ * the 3 visible tile labels read as products while the section title and
+ * "Show more" destination span both.
+ *
+ * Filename & default export stay as `Products` to minimize file-system
+ * churn; the SectionTitle + CTA copy carry the conceptual rename. Full
+ * 10-tile catalog lives at /services-and-solutions.
+ */
 export default function Products() {
   const { t } = useLanguage()
   const products = [
-    { title: t('product.1.title'), description: t('product.1.text'), link: "/services/metal-scrap-trading", image: "/assets/images/services/service_1.jpeg", icon: Recycle },
-    { title: t('product.2.title'), description: t('product.2.text'), link: "/services/heavy-equipment", image: "/assets/images/services/service_2.jpg", icon: Forklift },
-    { title: t('product.3.title'), description: t('product.3.text'), link: "/services/heavy-equipment", image: "/assets/images/services/service_3.jpg", icon: Cog },
+    { title: t('product.1.title'), description: t('product.1.text'), link: "/services/metal-scrap-trading", image: "/assets/real_Images/real-scrap-yard-hero-01.jpg", icon: Recycle },
+    { title: t('product.2.title'), description: t('product.2.text'), link: "/services/heavy-equipment", image: "/assets/real_Images/real-forklift-yard-01.jpg", icon: Forklift },
+    { title: t('product.3.title'), description: t('product.3.text'), link: "/services/heavy-equipment", image: "/assets/real_Images/real-reach-stacker-01.jpg", icon: Cog },
   ]
   return (
     <section className="section-padding bg-background relative overflow-hidden">
@@ -81,10 +101,10 @@ export default function Products() {
 
         <AnimatedSection animation="fade-up" className="mt-10 text-center">
           <Link
-            href="/products"
+            href="/services-and-solutions"
             className="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all"
           >
-            {t('home.products.viewAll')}
+            {t('home.products.showMore')}
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </AnimatedSection>

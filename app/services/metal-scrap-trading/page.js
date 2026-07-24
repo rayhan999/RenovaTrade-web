@@ -10,7 +10,7 @@ export const metadata = {
   description: 'Renova Trade sources and trades ferrous and non-ferrous metal scrap including HMS, shredded scrap, copper, aluminum, stainless steel, and brass.',
   openGraph: {
     title: 'Metal Scrap Trading - Renova Trade',
-    description: 'Reliable metal scrap trading and export from Europe to South Asia.',
+    description: 'Reliable metal scrap trading and export from Europe to global industrial markets.',
     url: 'https://renovatrade.fi/services/metal-scrap-trading',
     siteName: 'Renova Trade',
     type: 'website'
@@ -50,7 +50,7 @@ export default function MetalScrapTradingPage() {
             <AnimatedSection animation="fade-left" className="lg:col-span-2 space-y-8">
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img
-                  src="/assets/images/services/service_1.jpeg"
+                  src="/assets/real_Images/real-scrap-yard-hero-01.jpg"
                   alt="Metal scrap trading"
                   className="w-full h-80 object-cover"
                 />
@@ -61,7 +61,7 @@ export default function MetalScrapTradingPage() {
                   Metal Scrap Trading
                 </h2>
                 <p className="text-secondary leading-relaxed mb-6">
-                  Renova Trade specializes in sourcing and trading ferrous and non-ferrous metal scrap from trusted European suppliers. We connect recyclers, foundries, and manufacturers in South Asia with reliable scrap streams that meet international quality standards.
+                  Renova Trade specializes in sourcing and trading ferrous and non-ferrous metal scrap from trusted European suppliers. We connect recyclers, foundries, and manufacturers across global industrial markets with reliable scrap streams that meet international quality standards.
                 </p>
                 <p className="text-secondary leading-relaxed">
                   Our team manages supplier verification, quality inspection, pricing, documentation, and logistics coordination so our customers receive consistent material on competitive terms.
